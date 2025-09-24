@@ -63,7 +63,16 @@ class LanguageSwitcher {
                 
                 // Footer
                 footer_rights: "Alle rechten voorbehouden",
-                footer_reserve: "Reserveer uw verblijf aan zee"
+                footer_reserve: "Reserveer uw verblijf aan zee",
+                footer_quick_links: "Snelle Links",
+                footer_practical: "Praktisch",
+                footer_booking_title: "Boek uw verblijf",
+                footer_booking_desc: "Reserveer nu en geniet van een ontspannen verblijf aan zee",
+                footer_copyright: "© 2024 Aparthotel De Wielingen. Alle rechten voorbehouden.",
+                
+                // Additional content
+                check_in_out: "Check-in/out",
+                amenities: "Voorzieningen"
             },
             en: {
                 // Navigation
@@ -117,7 +126,16 @@ class LanguageSwitcher {
                 
                 // Footer
                 footer_rights: "All rights reserved",
-                footer_reserve: "Reserve your stay by the sea"
+                footer_reserve: "Reserve your stay by the sea",
+                footer_quick_links: "Quick Links",
+                footer_practical: "Practical",
+                footer_booking_title: "Book your stay",
+                footer_booking_desc: "Reserve now and enjoy a relaxing stay by the sea",
+                footer_copyright: "© 2024 Aparthotel De Wielingen. All rights reserved.",
+                
+                // Additional content
+                check_in_out: "Check-in/out",
+                amenities: "Amenities"
             },
             fr: {
                 // Navigation
@@ -171,7 +189,16 @@ class LanguageSwitcher {
                 
                 // Footer
                 footer_rights: "Tous droits réservés",
-                footer_reserve: "Réservez votre séjour au bord de mer"
+                footer_reserve: "Réservez votre séjour au bord de mer",
+                footer_quick_links: "Liens Rapides",
+                footer_practical: "Pratique",
+                footer_booking_title: "Réservez votre séjour",
+                footer_booking_desc: "Réservez maintenant et profitez d'un séjour détendu au bord de mer",
+                footer_copyright: "© 2024 Aparthotel De Wielingen. Tous droits réservés.",
+                
+                // Additional content
+                check_in_out: "Check-in/out",
+                amenities: "Équipements"
             },
             de: {
                 // Navigation
@@ -225,7 +252,16 @@ class LanguageSwitcher {
                 
                 // Footer
                 footer_rights: "Alle Rechte vorbehalten",
-                footer_reserve: "Reservieren Sie Ihren Aufenthalt am Meer"
+                footer_reserve: "Reservieren Sie Ihren Aufenthalt am Meer",
+                footer_quick_links: "Schnelle Links",
+                footer_practical: "Praktisch",
+                footer_booking_title: "Buchen Sie Ihren Aufenthalt",
+                footer_booking_desc: "Reservieren Sie jetzt und genießen Sie einen entspannten Aufenthalt am Meer",
+                footer_copyright: "© 2024 Aparthotel De Wielingen. Alle Rechte vorbehalten.",
+                
+                // Additional content
+                check_in_out: "Check-in/out",
+                amenities: "Ausstattung"
             }
         };
     }
