@@ -581,7 +581,7 @@
     
     <!-- JavaScript -->
     <script>
-        // Mobile menu toggle
+        // Mobile menu toggle - Simple & Reliable
         function toggleMobileMenu() {
             const mobileMenu = document.querySelector('.mobile-menu');
             const mobileOverlay = document.querySelector('.mobile-overlay');
@@ -600,20 +600,6 @@
                 hamburger.classList.add('active');
                 document.body.style.overflow = 'hidden';
             }
-        } else {
-                mobileMenu.classList.add('open');
-                mobileOverlay.classList.add('active');
-                hamburger.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const mobileOverlay = document.querySelector('.mobile-overlay');
-            const hamburger = document.querySelector('.hamburger');
-            
-            mobileMenu.classList.toggle('open');
-            mobileOverlay.classList.toggle('hidden');
-            hamburger.classList.toggle('active');
         }
         
         // Scroll animations

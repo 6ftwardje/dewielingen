@@ -535,26 +535,13 @@
                 mobileOverlay.classList.remove('active');
                 hamburger.classList.remove('active');
                 document.body.style.overflow = '';
-            } else {
-                // Open menu
-                mobileMenu.classList.add('open');
-                mobileOverlay.classList.add('active');
-                hamburger.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        } else {
-                mobileMenu.classList.add('open');
-                mobileOverlay.classList.add('active');
-                hamburger.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
         }
             const mobileMenu = document.querySelector('.mobile-menu');
             const mobileOverlay = document.querySelector('.mobile-overlay');
             const hamburger = document.querySelector('.hamburger');
             
             mobileMenu.classList.toggle('open');
-            mobileOverlay.classList.toggle('hidden');
+            mobileOverlay.classList.toggle('active');
             hamburger.classList.toggle('active');
         }
         
