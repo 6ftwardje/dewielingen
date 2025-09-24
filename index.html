@@ -42,6 +42,11 @@
             background-attachment: fixed;
             position: relative;
         }
+        .hero-bg[style*="background-image"] {
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
         
         .hero-bg::before {
             content: '';
@@ -248,7 +253,7 @@
     </nav>
     
     <!-- Hero Section -->
-    <section class="hero-bg min-h-screen flex items-center justify-center text-white">
+    <section class="hero-bg min-h-screen flex items-center justify-center text-white" style="background-image: url('assets/hero_kust.jpg');">
         <div class="text-center px-4 max-w-4xl mx-auto">
             <h1 class="text-5xl md:text-7xl font-bold mb-6 fade-in" data-translate="home_welcome">Welkom bij Aparthotel De Wielingen</h1>
             <p class="text-xl md:text-2xl mb-8 opacity-90 fade-in" data-translate="home_subtitle">Een onvergetelijk verblijf aan de Belgische kust, op wandelafstand van de zee</p>
@@ -277,7 +282,7 @@
                 <!-- Highlight 2 -->
                 <div class="text-center fade-in">
                     <div class="w-full h-64 bg-gray-200 rounded-lg mb-6 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Unieke ligging Westende-bad" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        <img src="assets/westende_bad.jpg" alt="Unieke ligging Westende-bad" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
                     </div>
                     <h3 class="text-2xl font-semibold mb-4 text-dark-gray" data-translate="home_location_title">Unieke Ligging</h3>
                     <p class="text-light-gray" data-translate="home_location_desc">Gelegen in het centrum van Westende-bad, op 300m van de tramhalte. Ideaal voor wandelen, fietsen en relaxen tussen strand en polders.</p>

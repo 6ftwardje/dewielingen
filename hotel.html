@@ -41,6 +41,11 @@
             background-position: center;
             position: relative;
         }
+        .hero-bg[style*="background-image"] {
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
         
         .hero-bg::before {
             content: '';
@@ -244,7 +249,7 @@
     </nav>
     
     <!-- Hero Section -->
-    <section class="hero-bg pt-16 min-h-[60vh] flex items-center">
+    <section class="hero-bg pt-16 min-h-[60vh] flex items-center" style="background-image: url('assets/hotel_de_wielingen.png'); background-size: cover; background-position: center; filter: blur(1px);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center text-white">
                 <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in" data-translate="hotel_welcome">Welkom bij De Wielingen</h1>
@@ -267,7 +272,7 @@
                 </div>
                 <div class="fade-in">
                     <div class="w-full h-96 bg-gray-200 rounded-lg overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Hotel lobby" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        <img src="assets/hotel_de_wielingen.png" alt="Hotel De Wielingen" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
                     </div>
                 </div>
             </div>
