@@ -72,7 +72,79 @@ class LanguageSwitcher {
                 
                 // Additional content
                 check_in_out: "Check-in/out",
-                amenities: "Voorzieningen"
+                amenities: "Voorzieningen",
+                
+                // CTA Section
+                cta_title: "Klaar voor uw verblijf?",
+                cta_subtitle: "Boek nu en geniet van een onvergetelijke tijd aan de Belgische kust",
+                
+                // Room Types
+                rooms_subtitle_alt: "Comfortabele studio's en appartementen met alle moderne voorzieningen",
+                studio_features: "Studio's",
+                apartment_features: "Appartementen",
+                studio_desc: "Moderne studio's met terras, perfect voor koppels",
+                apartment_desc: "Ruime appartementen met luxe terras, ideaal voor gezinnen",
+                
+                // Hotel Features
+                hotel_features_title: "Wat maakt ons bijzonder?",
+                hotel_location_feature: "Centrum van Westende-bad",
+                hotel_location_desc: "Gelegen op de hoek van Irislaan en Henri Jasparlaan, op 300m van de tramhalte met verbinding naar alle kuststeden.",
+                hotel_rooms_feature: "Ruime Studio's & Appartementen",
+                hotel_rooms_desc: "Studio's met terras en appartementen met luxe terras, volledig ingericht met kingsize bed, eigen badkamer en kitchenette.",
+                hotel_service_feature: "Hotelservice Zonder Maaltijden",
+                hotel_service_desc: "Opgemaakte bedden, handdoeken en alle comfort van een hotel, maar met de vrijheid van een appartement.",
+                
+                // Practical Info
+                practical_title: "Praktische Informatie",
+                practical_subtitle: "Alles wat u moet weten voor uw verblijf",
+                check_in_title: "Check-in",
+                check_out_title: "Check-out",
+                check_in_time: "14:00 - 17:00",
+                check_out_time: "10:00 - 11:00",
+                check_in_desc: "Check-in: vanaf 14u00 tot 17u00",
+                check_out_desc: "Check-uit: tussen 10u00 en 11u00",
+                
+                // Amenities
+                wifi_title: "Gratis WiFi",
+                wifi_desc: "Gratis WiFi in het hele hotel",
+                kitchenette_title: "Kitchenette",
+                kitchenette_desc: "Kitchenette met twee kookplaten, frigo en keukenbenodigdheden zoals potten, pannen, bestek, glazen, borden.",
+                senseo_title: "NIEUWE SENSEO Machines",
+                senseo_desc: "NIEUWE SENSEO machines op elke kamer! Voor een perfecte kop koffie tijdens uw verblijf.",
+                microwave_title: "Microgolfoven",
+                microwave_desc: "Microgolfoven plaatsen is mogelijk op aanvraag (gratis service, beperkte voorraad).",
+                parking_title: "Eigen Parking",
+                parking_price: "€10 per nacht",
+                parking_desc: "Het hotel beschikt over een eigen parking aan het hotel. Hier zijn ook 2 elektrische laadpalen beschikbaar voor uw wagen.",
+                
+                // Location
+                location_title: "Perfect Gelegen",
+                location_subtitle: "Ontdek onze unieke ligging aan de Belgische kust",
+                location_desc1: "De Wielingen situeert zich op de hoek van de Irislaan en de Henri Jasparlaan. Dé verbindingsweg naar alle kuststeden. Gelegen in het centrum van Westende-bad, op 300 meter van de tramhalte (Westende-bad).",
+                location_desc2: "Deze tramhalte heeft verbinding naar alle andere badplaatsen, Plopsaland e.d. Vanuit Westende starten prachtige fietstochten en wandelingen in het polderlandschap.",
+                location_desc3: "In Westende-bad zijn er tal van restaurants en tearooms. Ook zijn er tal van sportmogelijkheden, watersportcentrum, golfterrein. Westende kent ook tal van jaarlijkse evenementen zoals champagneweekend in november, visweekend en bierweekend in juni, en het stripfestival in de zomervakantie.",
+                
+                // Nearby
+                nearby_title: "In de Buurt",
+                beach_title: "Strand van Westende",
+                beach_desc: "Op wandelafstand van het hotel ligt het prachtige strand van Westende-bad.",
+                tram_title: "Tramhalte Westende-bad",
+                tram_desc: "Op 300m van het hotel met verbinding naar alle andere badplaatsen en Plopsaland.",
+                
+                // Contact
+                contact_info_title: "Contactgegevens",
+                contact_address_title: "Adres",
+                contact_phone_title: "Telefoon",
+                contact_email_title: "E-mail",
+                contact_form_title: "Stuur ons een bericht",
+                contact_form_desc: "Heeft u vragen? Neem gerust contact met ons op.",
+                
+                // Prices
+                prices_title: "Prijslijst",
+                prices_subtitle: "Transparante prijzen voor uw verblijf",
+                all_in_title: "All-in",
+                supplements_title: "Supplementen",
+                price_note: "Meer dan het vermelde aantal personen niet toegelaten!"
             },
             en: {
                 // Navigation
@@ -134,8 +206,81 @@ class LanguageSwitcher {
                 footer_copyright: "© 2024 Aparthotel De Wielingen. All rights reserved.",
                 
                 // Additional content
+                // Additional content
                 check_in_out: "Check-in/out",
-                amenities: "Amenities"
+                amenities: "Amenities",
+                
+                // CTA Section
+                cta_title: "Ready for your stay?",
+                cta_subtitle: "Book now and enjoy an unforgettable time on the Belgian coast",
+                
+                // Room Types
+                rooms_subtitle_alt: "Comfortable studios and apartments with all modern amenities",
+                studio_features: "Studios",
+                apartment_features: "Apartments",
+                studio_desc: "Modern studios with terrace, perfect for couples",
+                apartment_desc: "Spacious apartments with luxury terrace, ideal for families",
+                
+                // Hotel Features
+                hotel_features_title: "What makes us special?",
+                hotel_location_feature: "Center of Westende-bad",
+                hotel_location_desc: "Located at the corner of Irislaan and Henri Jasparlaan, 300m from the tram stop with connections to all coastal cities.",
+                hotel_rooms_feature: "Spacious Studios & Apartments",
+                hotel_rooms_desc: "Studios with terrace and apartments with luxury terrace, fully equipped with kingsize bed, private bathroom and kitchenette.",
+                hotel_service_feature: "Hotel Service Without Meals",
+                hotel_service_desc: "Made beds, towels and all the comfort of a hotel, but with the freedom of an apartment.",
+                
+                // Practical Info
+                practical_title: "Practical Information",
+                practical_subtitle: "Everything you need to know for your stay",
+                check_in_title: "Check-in",
+                check_out_title: "Check-out",
+                check_in_time: "14:00 - 17:00",
+                check_out_time: "10:00 - 11:00",
+                check_in_desc: "Check-in: from 2:00 PM to 5:00 PM",
+                check_out_desc: "Check-out: between 10:00 AM and 11:00 AM",
+                
+                // Amenities
+                wifi_title: "Free WiFi",
+                wifi_desc: "Free WiFi throughout the hotel",
+                kitchenette_title: "Kitchenette",
+                kitchenette_desc: "Kitchenette with two hot plates, fridge and kitchen essentials such as pots, pans, cutlery, glasses, plates.",
+                senseo_title: "NEW SENSEO Machines",
+                senseo_desc: "NEW SENSEO machines in every room! For a perfect cup of coffee during your stay.",
+                microwave_title: "Microwave",
+                microwave_desc: "Microwave placement is possible on request (free service, limited stock).",
+                parking_title: "Own Parking",
+                parking_price: "€10 per night",
+                parking_desc: "The hotel has its own parking at the hotel. There are also 2 electric charging stations available for your car.",
+                
+                // Location
+                location_title: "Perfectly Located",
+                location_subtitle: "Discover our unique location on the Belgian coast",
+                location_desc1: "De Wielingen is located at the corner of Irislaan and Henri Jasparlaan. The connecting road to all coastal cities. Located in the center of Westende-bad, 300 meters from the tram stop (Westende-bad).",
+                location_desc2: "This tram stop has connections to all other seaside resorts, Plopsaland etc. From Westende, beautiful bike rides and walks in the polder landscape start.",
+                location_desc3: "In Westende-bad there are many restaurants and tea rooms. There are also many sports facilities, water sports center, golf course. Westende also has many annual events such as champagne weekend in November, fish weekend and beer weekend in June, and the comic festival in summer vacation.",
+                
+                // Nearby
+                nearby_title: "Nearby",
+                beach_title: "Westende Beach",
+                beach_desc: "Within walking distance of the hotel lies the beautiful beach of Westende-bad.",
+                tram_title: "Westende-bad Tram Stop",
+                tram_desc: "300m from the hotel with connections to all other seaside resorts and Plopsaland.",
+                
+                // Contact
+                contact_info_title: "Contact Information",
+                contact_address_title: "Address",
+                contact_phone_title: "Phone",
+                contact_email_title: "Email",
+                contact_form_title: "Send us a message",
+                contact_form_desc: "Do you have questions? Feel free to contact us.",
+                
+                // Prices
+                prices_title: "Price List",
+                prices_subtitle: "Transparent prices for your stay",
+                all_in_title: "All-in",
+                supplements_title: "Supplements",
+                price_note: "More than the stated number of persons not allowed!"
             },
             fr: {
                 // Navigation
@@ -197,8 +342,81 @@ class LanguageSwitcher {
                 footer_copyright: "© 2024 Aparthotel De Wielingen. Tous droits réservés.",
                 
                 // Additional content
+                // Additional content
                 check_in_out: "Check-in/out",
-                amenities: "Équipements"
+                amenities: "Équipements",
+                
+                // CTA Section
+                cta_title: "Prêt pour votre séjour?",
+                cta_subtitle: "Réservez maintenant et profitez d'un temps inoubliable sur la côte belge",
+                
+                // Room Types
+                rooms_subtitle_alt: "Studios et appartements confortables avec tous les équipements modernes",
+                studio_features: "Studios",
+                apartment_features: "Appartements",
+                studio_desc: "Studios modernes avec terrasse, parfaits pour les couples",
+                apartment_desc: "Appartements spacieux avec terrasse de luxe, idéaux pour les familles",
+                
+                // Hotel Features
+                hotel_features_title: "Qu'est-ce qui nous rend spéciaux?",
+                hotel_location_feature: "Centre de Westende-bad",
+                hotel_location_desc: "Situé au coin de l'Irislaan et de l'Henri Jasparlaan, à 300m de l'arrêt de tram avec connexions vers toutes les villes côtières.",
+                hotel_rooms_feature: "Studios & Appartements Spacieux",
+                hotel_rooms_desc: "Studios avec terrasse et appartements avec terrasse de luxe, entièrement équipés avec lit king-size, salle de bain privée et kitchenette.",
+                hotel_service_feature: "Service Hôtelier Sans Repas",
+                hotel_service_desc: "Lits faits, serviettes et tout le confort d'un hôtel, mais avec la liberté d'un appartement.",
+                
+                // Practical Info
+                practical_title: "Informations Pratiques",
+                practical_subtitle: "Tout ce que vous devez savoir pour votre séjour",
+                check_in_title: "Check-in",
+                check_out_title: "Check-out",
+                check_in_time: "14:00 - 17:00",
+                check_out_time: "10:00 - 11:00",
+                check_in_desc: "Check-in: à partir de 14h00 jusqu'à 17h00",
+                check_out_desc: "Check-out: entre 10h00 et 11h00",
+                
+                // Amenities
+                wifi_title: "WiFi Gratuit",
+                wifi_desc: "WiFi gratuit dans tout l'hôtel",
+                kitchenette_title: "Kitchenette",
+                kitchenette_desc: "Kitchenette avec deux plaques chauffantes, frigo et essentiels de cuisine comme casseroles, poêles, couverts, verres, assiettes.",
+                senseo_title: "NOUVELLES Machines SENSEO",
+                senseo_desc: "NOUVELLES machines SENSEO dans chaque chambre! Pour une tasse de café parfaite pendant votre séjour.",
+                microwave_title: "Micro-ondes",
+                microwave_desc: "Placement de micro-ondes possible sur demande (service gratuit, stock limité).",
+                parking_title: "Parking Privé",
+                parking_price: "€10 par nuit",
+                parking_desc: "L'hôtel dispose de son propre parking à l'hôtel. Il y a aussi 2 bornes de recharge électrique disponibles pour votre voiture.",
+                
+                // Location
+                location_title: "Parfaitement Situé",
+                location_subtitle: "Découvrez notre emplacement unique sur la côte belge",
+                location_desc1: "De Wielingen est situé au coin de l'Irislaan et de l'Henri Jasparlaan. La route de connexion vers toutes les villes côtières. Situé au centre de Westende-bad, à 300 mètres de l'arrêt de tram (Westende-bad).",
+                location_desc2: "Cet arrêt de tram a des connexions vers toutes les autres stations balnéaires, Plopsaland etc. De Westende, de magnifiques balades à vélo et promenades dans le paysage de polder commencent.",
+                location_desc3: "À Westende-bad, il y a de nombreux restaurants et salons de thé. Il y a aussi de nombreuses installations sportives, centre de sports nautiques, terrain de golf. Westende a aussi de nombreux événements annuels comme le weekend champagne en novembre, weekend poisson et weekend bière en juin, et le festival de bande dessinée en vacances d'été.",
+                
+                // Nearby
+                nearby_title: "À Proximité",
+                beach_title: "Plage de Westende",
+                beach_desc: "À quelques pas de l'hôtel se trouve la magnifique plage de Westende-bad.",
+                tram_title: "Arrêt de Tram Westende-bad",
+                tram_desc: "À 300m de l'hôtel avec connexions vers toutes les autres stations balnéaires et Plopsaland.",
+                
+                // Contact
+                contact_info_title: "Informations de Contact",
+                contact_address_title: "Adresse",
+                contact_phone_title: "Téléphone",
+                contact_email_title: "E-mail",
+                contact_form_title: "Envoyez-nous un message",
+                contact_form_desc: "Avez-vous des questions? N'hésitez pas à nous contacter.",
+                
+                // Prices
+                prices_title: "Liste des Prix",
+                prices_subtitle: "Prix transparents pour votre séjour",
+                all_in_title: "Tout inclus",
+                supplements_title: "Suppléments",
+                price_note: "Plus que le nombre indiqué de personnes non autorisé!"
             },
             de: {
                 // Navigation
@@ -260,8 +478,81 @@ class LanguageSwitcher {
                 footer_copyright: "© 2024 Aparthotel De Wielingen. Alle Rechte vorbehalten.",
                 
                 // Additional content
+                // Additional content
                 check_in_out: "Check-in/out",
-                amenities: "Ausstattung"
+                amenities: "Ausstattung",
+                
+                // CTA Section
+                cta_title: "Bereit für Ihren Aufenthalt?",
+                cta_subtitle: "Buchen Sie jetzt und genießen Sie eine unvergessliche Zeit an der belgischen Küste",
+                
+                // Room Types
+                rooms_subtitle_alt: "Komfortable Studios und Apartments mit allen modernen Annehmlichkeiten",
+                studio_features: "Studios",
+                apartment_features: "Apartments",
+                studio_desc: "Moderne Studios mit Terrasse, perfekt für Paare",
+                apartment_desc: "Geräumige Apartments mit Luxus-Terrasse, ideal für Familien",
+                
+                // Hotel Features
+                hotel_features_title: "Was macht uns besonders?",
+                hotel_location_feature: "Zentrum von Westende-bad",
+                hotel_location_desc: "Gelegen an der Ecke von Irislaan und Henri Jasparlaan, 300m von der Straßenbahnhaltestelle mit Verbindungen zu allen Küstenstädten.",
+                hotel_rooms_feature: "Geräumige Studios & Apartments",
+                hotel_rooms_desc: "Studios mit Terrasse und Apartments mit Luxus-Terrasse, vollständig ausgestattet mit Kingsize-Bett, eigenem Badezimmer und Küchenzeile.",
+                hotel_service_feature: "Hotelservice Ohne Mahlzeiten",
+                hotel_service_desc: "Gemachte Betten, Handtücher und der ganze Komfort eines Hotels, aber mit der Freiheit einer Wohnung.",
+                
+                // Practical Info
+                practical_title: "Praktische Informationen",
+                practical_subtitle: "Alles was Sie für Ihren Aufenthalt wissen müssen",
+                check_in_title: "Check-in",
+                check_out_title: "Check-out",
+                check_in_time: "14:00 - 17:00",
+                check_out_time: "10:00 - 11:00",
+                check_in_desc: "Check-in: ab 14:00 bis 17:00",
+                check_out_desc: "Check-out: zwischen 10:00 und 11:00",
+                
+                // Amenities
+                wifi_title: "Kostenloses WiFi",
+                wifi_desc: "Kostenloses WiFi im gesamten Hotel",
+                kitchenette_title: "Küchenzeile",
+                kitchenette_desc: "Küchenzeile mit zwei Kochplatten, Kühlschrank und Küchenessentials wie Töpfe, Pfannen, Besteck, Gläser, Teller.",
+                senseo_title: "NEUE SENSEO Maschinen",
+                senseo_desc: "NEUE SENSEO Maschinen in jedem Zimmer! Für eine perfekte Tasse Kaffee während Ihres Aufenthalts.",
+                microwave_title: "Mikrowelle",
+                microwave_desc: "Mikrowellen-Platzierung ist auf Anfrage möglich (kostenloser Service, begrenzte Verfügbarkeit).",
+                parking_title: "Eigener Parkplatz",
+                parking_price: "€10 pro Nacht",
+                parking_desc: "Das Hotel hat einen eigenen Parkplatz am Hotel. Es gibt auch 2 Elektroladestationen für Ihr Auto.",
+                
+                // Location
+                location_title: "Perfekt Gelegen",
+                location_subtitle: "Entdecken Sie unsere einzigartige Lage an der belgischen Küste",
+                location_desc1: "De Wielingen befindet sich an der Ecke von Irislaan und Henri Jasparlaan. Die Verbindungsstraße zu allen Küstenstädten. Gelegen im Zentrum von Westende-bad, 300 Meter von der Straßenbahnhaltestelle (Westende-bad).",
+                location_desc2: "Diese Straßenbahnhaltestelle hat Verbindungen zu allen anderen Badeorten, Plopsaland usw. Von Westende aus starten wunderschöne Radtouren und Spaziergänge in der Polderlandschaft.",
+                location_desc3: "In Westende-bad gibt es viele Restaurants und Teestuben. Es gibt auch viele Sportmöglichkeiten, Wassersportzentrum, Golfplatz. Westende hat auch viele jährliche Veranstaltungen wie Champagner-Wochenende im November, Fisch-Wochenende und Bier-Wochenende im Juni, und das Comic-Festival in den Sommerferien.",
+                
+                // Nearby
+                nearby_title: "In der Nähe",
+                beach_title: "Westende Strand",
+                beach_desc: "In Gehweite des Hotels liegt der wunderschöne Strand von Westende-bad.",
+                tram_title: "Westende-bad Straßenbahnhaltestelle",
+                tram_desc: "300m vom Hotel mit Verbindungen zu allen anderen Badeorten und Plopsaland.",
+                
+                // Contact
+                contact_info_title: "Kontaktinformationen",
+                contact_address_title: "Adresse",
+                contact_phone_title: "Telefon",
+                contact_email_title: "E-Mail",
+                contact_form_title: "Senden Sie uns eine Nachricht",
+                contact_form_desc: "Haben Sie Fragen? Kontaktieren Sie uns gerne.",
+                
+                // Prices
+                prices_title: "Preisliste",
+                prices_subtitle: "Transparente Preise für Ihren Aufenthalt",
+                all_in_title: "All-inclusive",
+                supplements_title: "Zusätze",
+                price_note: "Mehr als die angegebene Anzahl von Personen nicht erlaubt!"
             }
         };
     }
