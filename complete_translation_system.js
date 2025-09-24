@@ -1,175 +1,17 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel - Aparthotel De Wielingen</title>
-    <meta name="description" content="Ontdek Aparthotel De Wielingen: moderne accommodatie aan de Belgische kust met uitstekende service en ideale ligging.">
+// Script to add complete translation system to all pages
+const fs = require('fs');
+const path = require('path');
+
+const files = ['index.html', 'hotel.html', 'kamers.html', 'prijslijst.html', 'praktisch.html', 'ligging.html', 'contact.html'];
+
+files.forEach(file => {
+    const filePath = path.join(__dirname, file);
+    let content = fs.readFileSync(filePath, 'utf8');
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    console.log(`Adding complete translation system to ${file}...`);
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Custom Tailwind Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'cream': '#f9f9f7',
-                        'accent-red': '#a50030',
-                        'dark-gray': '#2d2d2d',
-                        'light-gray': '#6b7280'
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'sans-serif']
-                    }
-                }
-            }
-        }
-    </script>
-    
-    <!-- Custom CSS -->
-    <style>
-        .hero-bg {
-            background: linear-gradient(135deg, #a50030 0%, #8b0026 100%);
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-        .hero-bg[style*="background-image"] {
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-        }
-        
-        .hero-bg::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
-            z-index: 1;
-        }
-        
-        .hero-bg > * {
-            position: relative;
-            z-index: 2;
-        }        
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease-out;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Fallback: show elements after 1 second if JS doesn't load */
-        @media (prefers-reduced-motion: no-preference) {
-            .fade-in {
-                animation: fadeInFallback 0.6s ease-out 1s forwards;
-            }
-        }
-        
-        @keyframes fadeInFallback {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* Mobile Menu - Simple & Reliable */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100vh;
-            background: white;
-            z-index: 1000;
-            transform: translateX(100%);
-            transition: transform 0.3s ease;
-            overflow-y: auto;
-        }
-        
-        .mobile-menu.open {
-            transform: translateX(0);
-        }
-        
-        .mobile-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 999;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-        }
-        
-        .mobile-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .hamburger {
-            position: relative;
-            width: 24px;
-            height: 18px;
-            cursor: pointer;
-        }
-        
-        .hamburger span {
-            display: block;
-            position: absolute;
-            height: 2px;
-            width: 100%;
-            background: #2d2d2d;
-            border-radius: 1px;
-            opacity: 1;
-            left: 0;
-            transform: rotate(0deg);
-            transition: 0.25s ease-in-out;
-        }
-        
-        .hamburger span:nth-child(1) {
-            top: 0px;
-        }
-        
-        .hamburger span:nth-child(2) {
-            top: 8px;
-        }
-        
-        .hamburger span:nth-child(3) {
-            top: 16px;
-        }
-        
-        .hamburger.active span:nth-child(1) {
-            top: 8px;
-            transform: rotate(135deg);
-        }
-        
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-            left: -60px;
-        }
-        
-        .hamburger.active span:nth-child(3) {
-            top: 8px;
-            transform: rotate(-135deg);
-        }
-    
+    // Add language switcher CSS to the head section
+    const languageSwitcherCSS = `
         .language-switcher {
             position: fixed;
             top: 80px;
@@ -260,307 +102,16 @@
             .language-option .flag {
                 font-size: 14px;
             }
-        }</style>
-</head>
-<body class="bg-cream font-sans text-dark-gray">
-    <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="index.html" class="flex items-center space-x-2">
-                        <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto">
-                        <span class="text-2xl font-bold text-accent-red">De Wielingen</span>
-                    </a>
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="index.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Home</a>
-                        <a href="hotel.html" class="text-accent-red font-medium">Hotel</a>
-                        <a href="kamers.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-translate="nav_rooms">Kamers</a>
-                        <a href="prijslijst.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-translate="nav_prices">Prijslijst</a>
-                        <a href="praktisch.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-translate="nav_practical">Praktisch</a>
-                        <a href="ligging.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-translate="nav_location">Ligging</a>
-                        <a href="contact.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-translate="nav_contact">Contact</a>
-                        <a href="#" class="bg-accent-red text-white px-6 py-2 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium" data-translate="nav_book_now">Boek nu</a>
-                    </div>
-                </div>
-                
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button class="hamburger" onclick="toggleMobileMenu()">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Mobile Menu Overlay -->
-        <div class="mobile-overlay" onclick="toggleMobileMenu()"></div>
-        
-        <!-- Mobile Navigation -->
-        <div class="mobile-menu md:hidden">
-            <!-- Header -->
-            <div class="flex items-center justify-between p-6 border-b border-gray-200">
-                <a href="index.html" class="flex items-center space-x-2">
-                    <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto">
-                    <span class="text-xl font-bold text-accent-red">De Wielingen</span>
-                </a>
-                <button class="hamburger" onclick="toggleMobileMenu()">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-            
-            <!-- Navigation -->
-            <div class="px-6 py-8">
-                <nav class="space-y-6">
-                    <a href="index.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-translate="nav_home">Home</a>
-                    <a href="hotel.html" class="block text-2xl font-semibold text-accent-red">Hotel</a>
-                    <a href="kamers.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-translate="nav_rooms">Kamers</a>
-                    <a href="prijslijst.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-translate="nav_prices">Prijslijst</a>
-                    <a href="praktisch.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-translate="nav_practical">Praktisch</a>
-                    <a href="ligging.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-translate="nav_location">Ligging</a>
-                    <a href="contact.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-translate="nav_contact">Contact</a>
-                </nav>
-            </div>
-            
-            <!-- CTA Section -->
-            <div class="px-6 pb-8">
-                <a href="#" class="block w-full bg-accent-red text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-red-700 transition-colors duration-200 text-center shadow-lg" data-translate="nav_book_now">Boek nu</a>
-                <p class="text-center text-light-gray mt-3 text-sm" data-translate="footer_reserve">Reserveer uw verblijf aan zee</p>
-            </div>
-        </div>
-    </nav>
+        }`;
     
-    <!-- Hero Section -->
-    <section class="hero-bg pt-16 min-h-[60vh] flex items-center">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center text-white">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in" data-translate="hotel_welcome">Welkom bij De Wielingen</h1>
-                <p class="text-xl md:text-2xl opacity-90 fade-in" data-translate="hotel_subtitle">Ontdek onze moderne accommodatie aan de Belgische kust</p>
-            </div>
-        </div>
-    </section>
+    // Add CSS to the head section
+    const styleEnd = content.indexOf('</style>');
+    if (styleEnd !== -1) {
+        content = content.substring(0, styleEnd) + languageSwitcherCSS + content.substring(styleEnd);
+    }
     
-    <!-- Hotel Description -->
-    <section class="py-20 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div class="fade-in">
-                    <h2 class="text-4xl font-bold mb-6 text-dark-gray" data-translate="hotel_about_title">Over ons hotel</h2>
-                    <div class="space-y-4 text-lg text-light-gray">
-                        <p data-translate="hotel_about_text1">Wij heten u van harte welkom bij Aparthotel De Wielingen. Wij bezorgen u een onvergetelijk verblijf aan de Belgische kust. Ons hotel is gelegen op wandelafstand van de zee en biedt hotelservice zonder maaltijden.</p>
-                        <p data-translate="hotel_about_text2">De Wielingen heeft een unieke locatie, gelegen op een boog scheut van het strand en de uitgestrekte polders. Dit maakt onze ligging ideaal om er te wandelen, te fietsen en te relaxen.</p>
-                        <p data-translate="hotel_about_text3">Wij beschikken over ruime studio's (met terras) en appartementen met (luxe) terras. Hiernaast bieden wij ook een eigen parking aan voor het hotel met 2 elektrische laadpalen voor uw wagen.</p>
-                    </div>
-                </div>
-                <div class="fade-in">
-                    <div class="w-full h-96 bg-gray-200 rounded-lg overflow-hidden">
-                        <img src="assets/hotel_de_wielingen.png" alt="Hotel De Wielingen" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Features Section -->
-    <section class="bg-white py-20 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6 text-dark-gray" data-translate="hotel_features_title">Wat maakt ons bijzonder?</h2>
-                <p class="text-xl text-light-gray max-w-3xl mx-auto" data-translate="hotel_features_subtitle">Ontdek de voordelen van verblijven bij Aparthotel De Wielingen</p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="text-center fade-in">
-                    <div class="w-16 h-16 bg-accent-red rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-translate="hotel_location_feature">Centrum van Westende-bad</h3>
-                    <p class="text-light-gray" data-translate="hotel_location_desc">Gelegen op de hoek van Irislaan en Henri Jasparlaan, op 300m van de tramhalte met verbinding naar alle kuststeden.</p>
-                </div>
-                
-                <!-- Feature 2 -->
-                <div class="text-center fade-in">
-                    <div class="w-16 h-16 bg-accent-red rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5a2 2 0 012-2h4a2 2 0 012 2v2H8V5z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-translate="hotel_rooms_feature">Ruime Studio's & Appartementen</h3>
-                    <p class="text-light-gray" data-translate="hotel_rooms_desc">Studio's met terras en appartementen met luxe terras, volledig ingericht met kingsize bed, eigen badkamer en kitchenette.</p>
-                </div>
-                
-                <!-- Feature 3 -->
-                <div class="text-center fade-in">
-                    <div class="w-16 h-16 bg-accent-red rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Persoonlijke Service</h3>
-                    <p class="text-light-gray">Wij bieden persoonlijke aandacht en service om uw verblijf zo aangenaam mogelijk te maken.</p>
-                </div>
-                
-                <!-- Feature 4 -->
-                <div class="text-center fade-in">
-                    <div class="w-16 h-16 bg-accent-red rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Gratis WiFi</h3>
-                    <p class="text-light-gray">Gratis WiFi in alle kamers en gemeenschappelijke ruimtes voor uw comfort en gemak.</p>
-                </div>
-                
-                <!-- Feature 5 -->
-                <div class="text-center fade-in">
-                    <div class="w-16 h-16 bg-accent-red rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Flexibele Check-in</h3>
-                    <p class="text-light-gray">Flexibele incheck- en uitchecktijden om aan te sluiten bij uw reisplannen.</p>
-                </div>
-                
-                <!-- Feature 6 -->
-                <div class="text-center fade-in">
-                    <div class="w-16 h-16 bg-accent-red rounded-full flex items-center justify-center mx-auto mb-6">
-                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Kitchenette</h3>
-                    <p class="text-light-gray">Kitchenette met Senseo koffiezetapparaat en microgolf op aanvraag beschikbaar.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CTA Section -->
-    <section class="bg-dark-gray text-white py-20">
-        <div class="max-w-4xl mx-auto text-center px-4">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">Ervaar onze gastvrijheid</h2>
-            <p class="text-xl mb-8 opacity-90">Boek nu uw verblijf en ontdek waarom gasten steeds terugkeren naar De Wielingen</p>
-            <a href="#" class="inline-block bg-accent-red text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-700 transition-all duration-300 transform hover:scale-105">Boek nu</a>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="bg-white py-16 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid md:grid-cols-4 gap-8">
-                <!-- Contact Info -->
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Contact</h3>
-                    <div class="space-y-2 text-light-gray">
-                        <p>Irislaan 1</p>
-                        <p>8400 Oostende</p>
-                        <p>België</p>
-                        <p class="mt-4">Tel: +32 59 70 11 11</p>
-                        <p>Email: info@dewielingen.be</p>
-                    </div>
-                </div>
-                
-                <!-- Quick Links -->
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-translate="footer_quick_links">Snelle Links</h3>
-                    <div class="space-y-2">
-                        <a href="hotel.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Hotel</a>
-                        <a href="kamers.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Kamers</a>
-                        <a href="prijslijst.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Prijslijst</a>
-                        <a href="contact.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Contact</a>
-                    </div>
-                </div>
-                
-                <!-- Practical Info -->
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-translate="footer_practical">Praktisch</h3>
-                    <div class="space-y-2">
-                        <a href="praktisch.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-translate="check_in_out">Check-in/out</a>
-                        <a href="ligging.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-translate="nav_location">Ligging</a>
-                        <a href="#" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-translate="amenities">Voorzieningen</a>
-                    </div>
-                </div>
-                
-                <!-- Booking CTA -->
-                <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-translate="footer_booking_title">Boek uw verblijf</h3>
-                    <p class="text-light-gray mb-4" data-translate="footer_booking_desc">Reserveer nu en geniet van een ontspannen verblijf aan zee.</p>
-                    <a href="#" class="inline-block bg-accent-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium">Boek nu</a>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-200 mt-12 pt-8 text-center text-light-gray">
-                <p data-translate="footer_copyright">&copy; 2024 Aparthotel De Wielingen. Alle rechten voorbehouden.</p>
-            </div>
-        </div>
-    </footer>
-    
-    <!-- Language Switcher -->
-    <script src="language-switcher.js"></script>
-    
-    <!-- JavaScript -->
-    <script>
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const mobileOverlay = document.querySelector('.mobile-overlay');
-            const hamburger = document.querySelector('.hamburger');
-            
-            if (mobileMenu.classList.contains('open')) {
-                mobileMenu.classList.remove('open');
-                mobileOverlay.classList.remove('active');
-                hamburger.classList.remove('active');
-                document.body.style.overflow = '';
-            } else {
-                mobileMenu.classList.add('open');
-                mobileOverlay.classList.add('active');
-                hamburger.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            }
-        }
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const mobileOverlay = document.querySelector('.mobile-overlay');
-            const hamburger = document.querySelector('.hamburger');
-            
-            mobileMenu.classList.toggle('open');
-            mobileOverlay.classList.toggle('hidden');
-            hamburger.classList.toggle('active');
-        }
-        
-        // Scroll animations
-        function handleScrollAnimations() {
-            const elements = document.querySelectorAll('.fade-in');
-            
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.classList.add('visible');
-                }
-            });
-        }
-        
-        // Initialize scroll animations
-        window.addEventListener('scroll', handleScrollAnimations);
-        window.addEventListener('load', handleScrollAnimations);
-    </script>
-
+    // Add language switcher HTML before the closing body tag
+    const languageSwitcherHTML = `
     <!-- Language Switcher -->
     <div class="language-switcher">
         <button class="language-btn" onclick="toggleLanguageDropdown()">
@@ -586,7 +137,15 @@
                 <span class="language-text">Deutsch</span>
             </div>
         </div>
-    </div>
+    </div>`;
+    
+    const bodyEnd = content.indexOf('</body>');
+    if (bodyEnd !== -1) {
+        content = content.substring(0, bodyEnd) + languageSwitcherHTML + content.substring(bodyEnd);
+    }
+    
+    // Add JavaScript before the closing body tag
+    const languageSwitcherJS = `
     <script>
         // Language switcher functionality
         function toggleLanguageDropdown() {
@@ -951,5 +510,15 @@
             
             console.log('Translation completed for:', language);
         }
-    </script></body>
-</html>
+    </script>`;
+    
+    const bodyEnd2 = content.indexOf('</body>');
+    if (bodyEnd2 !== -1) {
+        content = content.substring(0, bodyEnd2) + languageSwitcherJS + content.substring(bodyEnd2);
+    }
+    
+    fs.writeFileSync(filePath, content);
+    console.log(`Completed ${file}`);
+});
+
+console.log('Complete translation system added to all pages!');
