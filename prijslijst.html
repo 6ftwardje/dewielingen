@@ -322,14 +322,14 @@
                 <div class="flex-shrink-0">
                     <a href="index.html" class="flex items-center space-x-2">
                         <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto">
-                        <span class="text-2xl font-bold text-accent-red">De Wielingen</span>
+                        <span class="text-2xl font-bold text-accent-red" data-translate="logo_text">De Wielingen</span>
                     </a>
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="index.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Home</a>
+                        <a href="index.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-translate="nav_home">Home</a>
                         <a href="hotel.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-translate="nav_hotel">Hotel</a>
                         <a href="kamers.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-translate="nav_rooms">Kamers</a>
                         <a href="prijslijst.html" class="text-accent-red font-medium">Prijslijst</a>
@@ -360,7 +360,7 @@
             <div class="flex items-center justify-between p-6 border-b border-gray-200">
                 <a href="index.html" class="flex items-center space-x-2">
                     <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto">
-                    <span class="text-xl font-bold text-accent-red">De Wielingen</span>
+                    <span class="text-xl font-bold text-accent-red" data-translate="logo_text">De Wielingen</span>
                 </a>
                 <button class="hamburger" onclick="toggleMobileMenu()">
                     <span></span>
@@ -640,13 +640,13 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <!-- Contact Info -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Contact</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-translate="contact_title">Contact</h3>
                     <div class="space-y-2 text-light-gray">
-                        <p>Irislaan 1</p>
-                        <p>8400 Oostende</p>
-                        <p>België</p>
-                        <p class="mt-4">Tel: +32 59 70 11 11</p>
-                        <p>Email: info@dewielingen.be</p>
+                        <p data-translate="address_street">Irislaan 1</p>
+                        <p data-translate="address_city">8400 Oostende</p>
+                        <p data-translate="address_country">België</p>
+                        <p class="mt-4" data-translate="phone">Tel: +32 59 70 11 11</p>
+                        <p data-translate="email">Email: info@dewielingen.be</p>
                     </div>
                 </div>
                 
@@ -654,10 +654,10 @@
                 <div>
                     <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-translate="footer_quick_links">Snelle Links</h3>
                     <div class="space-y-2">
-                        <a href="hotel.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Hotel</a>
-                        <a href="kamers.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Kamers</a>
-                        <a href="prijslijst.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Prijslijst</a>
-                        <a href="contact.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Contact</a>
+                        <a href="hotel.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-translate="nav_hotel">Hotel</a>
+                        <a href="kamers.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-translate="nav_rooms">Kamers</a>
+                        <a href="prijslijst.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-translate="nav_prices">Prijslijst</a>
+                        <a href="contact.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-translate="nav_contact">Contact</a>
                     </div>
                 </div>
                 
@@ -674,8 +674,8 @@
                 <!-- Booking CTA -->
                 <div>
                     <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-translate="footer_booking_title">Boek uw verblijf</h3>
-                    <p class="text-light-gray mb-4" data-translate="footer_booking_desc" data-translate="footer_booking_desc">Reserveer nu en geniet van een ontspannen verblijf aan zee.</p>
-                    <a href="#" class="inline-block bg-accent-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium">Boek nu</a>
+                    <p class="text-light-gray mb-4" data-translate="footer_booking_desc">Reserveer nu en geniet van een ontspannen verblijf aan zee.</p>
+                    <a href="#" class="inline-block bg-accent-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium" data-translate="nav_book_now">Boek nu</a>
                 </div>
             </div>
             
@@ -875,7 +875,23 @@
                     footer_booking_title: "Boek uw verblijf",
                     footer_booking_desc: "Reserveer nu en geniet van een ontspannen verblijf aan zee.",
                     footer_copyright: "© 2024 Aparthotel De Wielingen. Alle rechten voorbehouden."
-                },
+                                   logo_text: "De Wielingen",
+                    address_street: "Irislaan 1",
+                    address_city: "8400 Oostende",
+                    address_country: "België",
+                    phone: "Tel: +32 59 70 11 11",
+                    email: "Email: info@dewielingen.be",
+                    rooms_title: "Onze Kamers",
+                    rooms_subtitle: "Ontdek onze comfortabele accommodatie",
+                    our_rates: "Onze Tarieven",
+                    prices_inclusive: "Alle prijzen zijn inclusief belastingen en servicekosten",
+                    practical_title: "Praktische Informatie",
+                    practical_subtitle: "Alles wat u moet weten voor uw verblijf",
+                    location_title: "Ideale Ligging",
+                    location_subtitle: "Ontdek onze unieke locatie aan de Belgische kust",
+                    contact_title: "Contact",
+                    contact_subtitle: "Neem contact met ons op",
+ },
                 en: {
                     nav_home: "Home",
                     nav_hotel: "Hotel",
@@ -942,7 +958,23 @@
                     footer_booking_title: "Book your stay",
                     footer_booking_desc: "Reserve now and enjoy a relaxing stay by the sea.",
                     footer_copyright: "© 2024 Aparthotel De Wielingen. All rights reserved."
-                },
+                                   logo_text: "De Wielingen",
+                    address_street: "Irislaan 1",
+                    address_city: "8400 Ostend",
+                    address_country: "Belgium",
+                    phone: "Tel: +32 59 70 11 11",
+                    email: "Email: info@dewielingen.be",
+                    rooms_title: "Our Rooms",
+                    rooms_subtitle: "Discover our comfortable accommodation",
+                    our_rates: "Our Rates",
+                    prices_inclusive: "All prices include taxes and service charges",
+                    practical_title: "Practical Information",
+                    practical_subtitle: "Everything you need to know for your stay",
+                    location_title: "Ideal Location",
+                    location_subtitle: "Discover our unique location on the Belgian coast",
+                    contact_title: "Contact",
+                    contact_subtitle: "Get in touch with us",
+ },
                 fr: {
                     nav_home: "Accueil",
                     nav_hotel: "Hôtel",
@@ -1009,7 +1041,23 @@
                     footer_booking_title: "Réservez votre séjour",
                     footer_booking_desc: "Réservez maintenant et profitez d'un séjour détendu au bord de mer.",
                     footer_copyright: "© 2024 Aparthotel De Wielingen. Tous droits réservés."
-                },
+                                   logo_text: "De Wielingen",
+                    address_street: "Irislaan 1",
+                    address_city: "8400 Ostende",
+                    address_country: "Belgique",
+                    phone: "Tel: +32 59 70 11 11",
+                    email: "Email: info@dewielingen.be",
+                    rooms_title: "Nos Chambres",
+                    rooms_subtitle: "Découvrez notre hébergement confortable",
+                    our_rates: "Nos Tarifs",
+                    prices_inclusive: "Tous les prix incluent les taxes et frais de service",
+                    practical_title: "Informations Pratiques",
+                    practical_subtitle: "Tout ce que vous devez savoir pour votre séjour",
+                    location_title: "Emplacement Idéal",
+                    location_subtitle: "Découvrez notre emplacement unique sur la côte belge",
+                    contact_title: "Contact",
+                    contact_subtitle: "Contactez-nous",
+ },
                 de: {
                     nav_home: "Startseite",
                     nav_hotel: "Hotel",
@@ -1076,7 +1124,23 @@
                     footer_booking_title: "Buchen Sie Ihren Aufenthalt",
                     footer_booking_desc: "Reservieren Sie jetzt und genießen Sie einen entspannten Aufenthalt am Meer.",
                     footer_copyright: "© 2024 Aparthotel De Wielingen. Alle Rechte vorbehalten."
-                }
+                                   logo_text: "De Wielingen",
+                    address_street: "Irislaan 1",
+                    address_city: "8400 Ostende",
+                    address_country: "Belgien",
+                    phone: "Tel: +32 59 70 11 11",
+                    email: "Email: info@dewielingen.be",
+                    rooms_title: "Unsere Zimmer",
+                    rooms_subtitle: "Entdecken Sie unsere komfortable Unterkunft",
+                    our_rates: "Unsere Preise",
+                    prices_inclusive: "Alle Preise inklusive Steuern und Servicegebühren",
+                    practical_title: "Praktische Informationen",
+                    practical_subtitle: "Alles was Sie für Ihren Aufenthalt wissen müssen",
+                    location_title: "Ideale Lage",
+                    location_subtitle: "Entdecken Sie unsere einzigartige Lage an der belgischen Küste",
+                    contact_title: "Kontakt",
+                    contact_subtitle: "Nehmen Sie Kontakt mit uns auf",
+ }
             };
             
             const langTranslations = translations[language];
