@@ -49,7 +49,6 @@ dewielingen/
 ├── praktisch.html         # Praktische informatie
 ├── ligging.html           # Ligging pagina
 ├── contact.html           # Contact pagina
-├── language-switcher.js   # Taalwisselaar component
 └── README.md             # Project documentatie
 ```
 

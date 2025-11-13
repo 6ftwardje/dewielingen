@@ -221,97 +221,7 @@
             box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
     
-        .language-switcher {
-            position: fixed;
-            top: 80px;
-            right: 20px;
-            z-index: 1000;
-        }
-        .language-btn {
-            background: white;
-            border: 2px solid #a50030;
-            border-radius: 8px;
-            padding: 8px 12px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #a50030;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            min-width: 120px;
-        }
-        .language-btn:hover {
-            background: #a50030;
-            color: white;
-        }
-        .language-btn .flag {
-            font-size: 16px;
-        }
-        .language-btn .arrow {
-            font-size: 12px;
-            transition: transform 0.3s ease;
-        }
-        .language-btn.open .arrow {
-            transform: rotate(180deg);
-        }
-        .language-dropdown {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background: white;
-            border: 2px solid #a50030;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            margin-top: 4px;
-            min-width: 140px;
-            overflow: hidden;
-        }
-        .language-option {
-            padding: 10px 12px;
-            cursor: pointer;
-            font-size: 14px;
-            color: #333;
-            transition: background-color 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .language-option:hover {
-            background: #f0f0f0;
-        }
-        .hidden {
-            display: none;
-        }
-        @media (max-width: 768px) {
-            .language-switcher {
-                top: 70px;
-                right: 15px;
-            }
-            .language-btn {
-                padding: 6px 10px;
-                font-size: 12px;
-                min-width: 100px;
-            }
-            .language-btn .flag {
-                font-size: 14px;
-            }
-            .language-btn .arrow {
-                font-size: 10px;
-            }
-            .language-dropdown {
-                min-width: 120px;
-            }
-            .language-option {
-                padding: 8px 10px;
-                font-size: 12px;
-            }
-            .language-option .flag {
-                font-size: 14px;
-            }
-        }</style>
+    </style>
 </head>
 <body class="bg-cream font-sans text-dark-gray">
     <!-- Navigation -->
@@ -685,7 +595,6 @@
         </div>
     </footer>
     
-    <!-- Language Switcher -->
     <!-- JavaScript -->
     <script>
         // Mobile menu toggle
@@ -729,66 +638,5 @@
         window.addEventListener('load', handleScrollAnimations);
     </script>
 
-    <!-- Language Switcher -->
-    
-            <div class="language-option" data-lang="en">
-                <span class="flag">🇬🇧</span>
-                <span class="language-text">English</span>
-            </div>
-            <div class="language-option" data-lang="fr">
-                <span class="flag">🇫🇷</span>
-                <span class="language-text">Français</span>
-            </div>
-            <div class="language-option" data-lang="de">
-                <span class="flag">🇩🇪</span>
-                <span class="language-text">Deutsch</span>
-            </div>
-        </div>
-    </div>
-    <script>
-        
-            
-            const langTranslations = translations[language];
-            if (!langTranslations) {
-                console.log('No translations found for language:', language);
-                return;
-            }
-            
-            console.log('Found translations for:', language);
-            
-            // Translate elements with data-translate attribute
-            const elementsToTranslate = document.querySelectorAll('[data-translate]');
-            console.log('Found', elementsToTranslate.length, 'elements to translate');
-            
-            elementsToTranslate.forEach(element => {
-                const key = element.getAttribute('data-translate');
-                if (langTranslations[key]) {
-                    console.log('Translating', key, 'to:', langTranslations[key]);
-                    element.textContent = langTranslations[key];
-                } else {
-                    console.log('No translation found for key:', key);
-                }
-            });
-            
-            // Translate placeholder attributes
-            const placeholderElements = document.querySelectorAll('[data-translate-placeholder]');
-            console.log('Found', placeholderElements.length, 'placeholder elements to translate');
-            
-            placeholderElements.forEach(element => {
-                const key = element.getAttribute('data-translate-placeholder');
-                if (langTranslations[key]) {
-                    console.log('Translating placeholder', key, 'to:', langTranslations[key]);
-                    element.placeholder = langTranslations[key];
-                }
-            });
-            
-            // Update page language attribute
-            document.documentElement.lang = language;
-            
-            // Store preference
-            localStorage.setItem('preferred-language', language);
-            
-            console.log('Translation completed for:', language);
-        }
-    </script></body>
+    </body>
 </html>
