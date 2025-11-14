@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kamers - Aparthotel De Wielingen</title>
-    <meta name="description" content="Ontdek onze comfortabele studio's en appartementen met moderne voorzieningen. Kingsize bed, badkamer, WiFi en keuken inbegrepen.">
+    <meta name="description" content="Ontdek onze comfortabele studio's en appartementen met moderne voorzieningen. Kingsize bed, badkamer, WiFi en keuken inbegrepen." data-i18n="meta.description" data-i18n-attr="content">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -211,7 +211,58 @@
         .mobile-menu.open .mobile-nav-item:nth-child(6) { transition-delay: 0.35s; }
         .mobile-menu.open .mobile-nav-item:nth-child(7) { transition-delay: 0.4s; }
         .mobile-menu.open .mobile-nav-item:nth-child(8) { transition-delay: 0.45s; }
-    
+        
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 9999px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            z-index: 1100;
+        }
+        
+        .language-switcher button {
+            width: 44px;
+            height: 44px;
+            border-radius: 9999px;
+            border: 1px solid #e5e7eb;
+            background: white;
+            color: #2d2d2d;
+            font-weight: 600;
+            transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border 0.2s ease;
+        }
+        
+        .language-switcher button:hover {
+            transform: translateY(-2px);
+            border-color: #a50030;
+        }
+        
+        .language-switcher button.active {
+            background: #a50030;
+            color: #ffffff;
+            border-color: #a50030;
+        }
+        
+        @media (max-width: 768px) {
+            .language-switcher {
+                top: auto;
+                bottom: 1.5rem;
+                right: 50%;
+                transform: translateX(50%);
+                flex-direction: row;
+            }
+            
+            .language-switcher button:hover {
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body class="bg-cream font-sans text-dark-gray">
@@ -222,22 +273,22 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="index.html" class="flex items-center space-x-2">
-                        <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto">
-                        <span class="text-2xl font-bold text-accent-red">De Wielingen</span>
+                        <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto" data-i18n="brand.logoAlt" data-i18n-attr="alt">
+                        <span class="text-2xl font-bold text-accent-red" data-i18n="brand.name">De Wielingen</span>
                     </a>
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="index.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Home</a>
-                        <a href="hotel.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Hotel</a>
-                        <a href="kamers.html" class="text-accent-red font-medium">Kamers</a>
-                        <a href="prijslijst.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Prijslijst</a>
-                        <a href="praktisch.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Praktisch</a>
-                        <a href="ligging.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Ligging</a>
-                        <a href="contact.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Contact</a>
-                        <a href="#" class="bg-accent-red text-white px-6 py-2 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium">Boek nu</a>
+                        <a href="index.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.home">Home</a>
+                        <a href="hotel.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.hotel">Hotel</a>
+                        <a href="kamers.html" class="text-accent-red font-medium" data-i18n="nav.rooms">Kamers</a>
+                        <a href="prijslijst.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rates">Prijslijst</a>
+                        <a href="praktisch.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.practical">Praktisch</a>
+                        <a href="ligging.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.location">Ligging</a>
+                        <a href="contact.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.contact">Contact</a>
+                        <a href="#" class="bg-accent-red text-white px-6 py-2 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium" data-i18n="cta.bookNow">Boek nu</a>
                     </div>
                 </div>
                 
@@ -260,8 +311,8 @@
             <!-- Header -->
             <div class="flex items-center justify-between p-6 border-b border-gray-200">
                 <a href="index.html" class="flex items-center space-x-2">
-                    <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto">
-                    <span class="text-xl font-bold text-accent-red">De Wielingen</span>
+                    <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto" data-i18n="brand.logoAlt" data-i18n-attr="alt">
+                    <span class="text-xl font-bold text-accent-red" data-i18n="brand.name">De Wielingen</span>
                 </a>
                 <button class="hamburger" onclick="toggleMobileMenu()">
                     <span></span>
@@ -273,30 +324,37 @@
             <!-- Navigation -->
             <div class="px-6 py-8">
                 <nav class="space-y-6">
-                    <a href="index.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Home</a>
-                    <a href="hotel.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Hotel</a>
-                    <a href="kamers.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Kamers</a>
-                    <a href="prijslijst.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Prijslijst</a>
-                    <a href="praktisch.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Praktisch</a>
-                    <a href="ligging.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Ligging</a>
-                    <a href="contact.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Contact</a>
+                    <a href="index.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.home">Home</a>
+                    <a href="hotel.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.hotel">Hotel</a>
+                    <a href="kamers.html" class="block text-2xl font-semibold text-accent-red" data-i18n="nav.rooms">Kamers</a>
+                    <a href="prijslijst.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rates">Prijslijst</a>
+                    <a href="praktisch.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.practical">Praktisch</a>
+                    <a href="ligging.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.location">Ligging</a>
+                    <a href="contact.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.contact">Contact</a>
                 </nav>
             </div>
             
             <!-- CTA Section -->
             <div class="px-6 pb-8">
-                <a href="#" class="block w-full bg-accent-red text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-red-700 transition-colors duration-200 text-center shadow-lg">Boek nu</a>
-                <p class="text-center text-light-gray mt-3 text-sm">Reserveer uw verblijf aan zee</p>
+                <a href="#" class="block w-full bg-accent-red text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-red-700 transition-colors duration-200 text-center shadow-lg" data-i18n="cta.bookNow">Boek nu</a>
+                <p class="text-center text-light-gray mt-3 text-sm" data-i18n="cta.reserve">Reserveer uw verblijf aan zee</p>
             </div>
         </div>
     </nav>
+    
+    <div class="language-switcher" role="group" data-i18n="languageSwitcher.aria" data-i18n-attr="aria-label" aria-label="Taalkeuze">
+        <button type="button" class="lang-btn active" data-lang="nl" title="Nederlands" data-i18n="languageSwitcher.labels.nl" data-i18n-attr="title">NL</button>
+        <button type="button" class="lang-btn" data-lang="en" title="English" data-i18n="languageSwitcher.labels.en" data-i18n-attr="title">EN</button>
+        <button type="button" class="lang-btn" data-lang="fr" title="Français" data-i18n="languageSwitcher.labels.fr" data-i18n-attr="title">FR</button>
+        <button type="button" class="lang-btn" data-lang="de" title="Deutsch" data-i18n="languageSwitcher.labels.de" data-i18n-attr="title">DE</button>
+    </div>
     
     <!-- Hero Section -->
     <section class="hero-bg pt-16 min-h-[60vh] flex items-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center text-white">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">Onze Kamers</h1>
-                <p class="text-xl md:text-2xl opacity-90 fade-in">Comfortabele studio's en appartementen met alle moderne voorzieningen</p>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in" data-i18n="hero.title">Onze Kamers</h1>
+                <p class="text-xl md:text-2xl opacity-90 fade-in" data-i18n="hero.subtitle">Comfortabele studio's en appartementen met alle moderne voorzieningen</p>
             </div>
         </div>
     </section>
@@ -305,61 +363,61 @@
     <section class="py-20 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6 text-dark-gray">Kies uw accommodatie</h2>
-                <p class="text-xl text-light-gray max-w-3xl mx-auto">Ontdek onze verschillende kamertypes, elk met hun eigen charme en comfort</p>
+                <h2 class="text-4xl font-bold mb-6 text-dark-gray" data-i18n="rooms.title">Kies uw accommodatie</h2>
+                <p class="text-xl text-light-gray max-w-3xl mx-auto" data-i18n="rooms.subtitle">Ontdek onze verschillende kamertypes, elk met hun eigen charme en comfort</p>
             </div>
             
             <!-- Studio -->
             <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
                 <div class="fade-in">
                     <div class="w-full h-96 bg-gray-200 rounded-lg overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Studio kamer" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Studio kamer" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-i18n="rooms.studio.imageAlt" data-i18n-attr="alt">
                     </div>
                 </div>
                 <div class="fade-in">
-                    <h3 class="text-3xl font-bold mb-6 text-dark-gray">Studio</h3>
-                    <p class="text-lg text-light-gray mb-6">Onze studio's bieden een perfecte combinatie van comfort en functionaliteit. Ideaal voor koppels die op zoek zijn naar een romantische uitstap aan zee.</p>
+                    <h3 class="text-3xl font-bold mb-6 text-dark-gray" data-i18n="rooms.studio.title">Studio</h3>
+                    <p class="text-lg text-light-gray mb-6" data-i18n="rooms.studio.description">Onze studio's bieden een perfecte combinatie van comfort en functionaliteit. Ideaal voor koppels die op zoek zijn naar een romantische uitstap aan zee.</p>
                     
                     <div class="space-y-4 mb-8">
                         <div class="flex items-center">
                             <svg class="w-5 h-5 text-accent-red mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-dark-gray">Kingsize bed</span>
+                            <span class="text-dark-gray" data-i18n="rooms.studio.features.kingsize">Kingsize bed</span>
                         </div>
                         <div class="flex items-center">
                             <svg class="w-5 h-5 text-accent-red mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-dark-gray">Eigen badkamer met bad of douche</span>
+                            <span class="text-dark-gray" data-i18n="rooms.studio.features.bathroom">Eigen badkamer met bad of douche</span>
                         </div>
                         <div class="flex items-center">
                             <svg class="w-5 h-5 text-accent-red mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-dark-gray">Gratis WiFi in het hele hotel</span>
+                            <span class="text-dark-gray" data-i18n="rooms.studio.features.wifi">Gratis WiFi in het hele hotel</span>
                         </div>
                         <div class="flex items-center">
                             <svg class="w-5 h-5 text-accent-red mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-dark-gray">Kitchenette met twee kookplaten en frigo</span>
+                            <span class="text-dark-gray" data-i18n="rooms.studio.features.kitchenette">Kitchenette met twee kookplaten en frigo</span>
                         </div>
                         <div class="flex items-center">
                             <svg class="w-5 h-5 text-accent-red mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-dark-gray">NIEUWE SENSEO machines op elke kamer!</span>
+                            <span class="text-dark-gray" data-i18n="rooms.studio.features.senseo">NIEUWE SENSEO machines op elke kamer!</span>
                         </div>
                         <div class="flex items-center">
                             <svg class="w-5 h-5 text-accent-red mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-dark-gray">Terras</span>
+                            <span class="text-dark-gray" data-i18n="rooms.studio.features.terrace">Terras</span>
                         </div>
                     </div>
                     
-                    <a href="#" class="inline-block bg-accent-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium">Boek Studio</a>
+                    <a href="#" class="inline-block bg-accent-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium" data-i18n="rooms.studio.bookButton">Boek Studio</a>
                 </div>
             </div>
             
@@ -367,59 +425,59 @@
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="fade-in lg:order-2">
                     <div class="w-full h-96 bg-gray-200 rounded-lg overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Appartement" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Appartement" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-i18n="rooms.apartment.imageAlt" data-i18n-attr="alt">
                     </div>
                 </div>
                 <div class="fade-in lg:order-1">
-                    <h3 class="text-3xl font-bold mb-6 text-dark-gray">Appartement</h3>
-                    <p class="text-lg text-light-gray mb-6">Onze appartementen bieden meer ruimte en privacy, perfect voor gezinnen of groepen die langer willen verblijven en meer comfort zoeken.</p>
+                    <h3 class="text-3xl font-bold mb-6 text-dark-gray" data-i18n="rooms.apartment.title">Appartement</h3>
+                    <p class="text-lg text-light-gray mb-6" data-i18n="rooms.apartment.description">Onze appartementen bieden meer ruimte en privacy, perfect voor gezinnen of groepen die langer willen verblijven en meer comfort zoeken.</p>
                     
                     <div class="space-y-4 mb-8">
                         <div class="flex items-center">
                             <svg class="w-5 h-5 text-accent-red mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-dark-gray">Kingsize bed</span>
+                            <span class="text-dark-gray" data-i18n="rooms.apartment.features.kingsize">Kingsize bed</span>
                         </div>
                         <div class="flex items-center">
                             <svg class="w-5 h-5 text-accent-red mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-dark-gray">Eigen badkamer met bad of douche</span>
+                            <span class="text-dark-gray" data-i18n="rooms.apartment.features.bathroom">Eigen badkamer met bad of douche</span>
                         </div>
                         <div class="flex items-center">
                             <svg class="w-5 h-5 text-accent-red mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-dark-gray">Gratis WiFi in het hele hotel</span>
+                            <span class="text-dark-gray" data-i18n="rooms.apartment.features.wifi">Gratis WiFi in het hele hotel</span>
                         </div>
                         <div class="flex items-center">
                             <svg class="w-5 h-5 text-accent-red mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-dark-gray">Kitchenette met twee kookplaten en frigo</span>
+                            <span class="text-dark-gray" data-i18n="rooms.apartment.features.kitchenette">Kitchenette met twee kookplaten en frigo</span>
                         </div>
                         <div class="flex items-center">
                             <svg class="w-5 h-5 text-accent-red mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-dark-gray">NIEUWE SENSEO machines op elke kamer!</span>
+                            <span class="text-dark-gray" data-i18n="rooms.apartment.features.senseo">NIEUWE SENSEO machines op elke kamer!</span>
                         </div>
                         <div class="flex items-center">
                             <svg class="w-5 h-5 text-accent-red mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-dark-gray">Luxe terras</span>
+                            <span class="text-dark-gray" data-i18n="rooms.apartment.features.luxuryTerrace">Luxe terras</span>
                         </div>
                         <div class="flex items-center">
                             <svg class="w-5 h-5 text-accent-red mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-dark-gray">Keukenbenodigdheden (potten, pannen, bestek)</span>
+                            <span class="text-dark-gray" data-i18n="rooms.apartment.features.kitchenware">Keukenbenodigdheden (potten, pannen, bestek)</span>
                         </div>
                     </div>
                     
-                    <a href="#" class="inline-block bg-accent-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium">Boek Appartement</a>
+                    <a href="#" class="inline-block bg-accent-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium" data-i18n="rooms.apartment.bookButton">Boek Appartement</a>
                 </div>
             </div>
         </div>
@@ -429,8 +487,8 @@
     <section class="bg-white py-20 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6 text-dark-gray">Voorzieningen</h2>
-                <p class="text-xl text-light-gray max-w-3xl mx-auto">Alle comfort en gemak voor een perfect verblijf</p>
+                <h2 class="text-4xl font-bold mb-6 text-dark-gray" data-i18n="amenities.title">Voorzieningen</h2>
+                <p class="text-xl text-light-gray max-w-3xl mx-auto" data-i18n="amenities.subtitle">Alle comfort en gemak voor een perfect verblijf</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -441,8 +499,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Gratis WiFi</h3>
-                    <p class="text-light-gray">Snelle en betrouwbare internetverbinding in alle kamers en gemeenschappelijke ruimtes.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="amenities.items.wifi.title">Gratis WiFi</h3>
+                    <p class="text-light-gray" data-i18n="amenities.items.wifi.body">Snelle en betrouwbare internetverbinding in alle kamers en gemeenschappelijke ruimtes.</p>
                 </div>
                 
                 <!-- Amenity 2 -->
@@ -452,8 +510,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Kitchenette</h3>
-                    <p class="text-light-gray">Kitchenette met Senseo koffiezetapparaat en microgolf op aanvraag beschikbaar.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="amenities.items.kitchenette.title">Kitchenette</h3>
+                    <p class="text-light-gray" data-i18n="amenities.items.kitchenette.body">Kitchenette met Senseo koffiezetapparaat en microgolf op aanvraag beschikbaar.</p>
                 </div>
                 
                 <!-- Amenity 3 -->
@@ -463,8 +521,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Kingsize Bed</h3>
-                    <p class="text-light-gray">Comfortabele kingsize bedden voor een perfecte nachtrust tijdens uw verblijf.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="amenities.items.kingsize.title">Kingsize Bed</h3>
+                    <p class="text-light-gray" data-i18n="amenities.items.kingsize.body">Comfortabele kingsize bedden voor een perfecte nachtrust tijdens uw verblijf.</p>
                 </div>
                 
                 <!-- Amenity 4 -->
@@ -474,8 +532,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Flat-screen TV</h3>
-                    <p class="text-light-gray">Moderne flat-screen televisies voor entertainment tijdens uw verblijf.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="amenities.items.tv.title">Flat-screen TV</h3>
+                    <p class="text-light-gray" data-i18n="amenities.items.tv.body">Moderne flat-screen televisies voor entertainment tijdens uw verblijf.</p>
                 </div>
                 
                 <!-- Amenity 5 -->
@@ -485,8 +543,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Privé Badkamer</h3>
-                    <p class="text-light-gray">Moderne privé badkamers met douche en alle benodigde toiletartikelen.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="amenities.items.bathroom.title">Privé Badkamer</h3>
+                    <p class="text-light-gray" data-i18n="amenities.items.bathroom.body">Moderne privé badkamers met douche en alle benodigde toiletartikelen.</p>
                 </div>
                 
                 <!-- Amenity 6 -->
@@ -496,8 +554,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Flexibele Check-in</h3>
-                    <p class="text-light-gray">Flexibele incheck- en uitchecktijden om aan te sluiten bij uw reisplannen.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="amenities.items.flexible.title">Flexibele Check-in</h3>
+                    <p class="text-light-gray" data-i18n="amenities.items.flexible.body">Flexibele incheck- en uitchecktijden om aan te sluiten bij uw reisplannen.</p>
                 </div>
             </div>
         </div>
@@ -507,7 +565,7 @@
     <section class="py-20 px-4">
         <div class="max-w-4xl mx-auto">
             <div class="bg-white rounded-lg shadow-lg p-8">
-                <h2 class="text-3xl font-bold mb-8 text-dark-gray text-center">Huisregels</h2>
+                <h2 class="text-3xl font-bold mb-8 text-dark-gray text-center" data-i18n="houseRules.title">Huisregels</h2>
                 
                 <div class="space-y-6">
                     <div class="flex items-start">
@@ -517,8 +575,8 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold text-dark-gray mb-2">Niet roken</h3>
-                            <p class="text-light-gray">Roken in de kamers is ter strengste verboden. Dit wordt enkel toegelaten buiten en op het terras. Als dit niet wordt nageleeft kan er een boete worden aangerekend.</p>
+                            <h3 class="text-lg font-semibold text-dark-gray mb-2" data-i18n="houseRules.items.smoking.title">Niet roken</h3>
+                            <p class="text-light-gray" data-i18n="houseRules.items.smoking.body">Roken in de kamers is ter strengste verboden. Dit wordt enkel toegelaten buiten en op het terras. Als dit niet wordt nageleeft kan er een boete worden aangerekend.</p>
                         </div>
                     </div>
                     
@@ -529,8 +587,8 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold text-dark-gray mb-2">Maximum aantal personen</h3>
-                            <p class="text-light-gray">Meer dan het vermelde aantal personen per kamer is niet toegestaan.</p>
+                            <h3 class="text-lg font-semibold text-dark-gray mb-2" data-i18n="houseRules.items.maxPersons.title">Maximum aantal personen</h3>
+                            <p class="text-light-gray" data-i18n="houseRules.items.maxPersons.body">Meer dan het vermelde aantal personen per kamer is niet toegestaan.</p>
                         </div>
                     </div>
                     
@@ -541,8 +599,8 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-lg font-semibold text-dark-gray mb-2">Respect voor andere gasten</h3>
-                            <p class="text-light-gray">Wij vragen respect voor andere gasten en een rustige sfeer na 22:00 uur.</p>
+                            <h3 class="text-lg font-semibold text-dark-gray mb-2" data-i18n="houseRules.items.respect.title">Respect voor andere gasten</h3>
+                            <p class="text-light-gray" data-i18n="houseRules.items.respect.body">Wij vragen respect voor andere gasten en een rustige sfeer na 22:00 uur.</p>
                         </div>
                     </div>
                 </div>
@@ -553,9 +611,9 @@
     <!-- CTA Section -->
     <section class="bg-dark-gray text-white py-20">
         <div class="max-w-4xl mx-auto text-center px-4">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">Klaar om te boeken?</h2>
-            <p class="text-xl mb-8 opacity-90">Kies uw perfecte accommodatie en geniet van een ontspannen verblijf aan zee</p>
-            <a href="#" class="inline-block bg-accent-red text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-700 transition-all duration-300 transform hover:scale-105">Boek nu</a>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6" data-i18n="cta.sectionTitle">Klaar om te boeken?</h2>
+            <p class="text-xl mb-8 opacity-90" data-i18n="cta.sectionBody">Kies uw perfecte accommodatie en geniet van een ontspannen verblijf aan zee</p>
+            <a href="#" class="inline-block bg-accent-red text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-700 transition-all duration-300 transform hover:scale-105" data-i18n="cta.bookNow">Boek nu</a>
         </div>
     </section>
     
@@ -565,53 +623,695 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <!-- Contact Info -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Contact</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="footer.contact.heading">Contact</h3>
                     <div class="space-y-2 text-light-gray">
-                        <p>Irislaan 1</p>
-                        <p>8400 Oostende</p>
-                        <p>België</p>
-                        <p class="mt-4">Tel: +32 59 70 11 11</p>
-                        <p>Email: info@dewielingen.be</p>
+                        <p data-i18n="footer.contact.addressLine1">Irislaan 1</p>
+                        <p data-i18n="footer.contact.addressLine2">8400 Oostende</p>
+                        <p data-i18n="footer.contact.addressLine3">België</p>
+                        <p class="mt-4" data-i18n="footer.contact.phone">Tel: +32 59 70 11 11</p>
+                        <p data-i18n="footer.contact.email">Email: info@dewielingen.be</p>
                     </div>
                 </div>
                 
                 <!-- Quick Links -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Snelle Links</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="footer.quickLinks.heading">Snelle Links</h3>
                     <div class="space-y-2">
-                        <a href="hotel.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Hotel</a>
-                        <a href="kamers.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Kamers</a>
-                        <a href="prijslijst.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Prijslijst</a>
-                        <a href="contact.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Contact</a>
+                        <a href="hotel.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.hotel">Hotel</a>
+                        <a href="kamers.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rooms">Kamers</a>
+                        <a href="prijslijst.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rates">Prijslijst</a>
+                        <a href="contact.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.contact">Contact</a>
                     </div>
                 </div>
                 
                 <!-- Practical Info -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Praktisch</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="footer.practical.heading">Praktisch</h3>
                     <div class="space-y-2">
-                        <a href="praktisch.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Check-in/out</a>
-                        <a href="ligging.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Ligging</a>
-                        <a href="#" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Voorzieningen</a>
+                        <a href="praktisch.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="footer.practical.checkin">Check-in/out</a>
+                        <a href="ligging.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.location">Ligging</a>
+                        <a href="#" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="footer.practical.amenities">Voorzieningen</a>
                     </div>
                 </div>
                 
                 <!-- Booking CTA -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Boek uw verblijf</h3>
-                    <p class="text-light-gray mb-4">Reserveer nu en geniet van een ontspannen verblijf aan zee.</p>
-                    <a href="#" class="inline-block bg-accent-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium">Boek nu</a>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="footer.booking.heading">Boek uw verblijf</h3>
+                    <p class="text-light-gray mb-4" data-i18n="footer.booking.body">Reserveer nu en geniet van een ontspannen verblijf aan zee.</p>
+                    <a href="#" class="inline-block bg-accent-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium" data-i18n="cta.bookNow">Boek nu</a>
                 </div>
             </div>
             
             <div class="border-t border-gray-200 mt-12 pt-8 text-center text-light-gray">
-                <p>&copy; 2024 Aparthotel De Wielingen. Alle rechten voorbehouden.</p>
+                <p data-i18n="footer.bottom">&copy; 2024 Aparthotel De Wielingen. Alle rechten voorbehouden.</p>
             </div>
         </div>
     </footer>
     
     <!-- JavaScript -->
     <script>
+        const translations = {
+            nl: {
+                meta: {
+                    title: 'Kamers - Aparthotel De Wielingen',
+                    description: 'Ontdek onze comfortabele studio\'s en appartementen met moderne voorzieningen. Kingsize bed, badkamer, WiFi en keuken inbegrepen.'
+                },
+                languageSwitcher: {
+                    aria: 'Taalkeuze',
+                    labels: {
+                        nl: 'Nederlands',
+                        en: 'Engels',
+                        fr: 'Frans',
+                        de: 'Duits'
+                    }
+                },
+                brand: {
+                    name: 'De Wielingen',
+                    logoAlt: 'De Wielingen Logo'
+                },
+                nav: {
+                    home: 'Home',
+                    hotel: 'Hotel',
+                    rooms: 'Kamers',
+                    rates: 'Prijslijst',
+                    practical: 'Praktisch',
+                    location: 'Ligging',
+                    contact: 'Contact'
+                },
+                hero: {
+                    title: 'Onze Kamers',
+                    subtitle: 'Comfortabele studio\'s en appartementen met alle moderne voorzieningen'
+                },
+                rooms: {
+                    title: 'Kies uw accommodatie',
+                    subtitle: 'Ontdek onze verschillende kamertypes, elk met hun eigen charme en comfort',
+                    studio: {
+                        title: 'Studio',
+                        description: 'Onze studio\'s bieden een perfecte combinatie van comfort en functionaliteit. Ideaal voor koppels die op zoek zijn naar een romantische uitstap aan zee.',
+                        imageAlt: 'Studio kamer',
+                        features: {
+                            kingsize: 'Kingsize bed',
+                            bathroom: 'Eigen badkamer met bad of douche',
+                            wifi: 'Gratis WiFi in het hele hotel',
+                            kitchenette: 'Kitchenette met twee kookplaten en frigo',
+                            senseo: 'NIEUWE SENSEO machines op elke kamer!',
+                            terrace: 'Terras'
+                        },
+                        bookButton: 'Boek Studio'
+                    },
+                    apartment: {
+                        title: 'Appartement',
+                        description: 'Onze appartementen bieden meer ruimte en privacy, perfect voor gezinnen of groepen die langer willen verblijven en meer comfort zoeken.',
+                        imageAlt: 'Appartement',
+                        features: {
+                            kingsize: 'Kingsize bed',
+                            bathroom: 'Eigen badkamer met bad of douche',
+                            wifi: 'Gratis WiFi in het hele hotel',
+                            kitchenette: 'Kitchenette met twee kookplaten en frigo',
+                            senseo: 'NIEUWE SENSEO machines op elke kamer!',
+                            luxuryTerrace: 'Luxe terras',
+                            kitchenware: 'Keukenbenodigdheden (potten, pannen, bestek)'
+                        },
+                        bookButton: 'Boek Appartement'
+                    }
+                },
+                amenities: {
+                    title: 'Voorzieningen',
+                    subtitle: 'Alle comfort en gemak voor een perfect verblijf',
+                    items: {
+                        wifi: {
+                            title: 'Gratis WiFi',
+                            body: 'Snelle en betrouwbare internetverbinding in alle kamers en gemeenschappelijke ruimtes.'
+                        },
+                        kitchenette: {
+                            title: 'Kitchenette',
+                            body: 'Kitchenette met Senseo koffiezetapparaat en microgolf op aanvraag beschikbaar.'
+                        },
+                        kingsize: {
+                            title: 'Kingsize Bed',
+                            body: 'Comfortabele kingsize bedden voor een perfecte nachtrust tijdens uw verblijf.'
+                        },
+                        tv: {
+                            title: 'Flat-screen TV',
+                            body: 'Moderne flat-screen televisies voor entertainment tijdens uw verblijf.'
+                        },
+                        bathroom: {
+                            title: 'Privé Badkamer',
+                            body: 'Moderne privé badkamers met douche en alle benodigde toiletartikelen.'
+                        },
+                        flexible: {
+                            title: 'Flexibele Check-in',
+                            body: 'Flexibele incheck- en uitchecktijden om aan te sluiten bij uw reisplannen.'
+                        }
+                    }
+                },
+                houseRules: {
+                    title: 'Huisregels',
+                    items: {
+                        smoking: {
+                            title: 'Niet roken',
+                            body: 'Roken in de kamers is ter strengste verboden. Dit wordt enkel toegelaten buiten en op het terras. Als dit niet wordt nageleeft kan er een boete worden aangerekend.'
+                        },
+                        maxPersons: {
+                            title: 'Maximum aantal personen',
+                            body: 'Meer dan het vermelde aantal personen per kamer is niet toegestaan.'
+                        },
+                        respect: {
+                            title: 'Respect voor andere gasten',
+                            body: 'Wij vragen respect voor andere gasten en een rustige sfeer na 22:00 uur.'
+                        }
+                    }
+                },
+                cta: {
+                    bookNow: 'Boek nu',
+                    reserve: 'Reserveer uw verblijf aan zee',
+                    sectionTitle: 'Klaar om te boeken?',
+                    sectionBody: 'Kies uw perfecte accommodatie en geniet van een ontspannen verblijf aan zee'
+                },
+                footer: {
+                    contact: {
+                        heading: 'Contact',
+                        addressLine1: 'Irislaan 1',
+                        addressLine2: '8400 Oostende',
+                        addressLine3: 'België',
+                        phone: 'Tel: +32 59 70 11 11',
+                        email: 'Email: info@dewielingen.be'
+                    },
+                    quickLinks: {
+                        heading: 'Snelle Links'
+                    },
+                    practical: {
+                        heading: 'Praktisch',
+                        checkin: 'Check-in/out',
+                        amenities: 'Voorzieningen'
+                    },
+                    booking: {
+                        heading: 'Boek uw verblijf',
+                        body: 'Reserveer nu en geniet van een ontspannen verblijf aan zee.'
+                    },
+                    bottom: '© 2024 Aparthotel De Wielingen. Alle rechten voorbehouden.'
+                }
+            },
+            en: {
+                meta: {
+                    title: 'Rooms - Aparthotel De Wielingen',
+                    description: 'Discover our comfortable studios and apartments with modern amenities. King-size bed, bathroom, WiFi and kitchen included.'
+                },
+                languageSwitcher: {
+                    aria: 'Language selection',
+                    labels: {
+                        nl: 'Dutch',
+                        en: 'English',
+                        fr: 'French',
+                        de: 'German'
+                    }
+                },
+                brand: {
+                    name: 'De Wielingen',
+                    logoAlt: 'De Wielingen Logo'
+                },
+                nav: {
+                    home: 'Home',
+                    hotel: 'Hotel',
+                    rooms: 'Rooms',
+                    rates: 'Rates',
+                    practical: 'Practical info',
+                    location: 'Location',
+                    contact: 'Contact'
+                },
+                hero: {
+                    title: 'Our Rooms',
+                    subtitle: 'Comfortable studios and apartments with all modern amenities'
+                },
+                rooms: {
+                    title: 'Choose your accommodation',
+                    subtitle: 'Discover our different room types, each with their own charm and comfort',
+                    studio: {
+                        title: 'Studio',
+                        description: 'Our studios offer a perfect combination of comfort and functionality. Ideal for couples looking for a romantic getaway by the sea.',
+                        imageAlt: 'Studio room',
+                        features: {
+                            kingsize: 'King-size bed',
+                            bathroom: 'Private bathroom with bathtub or shower',
+                            wifi: 'Free WiFi throughout the hotel',
+                            kitchenette: 'Kitchenette with two hotplates and fridge',
+                            senseo: 'NEW SENSEO machines in every room!',
+                            terrace: 'Terrace'
+                        },
+                        bookButton: 'Book Studio'
+                    },
+                    apartment: {
+                        title: 'Apartment',
+                        description: 'Our apartments offer more space and privacy, perfect for families or groups who want to stay longer and seek more comfort.',
+                        imageAlt: 'Apartment',
+                        features: {
+                            kingsize: 'King-size bed',
+                            bathroom: 'Private bathroom with bathtub or shower',
+                            wifi: 'Free WiFi throughout the hotel',
+                            kitchenette: 'Kitchenette with two hotplates and fridge',
+                            senseo: 'NEW SENSEO machines in every room!',
+                            luxuryTerrace: 'Luxury terrace',
+                            kitchenware: 'Kitchenware (pots, pans, cutlery)'
+                        },
+                        bookButton: 'Book Apartment'
+                    }
+                },
+                amenities: {
+                    title: 'Amenities',
+                    subtitle: 'All comfort and convenience for a perfect stay',
+                    items: {
+                        wifi: {
+                            title: 'Free WiFi',
+                            body: 'Fast and reliable internet connection in all rooms and common areas.'
+                        },
+                        kitchenette: {
+                            title: 'Kitchenette',
+                            body: 'Kitchenette with Senseo coffee maker and microwave available on request.'
+                        },
+                        kingsize: {
+                            title: 'King-size Bed',
+                            body: 'Comfortable king-size beds for a perfect night\'s sleep during your stay.'
+                        },
+                        tv: {
+                            title: 'Flat-screen TV',
+                            body: 'Modern flat-screen televisions for entertainment during your stay.'
+                        },
+                        bathroom: {
+                            title: 'Private Bathroom',
+                            body: 'Modern private bathrooms with shower and all necessary toiletries.'
+                        },
+                        flexible: {
+                            title: 'Flexible Check-in',
+                            body: 'Flexible check-in and check-out times to suit your travel plans.'
+                        }
+                    }
+                },
+                houseRules: {
+                    title: 'House Rules',
+                    items: {
+                        smoking: {
+                            title: 'No smoking',
+                            body: 'Smoking in rooms is strictly prohibited. This is only allowed outside and on the terrace. If this is not respected, a fine may be charged.'
+                        },
+                        maxPersons: {
+                            title: 'Maximum number of persons',
+                            body: 'More than the stated number of persons per room is not allowed.'
+                        },
+                        respect: {
+                            title: 'Respect for other guests',
+                            body: 'We ask for respect for other guests and a quiet atmosphere after 10:00 PM.'
+                        }
+                    }
+                },
+                cta: {
+                    bookNow: 'Book now',
+                    reserve: 'Reserve your stay by the sea',
+                    sectionTitle: 'Ready to book?',
+                    sectionBody: 'Choose your perfect accommodation and enjoy a relaxing stay by the sea'
+                },
+                footer: {
+                    contact: {
+                        heading: 'Contact',
+                        addressLine1: 'Irislaan 1',
+                        addressLine2: '8400 Ostend',
+                        addressLine3: 'Belgium',
+                        phone: 'Tel: +32 59 70 11 11',
+                        email: 'Email: info@dewielingen.be'
+                    },
+                    quickLinks: {
+                        heading: 'Quick Links'
+                    },
+                    practical: {
+                        heading: 'Practical info',
+                        checkin: 'Check-in/out',
+                        amenities: 'Amenities'
+                    },
+                    booking: {
+                        heading: 'Book your stay',
+                        body: 'Reserve now and enjoy a relaxing stay by the sea.'
+                    },
+                    bottom: '© 2024 Aparthotel De Wielingen. All rights reserved.'
+                }
+            },
+            fr: {
+                meta: {
+                    title: 'Chambres - Aparthotel De Wielingen',
+                    description: 'Découvrez nos studios et appartements confortables avec équipements modernes. Lit king-size, salle de bain, WiFi et cuisine inclus.'
+                },
+                languageSwitcher: {
+                    aria: 'Sélection de langue',
+                    labels: {
+                        nl: 'Néerlandais',
+                        en: 'Anglais',
+                        fr: 'Français',
+                        de: 'Allemand'
+                    }
+                },
+                brand: {
+                    name: 'De Wielingen',
+                    logoAlt: 'Logo De Wielingen'
+                },
+                nav: {
+                    home: 'Accueil',
+                    hotel: 'Hôtel',
+                    rooms: 'Chambres',
+                    rates: 'Tarifs',
+                    practical: 'Infos pratiques',
+                    location: 'Emplacement',
+                    contact: 'Contact'
+                },
+                hero: {
+                    title: 'Nos Chambres',
+                    subtitle: 'Studios et appartements confortables avec tous les équipements modernes'
+                },
+                rooms: {
+                    title: 'Choisissez votre hébergement',
+                    subtitle: 'Découvrez nos différents types de chambres, chacun avec son propre charme et confort',
+                    studio: {
+                        title: 'Studio',
+                        description: 'Nos studios offrent une combinaison parfaite de confort et de fonctionnalité. Idéal pour les couples à la recherche d\'une escapade romantique au bord de la mer.',
+                        imageAlt: 'Chambre studio',
+                        features: {
+                            kingsize: 'Lit king-size',
+                            bathroom: 'Salle de bain privée avec baignoire ou douche',
+                            wifi: 'WiFi gratuit dans tout l\'hôtel',
+                            kitchenette: 'Kitchenette avec deux plaques de cuisson et frigo',
+                            senseo: 'NOUVELLES machines SENSEO dans chaque chambre !',
+                            terrace: 'Terrasse'
+                        },
+                        bookButton: 'Réserver un Studio'
+                    },
+                    apartment: {
+                        title: 'Appartement',
+                        description: 'Nos appartements offrent plus d\'espace et d\'intimité, parfaits pour les familles ou les groupes qui souhaitent séjourner plus longtemps et rechercher plus de confort.',
+                        imageAlt: 'Appartement',
+                        features: {
+                            kingsize: 'Lit king-size',
+                            bathroom: 'Salle de bain privée avec baignoire ou douche',
+                            wifi: 'WiFi gratuit dans tout l\'hôtel',
+                            kitchenette: 'Kitchenette avec deux plaques de cuisson et frigo',
+                            senseo: 'NOUVELLES machines SENSEO dans chaque chambre !',
+                            luxuryTerrace: 'Terrasse de luxe',
+                            kitchenware: 'Ustensiles de cuisine (casseroles, poêles, couverts)'
+                        },
+                        bookButton: 'Réserver un Appartement'
+                    }
+                },
+                amenities: {
+                    title: 'Équipements',
+                    subtitle: 'Tout le confort et la commodité pour un séjour parfait',
+                    items: {
+                        wifi: {
+                            title: 'WiFi gratuit',
+                            body: 'Connexion Internet rapide et fiable dans toutes les chambres et espaces communs.'
+                        },
+                        kitchenette: {
+                            title: 'Kitchenette',
+                            body: 'Kitchenette avec machine à café Senseo et micro-ondes disponible sur demande.'
+                        },
+                        kingsize: {
+                            title: 'Lit king-size',
+                            body: 'Lits king-size confortables pour une nuit parfaite pendant votre séjour.'
+                        },
+                        tv: {
+                            title: 'TV écran plat',
+                            body: 'Téléviseurs à écran plat modernes pour le divertissement pendant votre séjour.'
+                        },
+                        bathroom: {
+                            title: 'Salle de bain privée',
+                            body: 'Salles de bain privées modernes avec douche et tous les articles de toilette nécessaires.'
+                        },
+                        flexible: {
+                            title: 'Check-in flexible',
+                            body: 'Heures d\'arrivée et de départ flexibles selon votre programme de voyage.'
+                        }
+                    }
+                },
+                houseRules: {
+                    title: 'Règles de la maison',
+                    items: {
+                        smoking: {
+                            title: 'Interdiction de fumer',
+                            body: 'Il est strictement interdit de fumer dans les chambres. Ceci n\'est autorisé qu\'à l\'extérieur et sur la terrasse. Si cette règle n\'est pas respectée, une amende peut être appliquée.'
+                        },
+                        maxPersons: {
+                            title: 'Nombre maximum de personnes',
+                            body: 'Il n\'est pas autorisé de dépasser le nombre de personnes indiqué par chambre.'
+                        },
+                        respect: {
+                            title: 'Respect des autres clients',
+                            body: 'Nous demandons le respect des autres clients et une atmosphère calme après 22h00.'
+                        }
+                    }
+                },
+                cta: {
+                    bookNow: 'Réserver maintenant',
+                    reserve: 'Réservez votre séjour au bord de la mer',
+                    sectionTitle: 'Prêt à réserver ?',
+                    sectionBody: 'Choisissez votre hébergement parfait et profitez d\'un séjour détente au bord de la mer'
+                },
+                footer: {
+                    contact: {
+                        heading: 'Contact',
+                        addressLine1: 'Irislaan 1',
+                        addressLine2: '8400 Ostende',
+                        addressLine3: 'Belgique',
+                        phone: 'Tél. : +32 59 70 11 11',
+                        email: 'E-mail : info@dewielingen.be'
+                    },
+                    quickLinks: {
+                        heading: 'Liens rapides'
+                    },
+                    practical: {
+                        heading: 'Infos pratiques',
+                        checkin: 'Arrivée/départ',
+                        amenities: 'Équipements'
+                    },
+                    booking: {
+                        heading: 'Réservez votre séjour',
+                        body: 'Réservez maintenant et profitez d\'un séjour détente au bord de la mer.'
+                    },
+                    bottom: '© 2024 Aparthotel De Wielingen. Tous droits réservés.'
+                }
+            },
+            de: {
+                meta: {
+                    title: 'Zimmer - Aparthotel De Wielingen',
+                    description: 'Entdecken Sie unsere komfortablen Studios und Apartments mit modernen Annehmlichkeiten. Kingsize-Bett, Badezimmer, WiFi und Küche inbegriffen.'
+                },
+                languageSwitcher: {
+                    aria: 'Sprachauswahl',
+                    labels: {
+                        nl: 'Niederländisch',
+                        en: 'Englisch',
+                        fr: 'Französisch',
+                        de: 'Deutsch'
+                    }
+                },
+                brand: {
+                    name: 'De Wielingen',
+                    logoAlt: 'De Wielingen Logo'
+                },
+                nav: {
+                    home: 'Startseite',
+                    hotel: 'Hotel',
+                    rooms: 'Zimmer',
+                    rates: 'Preisliste',
+                    practical: 'Praktische Infos',
+                    location: 'Lage',
+                    contact: 'Kontakt'
+                },
+                hero: {
+                    title: 'Unsere Zimmer',
+                    subtitle: 'Komfortable Studios und Apartments mit allen modernen Annehmlichkeiten'
+                },
+                rooms: {
+                    title: 'Wählen Sie Ihre Unterkunft',
+                    subtitle: 'Entdecken Sie unsere verschiedenen Zimmertypen, jeder mit seinem eigenen Charme und Komfort',
+                    studio: {
+                        title: 'Studio',
+                        description: 'Unsere Studios bieten eine perfekte Kombination aus Komfort und Funktionalität. Ideal für Paare, die einen romantischen Ausflug ans Meer suchen.',
+                        imageAlt: 'Studio-Zimmer',
+                        features: {
+                            kingsize: 'Kingsize-Bett',
+                            bathroom: 'Privates Badezimmer mit Badewanne oder Dusche',
+                            wifi: 'Kostenloses WiFi im gesamten Hotel',
+                            kitchenette: 'Kitchenette mit zwei Kochplatten und Kühlschrank',
+                            senseo: 'NEUE SENSEO-Maschinen in jedem Zimmer!',
+                            terrace: 'Terrasse'
+                        },
+                        bookButton: 'Studio buchen'
+                    },
+                    apartment: {
+                        title: 'Apartment',
+                        description: 'Unsere Apartments bieten mehr Platz und Privatsphäre, perfekt für Familien oder Gruppen, die länger bleiben und mehr Komfort suchen möchten.',
+                        imageAlt: 'Apartment',
+                        features: {
+                            kingsize: 'Kingsize-Bett',
+                            bathroom: 'Privates Badezimmer mit Badewanne oder Dusche',
+                            wifi: 'Kostenloses WiFi im gesamten Hotel',
+                            kitchenette: 'Kitchenette mit zwei Kochplatten und Kühlschrank',
+                            senseo: 'NEUE SENSEO-Maschinen in jedem Zimmer!',
+                            luxuryTerrace: 'Luxus-Terrasse',
+                            kitchenware: 'Küchenutensilien (Töpfe, Pfannen, Besteck)'
+                        },
+                        bookButton: 'Apartment buchen'
+                    }
+                },
+                amenities: {
+                    title: 'Ausstattung',
+                    subtitle: 'Aller Komfort und Bequemlichkeit für einen perfekten Aufenthalt',
+                    items: {
+                        wifi: {
+                            title: 'Kostenloses WiFi',
+                            body: 'Schnelle und zuverlässige Internetverbindung in allen Zimmern und Gemeinschaftsbereichen.'
+                        },
+                        kitchenette: {
+                            title: 'Kitchenette',
+                            body: 'Kitchenette mit Senseo-Kaffeemaschine und Mikrowelle auf Anfrage verfügbar.'
+                        },
+                        kingsize: {
+                            title: 'Kingsize-Bett',
+                            body: 'Komfortable Kingsize-Betten für eine perfekte Nachtruhe während Ihres Aufenthalts.'
+                        },
+                        tv: {
+                            title: 'Flachbild-TV',
+                            body: 'Moderne Flachbildfernseher für Unterhaltung während Ihres Aufenthalts.'
+                        },
+                        bathroom: {
+                            title: 'Privates Badezimmer',
+                            body: 'Moderne private Badezimmer mit Dusche und allen notwendigen Toilettenartikeln.'
+                        },
+                        flexible: {
+                            title: 'Flexibler Check-in',
+                            body: 'Flexible An- und Abreisezeiten, abgestimmt auf Ihren Reiseplan.'
+                        }
+                    }
+                },
+                houseRules: {
+                    title: 'Hausregeln',
+                    items: {
+                        smoking: {
+                            title: 'Nicht rauchen',
+                            body: 'Das Rauchen in den Zimmern ist strengstens verboten. Dies ist nur draußen und auf der Terrasse erlaubt. Wenn dies nicht befolgt wird, kann eine Geldstrafe erhoben werden.'
+                        },
+                        maxPersons: {
+                            title: 'Maximale Anzahl von Personen',
+                            body: 'Mehr als die angegebene Anzahl von Personen pro Zimmer ist nicht erlaubt.'
+                        },
+                        respect: {
+                            title: 'Respekt für andere Gäste',
+                            body: 'Wir bitten um Respekt für andere Gäste und eine ruhige Atmosphäre nach 22:00 Uhr.'
+                        }
+                    }
+                },
+                cta: {
+                    bookNow: 'Jetzt buchen',
+                    reserve: 'Reservieren Sie Ihren Aufenthalt am Meer',
+                    sectionTitle: 'Bereit zum Buchen?',
+                    sectionBody: 'Wählen Sie Ihre perfekte Unterkunft und genießen Sie einen entspannten Aufenthalt am Meer'
+                },
+                footer: {
+                    contact: {
+                        heading: 'Kontakt',
+                        addressLine1: 'Irislaan 1',
+                        addressLine2: '8400 Ostende',
+                        addressLine3: 'Belgien',
+                        phone: 'Tel.: +32 59 70 11 11',
+                        email: 'E-Mail: info@dewielingen.be'
+                    },
+                    quickLinks: {
+                        heading: 'Schnelle Links'
+                    },
+                    practical: {
+                        heading: 'Praktische Infos',
+                        checkin: 'Check-in/Check-out',
+                        amenities: 'Ausstattung'
+                    },
+                    booking: {
+                        heading: 'Buchen Sie Ihren Aufenthalt',
+                        body: 'Reservieren Sie jetzt und genießen Sie einen entspannten Aufenthalt am Meer.'
+                    },
+                    bottom: '© 2024 Aparthotel De Wielingen. Alle Rechte vorbehalten.'
+                }
+            }
+        };
+
+        const languageButtons = document.querySelectorAll('.language-switcher .lang-btn');
+        let storedLang = null;
+        try {
+            storedLang = localStorage.getItem('preferredLang');
+        } catch (error) {
+            storedLang = null;
+        }
+        const defaultLang = storedLang && translations[storedLang] ? storedLang : 'nl';
+
+        function getTranslation(lang, key) {
+            return key.split('.').reduce((result, part) => {
+                if (result && Object.prototype.hasOwnProperty.call(result, part)) {
+                    return result[part];
+                }
+                return undefined;
+            }, translations[lang]);
+        }
+
+        function applyTranslations(lang) {
+            if (!translations[lang]) {
+                lang = 'nl';
+            }
+
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const attr = element.getAttribute('data-i18n-attr');
+                const fallback = getTranslation('nl', key);
+                const translation = getTranslation(lang, key) ?? fallback;
+
+                if (translation === undefined) {
+                    return;
+                }
+
+                if (attr) {
+                    if (attr === 'html') {
+                        element.innerHTML = translation;
+                    } else {
+                        element.setAttribute(attr, translation);
+                    }
+                } else {
+                    element.textContent = translation;
+                }
+            });
+
+            document.documentElement.setAttribute('lang', lang);
+
+            if (translations[lang].meta && translations[lang].meta.title) {
+                document.title = translations[lang].meta.title;
+            }
+
+            const metaDescription = document.querySelector('meta[name="description"]');
+            if (metaDescription && translations[lang].meta && translations[lang].meta.description) {
+                metaDescription.setAttribute('content', translations[lang].meta.description);
+            }
+
+            languageButtons.forEach(button => {
+                button.classList.toggle('active', button.dataset.lang === lang);
+            });
+
+            try {
+                localStorage.setItem('preferredLang', lang);
+            } catch (error) {
+                // Ignore storage errors
+            }
+        }
+
+        languageButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                applyTranslations(button.dataset.lang);
+            });
+        });
+
+        applyTranslations(defaultLang);
+
         // Mobile menu toggle - Simple & Reliable
         function toggleMobileMenu() {
             const mobileMenu = document.querySelector('.mobile-menu');

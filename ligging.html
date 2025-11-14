@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ligging - Aparthotel De Wielingen</title>
-    <meta name="description" content="Ontdek de ideale ligging van Aparthotel De Wielingen op de hoek van Irislaan en Henri Jasparlaan in Oostende, op wandelafstand van het strand.">
+    <meta name="description" content="Ontdek de ideale ligging van Aparthotel De Wielingen op de hoek van Irislaan en Henri Jasparlaan in Oostende, op wandelafstand van het strand." data-i18n="meta.description" data-i18n-attr="content">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -211,7 +211,58 @@
         .mobile-menu.open .mobile-nav-item:nth-child(6) { transition-delay: 0.35s; }
         .mobile-menu.open .mobile-nav-item:nth-child(7) { transition-delay: 0.4s; }
         .mobile-menu.open .mobile-nav-item:nth-child(8) { transition-delay: 0.45s; }
-    
+        
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 9999px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            z-index: 1100;
+        }
+        
+        .language-switcher button {
+            width: 44px;
+            height: 44px;
+            border-radius: 9999px;
+            border: 1px solid #e5e7eb;
+            background: white;
+            color: #2d2d2d;
+            font-weight: 600;
+            transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border 0.2s ease;
+        }
+        
+        .language-switcher button:hover {
+            transform: translateY(-2px);
+            border-color: #a50030;
+        }
+        
+        .language-switcher button.active {
+            background: #a50030;
+            color: #ffffff;
+            border-color: #a50030;
+        }
+        
+        @media (max-width: 768px) {
+            .language-switcher {
+                top: auto;
+                bottom: 1.5rem;
+                right: 50%;
+                transform: translateX(50%);
+                flex-direction: row;
+            }
+            
+            .language-switcher button:hover {
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body class="bg-cream font-sans text-dark-gray">
@@ -222,22 +273,22 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="index.html" class="flex items-center space-x-2">
-                        <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto">
-                        <span class="text-2xl font-bold text-accent-red">De Wielingen</span>
+                        <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto" data-i18n="brand.logoAlt" data-i18n-attr="alt">
+                        <span class="text-2xl font-bold text-accent-red" data-i18n="brand.name">De Wielingen</span>
                     </a>
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="index.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Home</a>
-                        <a href="hotel.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Hotel</a>
-                        <a href="kamers.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Kamers</a>
-                        <a href="prijslijst.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Prijslijst</a>
-                        <a href="praktisch.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Praktisch</a>
-                        <a href="ligging.html" class="text-accent-red font-medium">Ligging</a>
-                        <a href="contact.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Contact</a>
-                        <a href="#" class="bg-accent-red text-white px-6 py-2 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium">Boek nu</a>
+                        <a href="index.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.home">Home</a>
+                        <a href="hotel.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.hotel">Hotel</a>
+                        <a href="kamers.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rooms">Kamers</a>
+                        <a href="prijslijst.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rates">Prijslijst</a>
+                        <a href="praktisch.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.practical">Praktisch</a>
+                        <a href="ligging.html" class="text-accent-red font-medium" data-i18n="nav.location">Ligging</a>
+                        <a href="contact.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.contact">Contact</a>
+                        <a href="#" class="bg-accent-red text-white px-6 py-2 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium" data-i18n="cta.bookNow">Boek nu</a>
                     </div>
                 </div>
                 
@@ -260,8 +311,8 @@
             <!-- Header -->
             <div class="flex items-center justify-between p-6 border-b border-gray-200">
                 <a href="index.html" class="flex items-center space-x-2">
-                    <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto">
-                    <span class="text-xl font-bold text-accent-red">De Wielingen</span>
+                    <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto" data-i18n="brand.logoAlt" data-i18n-attr="alt">
+                    <span class="text-xl font-bold text-accent-red" data-i18n="brand.name">De Wielingen</span>
                 </a>
                 <button class="hamburger" onclick="toggleMobileMenu()">
                     <span></span>
@@ -273,30 +324,37 @@
             <!-- Navigation -->
             <div class="px-6 py-8">
                 <nav class="space-y-6">
-                    <a href="index.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Home</a>
-                    <a href="hotel.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Hotel</a>
-                    <a href="kamers.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Kamers</a>
-                    <a href="prijslijst.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Prijslijst</a>
-                    <a href="praktisch.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Praktisch</a>
-                    <a href="ligging.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Ligging</a>
-                    <a href="contact.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Contact</a>
+                    <a href="index.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.home">Home</a>
+                    <a href="hotel.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.hotel">Hotel</a>
+                    <a href="kamers.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rooms">Kamers</a>
+                    <a href="prijslijst.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rates">Prijslijst</a>
+                    <a href="praktisch.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.practical">Praktisch</a>
+                    <a href="ligging.html" class="block text-2xl font-semibold text-accent-red" data-i18n="nav.location">Ligging</a>
+                    <a href="contact.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.contact">Contact</a>
                 </nav>
             </div>
             
             <!-- CTA Section -->
             <div class="px-6 pb-8">
-                <a href="#" class="block w-full bg-accent-red text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-red-700 transition-colors duration-200 text-center shadow-lg">Boek nu</a>
-                <p class="text-center text-light-gray mt-3 text-sm">Reserveer uw verblijf aan zee</p>
+                <a href="#" class="block w-full bg-accent-red text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-red-700 transition-colors duration-200 text-center shadow-lg" data-i18n="cta.bookNow">Boek nu</a>
+                <p class="text-center text-light-gray mt-3 text-sm" data-i18n="cta.reserve">Reserveer uw verblijf aan zee</p>
             </div>
         </div>
     </nav>
+    
+    <div class="language-switcher" role="group" data-i18n="languageSwitcher.aria" data-i18n-attr="aria-label" aria-label="Taalkeuze">
+        <button type="button" class="lang-btn active" data-lang="nl" title="Nederlands" data-i18n="languageSwitcher.labels.nl" data-i18n-attr="title">NL</button>
+        <button type="button" class="lang-btn" data-lang="en" title="English" data-i18n="languageSwitcher.labels.en" data-i18n-attr="title">EN</button>
+        <button type="button" class="lang-btn" data-lang="fr" title="Français" data-i18n="languageSwitcher.labels.fr" data-i18n-attr="title">FR</button>
+        <button type="button" class="lang-btn" data-lang="de" title="Deutsch" data-i18n="languageSwitcher.labels.de" data-i18n-attr="title">DE</button>
+    </div>
     
     <!-- Hero Section -->
     <section class="hero-bg pt-16 min-h-[60vh] flex items-center" style="background-image: url('assets/westende_bad_2.webp');">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center text-white">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">Ideale Ligging</h1>
-                <p class="text-xl md:text-2xl opacity-90 fade-in">In het hart van Oostende, op wandelafstand van het strand</p>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in" data-i18n="hero.title">Ideale Ligging</h1>
+                <p class="text-xl md:text-2xl opacity-90 fade-in" data-i18n="hero.subtitle">In het hart van Oostende, op wandelafstand van het strand</p>
             </div>
         </div>
     </section>
@@ -306,16 +364,16 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="fade-in">
-                    <h2 class="text-4xl font-bold mb-6 text-dark-gray">Perfect Gelegen</h2>
+                    <h2 class="text-4xl font-bold mb-6 text-dark-gray" data-i18n="location.title">Perfect Gelegen</h2>
                     <div class="space-y-4 text-lg text-light-gray">
-                        <p>De Wielingen situeert zich op de hoek van de Irislaan en de Henri Jasparlaan. Dé verbindingsweg naar alle kuststeden. Gelegen in het centrum van Westende-bad, op 300 meter van de tramhalte (Westende-bad).</p>
-                        <p>Deze tramhalte heeft verbinding naar alle andere badplaatsen, Plopsaland e.d. Vanuit Westende starten prachtige fietstochten en wandelingen in het polderlandschap.</p>
-                        <p>In Westende-bad zijn er tal van restaurants en tearooms. Ook zijn er tal van sportmogelijkheden, watersportcentrum, golfterrein. Westende kent ook tal van jaarlijkse evenementen zoals champagneweekend in november, visweekend en bierweekend in juni, en het stripfestival in de zomervakantie.</p>
+                        <p data-i18n="location.paragraph1">De Wielingen situeert zich op de hoek van de Irislaan en de Henri Jasparlaan. Dé verbindingsweg naar alle kuststeden. Gelegen in het centrum van Westende-bad, op 300 meter van de tramhalte (Westende-bad).</p>
+                        <p data-i18n="location.paragraph2">Deze tramhalte heeft verbinding naar alle andere badplaatsen, Plopsaland e.d. Vanuit Westende starten prachtige fietstochten en wandelingen in het polderlandschap.</p>
+                        <p data-i18n="location.paragraph3">In Westende-bad zijn er tal van restaurants en tearooms. Ook zijn er tal van sportmogelijkheden, watersportcentrum, golfterrein. Westende kent ook tal van jaarlijkse evenementen zoals champagneweekend in november, visweekend en bierweekend in juni, en het stripfestival in de zomervakantie.</p>
                     </div>
                 </div>
                 <div class="fade-in">
                     <div class="w-full h-96 bg-gray-200 rounded-lg overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Oostende strand" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Oostende strand" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-i18n="location.imageAlt" data-i18n-attr="alt">
                     </div>
                 </div>
             </div>
@@ -326,16 +384,16 @@
     <section class="bg-white py-20 px-4">
         <div class="max-w-4xl mx-auto text-center">
             <div class="bg-gray-50 rounded-lg p-8 fade-in">
-                <h2 class="text-3xl font-bold mb-8 text-dark-gray">Ons Adres</h2>
+                <h2 class="text-3xl font-bold mb-8 text-dark-gray" data-i18n="address.title">Ons Adres</h2>
                 <div class="space-y-4 text-lg">
                     <div class="flex items-center justify-center">
                         <svg class="w-6 h-6 text-accent-red mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
-                        <span class="text-dark-gray font-semibold">Irislaan 1, 8400 Oostende, België</span>
+                        <span class="text-dark-gray font-semibold" data-i18n="address.full">Irislaan 1, 8400 Oostende, België</span>
                     </div>
-                    <p class="text-light-gray">Op de hoek van Irislaan en Henri Jasparlaan</p>
+                    <p class="text-light-gray" data-i18n="address.corner">Op de hoek van Irislaan en Henri Jasparlaan</p>
                 </div>
             </div>
         </div>
@@ -345,98 +403,98 @@
     <section class="py-20 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6 text-dark-gray">In de Buurt</h2>
-                <p class="text-xl text-light-gray max-w-3xl mx-auto">Ontdek wat er allemaal te doen is in de omgeving</p>
+                <h2 class="text-4xl font-bold mb-6 text-dark-gray" data-i18n="nearby.title">In de Buurt</h2>
+                <p class="text-xl text-light-gray max-w-3xl mx-auto" data-i18n="nearby.subtitle">Ontdek wat er allemaal te doen is in de omgeving</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Strand -->
                 <div class="bg-white rounded-lg shadow-lg p-6 fade-in">
                     <div class="w-full h-48 bg-gray-200 rounded-lg mb-6 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Westende strand" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Westende strand" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-i18n="nearby.items.beach.imageAlt" data-i18n-attr="alt">
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-dark-gray">Strand van Westende</h3>
-                    <p class="text-light-gray mb-4">Op wandelafstand van het hotel ligt het prachtige strand van Westende-bad.</p>
+                    <h3 class="text-xl font-semibold mb-3 text-dark-gray" data-i18n="nearby.items.beach.title">Strand van Westende</h3>
+                    <p class="text-light-gray mb-4" data-i18n="nearby.items.beach.body">Op wandelafstand van het hotel ligt het prachtige strand van Westende-bad.</p>
                     <div class="flex items-center text-accent-red font-medium">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
-                        <span>Op wandelafstand</span>
+                        <span data-i18n="nearby.items.beach.distance">Op wandelafstand</span>
                     </div>
                 </div>
                 
                 <!-- Tramhalte -->
                 <div class="bg-white rounded-lg shadow-lg p-6 fade-in">
                     <div class="w-full h-48 bg-gray-200 rounded-lg mb-6 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Tramhalte Westende-bad" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Tramhalte Westende-bad" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-i18n="nearby.items.tram.imageAlt" data-i18n-attr="alt">
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-dark-gray">Tramhalte Westende-bad</h3>
-                    <p class="text-light-gray mb-4">Op 300m van het hotel met verbinding naar alle andere badplaatsen en Plopsaland.</p>
+                    <h3 class="text-xl font-semibold mb-3 text-dark-gray" data-i18n="nearby.items.tram.title">Tramhalte Westende-bad</h3>
+                    <p class="text-light-gray mb-4" data-i18n="nearby.items.tram.body">Op 300m van het hotel met verbinding naar alle andere badplaatsen en Plopsaland.</p>
                     <div class="flex items-center text-accent-red font-medium">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
-                        <span>300 meter</span>
+                        <span data-i18n="nearby.items.tram.distance">300 meter</span>
                     </div>
                 </div>
                 
                 <!-- Station -->
                 <div class="bg-white rounded-lg shadow-lg p-6 fade-in">
                     <div class="w-full h-48 bg-gray-200 rounded-lg mb-6 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Station Oostende" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Station Oostende" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-i18n="nearby.items.station.imageAlt" data-i18n-attr="alt">
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-dark-gray">Station Oostende</h3>
-                    <p class="text-light-gray mb-4">Het treinstation voor gemakkelijke verbindingen met andere steden.</p>
+                    <h3 class="text-xl font-semibold mb-3 text-dark-gray" data-i18n="nearby.items.station.title">Station Oostende</h3>
+                    <p class="text-light-gray mb-4" data-i18n="nearby.items.station.body">Het treinstation voor gemakkelijke verbindingen met andere steden.</p>
                     <div class="flex items-center text-accent-red font-medium">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
-                        <span>15 minuten wandelen</span>
+                        <span data-i18n="nearby.items.station.distance">15 minuten wandelen</span>
                     </div>
                 </div>
                 
                 <!-- Casino -->
                 <div class="bg-white rounded-lg shadow-lg p-6 fade-in">
                     <div class="w-full h-48 bg-gray-200 rounded-lg mb-6 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Casino Oostende" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Casino Oostende" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-i18n="nearby.items.casino.imageAlt" data-i18n-attr="alt">
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-dark-gray">Casino Kursaal</h3>
-                    <p class="text-light-gray mb-4">Het beroemde Casino Kursaal voor entertainment en evenementen.</p>
+                    <h3 class="text-xl font-semibold mb-3 text-dark-gray" data-i18n="nearby.items.casino.title">Casino Kursaal</h3>
+                    <p class="text-light-gray mb-4" data-i18n="nearby.items.casino.body">Het beroemde Casino Kursaal voor entertainment en evenementen.</p>
                     <div class="flex items-center text-accent-red font-medium">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
-                        <span>8 minuten wandelen</span>
+                        <span data-i18n="nearby.items.casino.distance">8 minuten wandelen</span>
                     </div>
                 </div>
                 
                 <!-- Visserskaai -->
                 <div class="bg-white rounded-lg shadow-lg p-6 fade-in">
                     <div class="w-full h-48 bg-gray-200 rounded-lg mb-6 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Visserskaai" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Visserskaai" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-i18n="nearby.items.fisherman.imageAlt" data-i18n-attr="alt">
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-dark-gray">Visserskaai</h3>
-                    <p class="text-light-gray mb-4">De traditionele visserskaai met verse vis en lokale specialiteiten.</p>
+                    <h3 class="text-xl font-semibold mb-3 text-dark-gray" data-i18n="nearby.items.fisherman.title">Visserskaai</h3>
+                    <p class="text-light-gray mb-4" data-i18n="nearby.items.fisherman.body">De traditionele visserskaai met verse vis en lokale specialiteiten.</p>
                     <div class="flex items-center text-accent-red font-medium">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
-                        <span>12 minuten wandelen</span>
+                        <span data-i18n="nearby.items.fisherman.distance">12 minuten wandelen</span>
                     </div>
                 </div>
                 
                 <!-- Leopoldpark -->
                 <div class="bg-white rounded-lg shadow-lg p-6 fade-in">
                     <div class="w-full h-48 bg-gray-200 rounded-lg mb-6 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Leopoldpark" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Leopoldpark" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-i18n="nearby.items.park.imageAlt" data-i18n-attr="alt">
                     </div>
-                    <h3 class="text-xl font-semibold mb-3 text-dark-gray">Leopoldpark</h3>
-                    <p class="text-light-gray mb-4">Een groene oase in het centrum voor een ontspannen wandeling.</p>
+                    <h3 class="text-xl font-semibold mb-3 text-dark-gray" data-i18n="nearby.items.park.title">Leopoldpark</h3>
+                    <p class="text-light-gray mb-4" data-i18n="nearby.items.park.body">Een groene oase in het centrum voor een ontspannen wandeling.</p>
                     <div class="flex items-center text-accent-red font-medium">
                         <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
-                        <span>7 minuten wandelen</span>
+                        <span data-i18n="nearby.items.park.distance">7 minuten wandelen</span>
                     </div>
                 </div>
             </div>
@@ -447,8 +505,8 @@
     <section class="bg-white py-20 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6 text-dark-gray">Bereikbaarheid</h2>
-                <p class="text-xl text-light-gray max-w-3xl mx-auto">Hoe u ons gemakkelijk kunt bereiken</p>
+                <h2 class="text-4xl font-bold mb-6 text-dark-gray" data-i18n="transport.title">Bereikbaarheid</h2>
+                <p class="text-xl text-light-gray max-w-3xl mx-auto" data-i18n="transport.subtitle">Hoe u ons gemakkelijk kunt bereiken</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
@@ -460,9 +518,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Met de Auto</h3>
-                    <p class="text-light-gray mb-4">Gemakkelijk bereikbaar via de E40. Parkeerplaats beschikbaar tegen supplement.</p>
-                    <div class="text-accent-red font-medium">€10 per nacht</div>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="transport.items.car.title">Met de Auto</h3>
+                    <p class="text-light-gray mb-4" data-i18n="transport.items.car.body">Gemakkelijk bereikbaar via de E40. Parkeerplaats beschikbaar tegen supplement.</p>
+                    <div class="text-accent-red font-medium" data-i18n="transport.items.car.price">€10 per nacht</div>
                 </div>
                 
                 <!-- Train -->
@@ -472,9 +530,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Met de Trein</h3>
-                    <p class="text-light-gray mb-4">Station Oostende op 15 minuten wandelen. Directe verbindingen met Brussel en andere steden.</p>
-                    <div class="text-accent-red font-medium">15 minuten wandelen</div>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="transport.items.train.title">Met de Trein</h3>
+                    <p class="text-light-gray mb-4" data-i18n="transport.items.train.body">Station Oostende op 15 minuten wandelen. Directe verbindingen met Brussel en andere steden.</p>
+                    <div class="text-accent-red font-medium" data-i18n="transport.items.train.distance">15 minuten wandelen</div>
                 </div>
                 
                 <!-- Bus -->
@@ -484,9 +542,9 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Met de Bus</h3>
-                    <p class="text-light-gray mb-4">Verschillende buslijnen stoppen in de buurt. Busstation op 10 minuten wandelen.</p>
-                    <div class="text-accent-red font-medium">10 minuten wandelen</div>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="transport.items.bus.title">Met de Bus</h3>
+                    <p class="text-light-gray mb-4" data-i18n="transport.items.bus.body">Verschillende buslijnen stoppen in de buurt. Busstation op 10 minuten wandelen.</p>
+                    <div class="text-accent-red font-medium" data-i18n="transport.items.bus.distance">10 minuten wandelen</div>
                 </div>
             </div>
         </div>
@@ -495,9 +553,9 @@
     <!-- CTA Section -->
     <section class="bg-dark-gray text-white py-20">
         <div class="max-w-4xl mx-auto text-center px-4">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">Ontdek onze ligging</h2>
-            <p class="text-xl mb-8 opacity-90">Boek nu en ervaar zelf hoe perfect onze locatie is</p>
-            <a href="#" class="inline-block bg-accent-red text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-700 transition-all duration-300 transform hover:scale-105">Boek nu</a>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6" data-i18n="cta.sectionTitle">Ontdek onze ligging</h2>
+            <p class="text-xl mb-8 opacity-90" data-i18n="cta.sectionBody">Boek nu en ervaar zelf hoe perfect onze locatie is</p>
+            <a href="#" class="inline-block bg-accent-red text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-700 transition-all duration-300 transform hover:scale-105" data-i18n="cta.bookNow">Boek nu</a>
         </div>
     </section>
     
@@ -507,54 +565,681 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <!-- Contact Info -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Contact</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="footer.contact.heading">Contact</h3>
                     <div class="space-y-2 text-light-gray">
-                        <p>Irislaan 1</p>
-                        <p>8400 Oostende</p>
-                        <p>België</p>
-                        <p class="mt-4">Tel: +32 59 70 11 11</p>
-                        <p>Email: info@dewielingen.be</p>
+                        <p data-i18n="footer.contact.addressLine1">Irislaan 1</p>
+                        <p data-i18n="footer.contact.addressLine2">8400 Oostende</p>
+                        <p data-i18n="footer.contact.addressLine3">België</p>
+                        <p class="mt-4" data-i18n="footer.contact.phone">Tel: +32 59 70 11 11</p>
+                        <p data-i18n="footer.contact.email">Email: info@dewielingen.be</p>
                     </div>
                 </div>
                 
                 <!-- Quick Links -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Snelle Links</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="footer.quickLinks.heading">Snelle Links</h3>
                     <div class="space-y-2">
-                        <a href="hotel.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Hotel</a>
-                        <a href="kamers.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Kamers</a>
-                        <a href="prijslijst.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Prijslijst</a>
-                        <a href="contact.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Contact</a>
+                        <a href="hotel.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.hotel">Hotel</a>
+                        <a href="kamers.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rooms">Kamers</a>
+                        <a href="prijslijst.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rates">Prijslijst</a>
+                        <a href="contact.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.contact">Contact</a>
                     </div>
                 </div>
                 
                 <!-- Practical Info -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Praktisch</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="footer.practical.heading">Praktisch</h3>
                     <div class="space-y-2">
-                        <a href="praktisch.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Check-in/out</a>
-                        <a href="ligging.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Ligging</a>
-                        <a href="#" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Voorzieningen</a>
+                        <a href="praktisch.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="footer.practical.checkin">Check-in/out</a>
+                        <a href="ligging.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.location">Ligging</a>
+                        <a href="#" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="footer.practical.amenities">Voorzieningen</a>
                     </div>
                 </div>
                 
                 <!-- Booking CTA -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Boek uw verblijf</h3>
-                    <p class="text-light-gray mb-4">Reserveer nu en geniet van een ontspannen verblijf aan zee.</p>
-                    <a href="#" class="inline-block bg-accent-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium">Boek nu</a>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="footer.booking.heading">Boek uw verblijf</h3>
+                    <p class="text-light-gray mb-4" data-i18n="footer.booking.body">Reserveer nu en geniet van een ontspannen verblijf aan zee.</p>
+                    <a href="#" class="inline-block bg-accent-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium" data-i18n="cta.bookNow">Boek nu</a>
                 </div>
             </div>
             
             <div class="border-t border-gray-200 mt-12 pt-8 text-center text-light-gray">
-                <p>&copy; 2024 Aparthotel De Wielingen. Alle rechten voorbehouden.</p>
+                <p data-i18n="footer.bottom">&copy; 2024 Aparthotel De Wielingen. Alle rechten voorbehouden.</p>
             </div>
         </div>
     </footer>
     
     <!-- JavaScript -->
     <script>
-        // Mobile menu toggle
+        const translations = {
+            nl: {
+                meta: {
+                    title: 'Ligging - Aparthotel De Wielingen',
+                    description: 'Ontdek de ideale ligging van Aparthotel De Wielingen op de hoek van Irislaan en Henri Jasparlaan in Oostende, op wandelafstand van het strand.'
+                },
+                languageSwitcher: {
+                    aria: 'Taalkeuze',
+                    labels: {
+                        nl: 'Nederlands',
+                        en: 'Engels',
+                        fr: 'Frans',
+                        de: 'Duits'
+                    }
+                },
+                brand: {
+                    name: 'De Wielingen',
+                    logoAlt: 'De Wielingen Logo'
+                },
+                nav: {
+                    home: 'Home',
+                    hotel: 'Hotel',
+                    rooms: 'Kamers',
+                    rates: 'Prijslijst',
+                    practical: 'Praktisch',
+                    location: 'Ligging',
+                    contact: 'Contact'
+                },
+                hero: {
+                    title: 'Ideale Ligging',
+                    subtitle: 'In het hart van Oostende, op wandelafstand van het strand'
+                },
+                location: {
+                    title: 'Perfect Gelegen',
+                    paragraph1: 'De Wielingen situeert zich op de hoek van de Irislaan en de Henri Jasparlaan. Dé verbindingsweg naar alle kuststeden. Gelegen in het centrum van Westende-bad, op 300 meter van de tramhalte (Westende-bad).',
+                    paragraph2: 'Deze tramhalte heeft verbinding naar alle andere badplaatsen, Plopsaland e.d. Vanuit Westende starten prachtige fietstochten en wandelingen in het polderlandschap.',
+                    paragraph3: 'In Westende-bad zijn er tal van restaurants en tearooms. Ook zijn er tal van sportmogelijkheden, watersportcentrum, golfterrein. Westende kent ook tal van jaarlijkse evenementen zoals champagneweekend in november, visweekend en bierweekend in juni, en het stripfestival in de zomervakantie.',
+                    imageAlt: 'Oostende strand'
+                },
+                address: {
+                    title: 'Ons Adres',
+                    full: 'Irislaan 1, 8400 Oostende, België',
+                    corner: 'Op de hoek van Irislaan en Henri Jasparlaan'
+                },
+                nearby: {
+                    title: 'In de Buurt',
+                    subtitle: 'Ontdek wat er allemaal te doen is in de omgeving',
+                    items: {
+                        beach: {
+                            imageAlt: 'Westende strand',
+                            title: 'Strand van Westende',
+                            body: 'Op wandelafstand van het hotel ligt het prachtige strand van Westende-bad.',
+                            distance: 'Op wandelafstand'
+                        },
+                        tram: {
+                            imageAlt: 'Tramhalte Westende-bad',
+                            title: 'Tramhalte Westende-bad',
+                            body: 'Op 300m van het hotel met verbinding naar alle andere badplaatsen en Plopsaland.',
+                            distance: '300 meter'
+                        },
+                        station: {
+                            imageAlt: 'Station Oostende',
+                            title: 'Station Oostende',
+                            body: 'Het treinstation voor gemakkelijke verbindingen met andere steden.',
+                            distance: '15 minuten wandelen'
+                        },
+                        casino: {
+                            imageAlt: 'Casino Oostende',
+                            title: 'Casino Kursaal',
+                            body: 'Het beroemde Casino Kursaal voor entertainment en evenementen.',
+                            distance: '8 minuten wandelen'
+                        },
+                        fisherman: {
+                            imageAlt: 'Visserskaai',
+                            title: 'Visserskaai',
+                            body: 'De traditionele visserskaai met verse vis en lokale specialiteiten.',
+                            distance: '12 minuten wandelen'
+                        },
+                        park: {
+                            imageAlt: 'Leopoldpark',
+                            title: 'Leopoldpark',
+                            body: 'Een groene oase in het centrum voor een ontspannen wandeling.',
+                            distance: '7 minuten wandelen'
+                        }
+                    }
+                },
+                transport: {
+                    title: 'Bereikbaarheid',
+                    subtitle: 'Hoe u ons gemakkelijk kunt bereiken',
+                    items: {
+                        car: {
+                            title: 'Met de Auto',
+                            body: 'Gemakkelijk bereikbaar via de E40. Parkeerplaats beschikbaar tegen supplement.',
+                            price: '€10 per nacht'
+                        },
+                        train: {
+                            title: 'Met de Trein',
+                            body: 'Station Oostende op 15 minuten wandelen. Directe verbindingen met Brussel en andere steden.',
+                            distance: '15 minuten wandelen'
+                        },
+                        bus: {
+                            title: 'Met de Bus',
+                            body: 'Verschillende buslijnen stoppen in de buurt. Busstation op 10 minuten wandelen.',
+                            distance: '10 minuten wandelen'
+                        }
+                    }
+                },
+                cta: {
+                    bookNow: 'Boek nu',
+                    reserve: 'Reserveer uw verblijf aan zee',
+                    sectionTitle: 'Ontdek onze ligging',
+                    sectionBody: 'Boek nu en ervaar zelf hoe perfect onze locatie is'
+                },
+                footer: {
+                    contact: {
+                        heading: 'Contact',
+                        addressLine1: 'Irislaan 1',
+                        addressLine2: '8400 Oostende',
+                        addressLine3: 'België',
+                        phone: 'Tel: +32 59 70 11 11',
+                        email: 'Email: info@dewielingen.be'
+                    },
+                    quickLinks: {
+                        heading: 'Snelle Links'
+                    },
+                    practical: {
+                        heading: 'Praktisch',
+                        checkin: 'Check-in/out',
+                        amenities: 'Voorzieningen'
+                    },
+                    booking: {
+                        heading: 'Boek uw verblijf',
+                        body: 'Reserveer nu en geniet van een ontspannen verblijf aan zee.'
+                    },
+                    bottom: '© 2024 Aparthotel De Wielingen. Alle rechten voorbehouden.'
+                }
+            },
+            en: {
+                meta: {
+                    title: 'Location - Aparthotel De Wielingen',
+                    description: 'Discover the ideal location of Aparthotel De Wielingen at the corner of Irislaan and Henri Jasparlaan in Ostend, within walking distance of the beach.'
+                },
+                languageSwitcher: {
+                    aria: 'Language selection',
+                    labels: {
+                        nl: 'Dutch',
+                        en: 'English',
+                        fr: 'French',
+                        de: 'German'
+                    }
+                },
+                brand: {
+                    name: 'De Wielingen',
+                    logoAlt: 'De Wielingen Logo'
+                },
+                nav: {
+                    home: 'Home',
+                    hotel: 'Hotel',
+                    rooms: 'Rooms',
+                    rates: 'Rates',
+                    practical: 'Practical info',
+                    location: 'Location',
+                    contact: 'Contact'
+                },
+                hero: {
+                    title: 'Ideal Location',
+                    subtitle: 'In the heart of Ostend, within walking distance of the beach'
+                },
+                location: {
+                    title: 'Perfectly Located',
+                    paragraph1: 'De Wielingen is located at the corner of Irislaan and Henri Jasparlaan. The connecting road to all coastal cities. Located in the center of Westende-bad, 300 meters from the tram stop (Westende-bad).',
+                    paragraph2: 'This tram stop has connections to all other seaside resorts, Plopsaland, etc. From Westende, beautiful bike rides and walks in the polder landscape start.',
+                    paragraph3: 'In Westende-bad there are numerous restaurants and tea rooms. There are also many sports opportunities, water sports center, golf course. Westende also has numerous annual events such as champagne weekend in November, fish weekend and beer weekend in June, and the comic festival during the summer vacation.',
+                    imageAlt: 'Ostend beach'
+                },
+                address: {
+                    title: 'Our Address',
+                    full: 'Irislaan 1, 8400 Ostend, Belgium',
+                    corner: 'At the corner of Irislaan and Henri Jasparlaan'
+                },
+                nearby: {
+                    title: 'Nearby',
+                    subtitle: 'Discover what there is to do in the area',
+                    items: {
+                        beach: {
+                            imageAlt: 'Westende beach',
+                            title: 'Westende Beach',
+                            body: 'Within walking distance of the hotel lies the beautiful beach of Westende-bad.',
+                            distance: 'Within walking distance'
+                        },
+                        tram: {
+                            imageAlt: 'Westende-bad tram stop',
+                            title: 'Westende-bad Tram Stop',
+                            body: '300m from the hotel with connections to all other seaside resorts and Plopsaland.',
+                            distance: '300 meters'
+                        },
+                        station: {
+                            imageAlt: 'Ostend station',
+                            title: 'Ostend Station',
+                            body: 'The train station for easy connections to other cities.',
+                            distance: '15 minutes walk'
+                        },
+                        casino: {
+                            imageAlt: 'Ostend casino',
+                            title: 'Casino Kursaal',
+                            body: 'The famous Casino Kursaal for entertainment and events.',
+                            distance: '8 minutes walk'
+                        },
+                        fisherman: {
+                            imageAlt: 'Fisherman\'s quay',
+                            title: 'Fisherman\'s Quay',
+                            body: 'The traditional fisherman\'s quay with fresh fish and local specialties.',
+                            distance: '12 minutes walk'
+                        },
+                        park: {
+                            imageAlt: 'Leopoldpark',
+                            title: 'Leopoldpark',
+                            body: 'A green oasis in the center for a relaxing walk.',
+                            distance: '7 minutes walk'
+                        }
+                    }
+                },
+                transport: {
+                    title: 'Accessibility',
+                    subtitle: 'How to reach us easily',
+                    items: {
+                        car: {
+                            title: 'By Car',
+                            body: 'Easily accessible via the E40. Parking available for a supplement.',
+                            price: '€10 per night'
+                        },
+                        train: {
+                            title: 'By Train',
+                            body: 'Ostend station within 15 minutes walk. Direct connections to Brussels and other cities.',
+                            distance: '15 minutes walk'
+                        },
+                        bus: {
+                            title: 'By Bus',
+                            body: 'Several bus lines stop nearby. Bus station within 10 minutes walk.',
+                            distance: '10 minutes walk'
+                        }
+                    }
+                },
+                cta: {
+                    bookNow: 'Book now',
+                    reserve: 'Reserve your stay by the sea',
+                    sectionTitle: 'Discover our location',
+                    sectionBody: 'Book now and experience for yourself how perfect our location is'
+                },
+                footer: {
+                    contact: {
+                        heading: 'Contact',
+                        addressLine1: 'Irislaan 1',
+                        addressLine2: '8400 Ostend',
+                        addressLine3: 'Belgium',
+                        phone: 'Tel: +32 59 70 11 11',
+                        email: 'Email: info@dewielingen.be'
+                    },
+                    quickLinks: {
+                        heading: 'Quick Links'
+                    },
+                    practical: {
+                        heading: 'Practical info',
+                        checkin: 'Check-in/out',
+                        amenities: 'Amenities'
+                    },
+                    booking: {
+                        heading: 'Book your stay',
+                        body: 'Reserve now and enjoy a relaxing stay by the sea.'
+                    },
+                    bottom: '© 2024 Aparthotel De Wielingen. All rights reserved.'
+                }
+            },
+            fr: {
+                meta: {
+                    title: 'Emplacement - Aparthotel De Wielingen',
+                    description: 'Découvrez l\'emplacement idéal de l\'Aparthotel De Wielingen au coin de l\'Irislaan et de l\'Henri Jasparlaan à Ostende, à distance de marche de la plage.'
+                },
+                languageSwitcher: {
+                    aria: 'Sélection de langue',
+                    labels: {
+                        nl: 'Néerlandais',
+                        en: 'Anglais',
+                        fr: 'Français',
+                        de: 'Allemand'
+                    }
+                },
+                brand: {
+                    name: 'De Wielingen',
+                    logoAlt: 'Logo De Wielingen'
+                },
+                nav: {
+                    home: 'Accueil',
+                    hotel: 'Hôtel',
+                    rooms: 'Chambres',
+                    rates: 'Tarifs',
+                    practical: 'Infos pratiques',
+                    location: 'Emplacement',
+                    contact: 'Contact'
+                },
+                hero: {
+                    title: 'Emplacement Idéal',
+                    subtitle: 'Au cœur d\'Ostende, à distance de marche de la plage'
+                },
+                location: {
+                    title: 'Parfaitement Situé',
+                    paragraph1: 'De Wielingen est situé au coin de l\'Irislaan et de l\'Henri Jasparlaan. La route de connexion vers toutes les villes côtières. Situé dans le centre de Westende-bad, à 300 mètres de l\'arrêt de tram (Westende-bad).',
+                    paragraph2: 'Cet arrêt de tram a des connexions vers toutes les autres stations balnéaires, Plopsaland, etc. Depuis Westende, de magnifiques balades à vélo et des promenades dans le paysage polder commencent.',
+                    paragraph3: 'À Westende-bad, il y a de nombreux restaurants et salons de thé. Il y a aussi de nombreuses possibilités sportives, centre de sports nautiques, terrain de golf. Westende a également de nombreux événements annuels tels que le week-end champagne en novembre, le week-end poisson et le week-end bière en juin, et le festival de bande dessinée pendant les vacances d\'été.',
+                    imageAlt: 'Plage d\'Ostende'
+                },
+                address: {
+                    title: 'Notre Adresse',
+                    full: 'Irislaan 1, 8400 Ostende, Belgique',
+                    corner: 'Au coin de l\'Irislaan et de l\'Henri Jasparlaan'
+                },
+                nearby: {
+                    title: 'À Proximité',
+                    subtitle: 'Découvrez ce qu\'il y a à faire dans les environs',
+                    items: {
+                        beach: {
+                            imageAlt: 'Plage de Westende',
+                            title: 'Plage de Westende',
+                            body: 'À distance de marche de l\'hôtel se trouve la magnifique plage de Westende-bad.',
+                            distance: 'À distance de marche'
+                        },
+                        tram: {
+                            imageAlt: 'Arrêt de tram Westende-bad',
+                            title: 'Arrêt de Tram Westende-bad',
+                            body: 'À 300m de l\'hôtel avec connexions vers toutes les autres stations balnéaires et Plopsaland.',
+                            distance: '300 mètres'
+                        },
+                        station: {
+                            imageAlt: 'Gare d\'Ostende',
+                            title: 'Gare d\'Ostende',
+                            body: 'La gare pour des connexions faciles vers d\'autres villes.',
+                            distance: '15 minutes à pied'
+                        },
+                        casino: {
+                            imageAlt: 'Casino d\'Ostende',
+                            title: 'Casino Kursaal',
+                            body: 'Le célèbre Casino Kursaal pour le divertissement et les événements.',
+                            distance: '8 minutes à pied'
+                        },
+                        fisherman: {
+                            imageAlt: 'Quai des pêcheurs',
+                            title: 'Quai des Pêcheurs',
+                            body: 'Le quai traditionnel des pêcheurs avec du poisson frais et des spécialités locales.',
+                            distance: '12 minutes à pied'
+                        },
+                        park: {
+                            imageAlt: 'Leopoldpark',
+                            title: 'Leopoldpark',
+                            body: 'Une oasis verte au centre pour une promenade relaxante.',
+                            distance: '7 minutes à pied'
+                        }
+                    }
+                },
+                transport: {
+                    title: 'Accessibilité',
+                    subtitle: 'Comment nous rejoindre facilement',
+                    items: {
+                        car: {
+                            title: 'En Voiture',
+                            body: 'Facilement accessible via l\'E40. Parking disponible moyennant un supplément.',
+                            price: '€10 par nuit'
+                        },
+                        train: {
+                            title: 'En Train',
+                            body: 'Gare d\'Ostende à 15 minutes à pied. Connexions directes vers Bruxelles et d\'autres villes.',
+                            distance: '15 minutes à pied'
+                        },
+                        bus: {
+                            title: 'En Bus',
+                            body: 'Plusieurs lignes de bus s\'arrêtent à proximité. Gare routière à 10 minutes à pied.',
+                            distance: '10 minutes à pied'
+                        }
+                    }
+                },
+                cta: {
+                    bookNow: 'Réserver maintenant',
+                    reserve: 'Réservez votre séjour au bord de la mer',
+                    sectionTitle: 'Découvrez notre emplacement',
+                    sectionBody: 'Réservez maintenant et découvrez par vous-même à quel point notre emplacement est parfait'
+                },
+                footer: {
+                    contact: {
+                        heading: 'Contact',
+                        addressLine1: 'Irislaan 1',
+                        addressLine2: '8400 Ostende',
+                        addressLine3: 'Belgique',
+                        phone: 'Tél. : +32 59 70 11 11',
+                        email: 'E-mail : info@dewielingen.be'
+                    },
+                    quickLinks: {
+                        heading: 'Liens rapides'
+                    },
+                    practical: {
+                        heading: 'Infos pratiques',
+                        checkin: 'Arrivée/départ',
+                        amenities: 'Équipements'
+                    },
+                    booking: {
+                        heading: 'Réservez votre séjour',
+                        body: 'Réservez maintenant et profitez d\'un séjour détente au bord de la mer.'
+                    },
+                    bottom: '© 2024 Aparthotel De Wielingen. Tous droits réservés.'
+                }
+            },
+            de: {
+                meta: {
+                    title: 'Lage - Aparthotel De Wielingen',
+                    description: 'Entdecken Sie die ideale Lage des Aparthotel De Wielingen an der Ecke von Irislaan und Henri Jasparlaan in Ostende, in Gehweite zum Strand.'
+                },
+                languageSwitcher: {
+                    aria: 'Sprachauswahl',
+                    labels: {
+                        nl: 'Niederländisch',
+                        en: 'Englisch',
+                        fr: 'Französisch',
+                        de: 'Deutsch'
+                    }
+                },
+                brand: {
+                    name: 'De Wielingen',
+                    logoAlt: 'De Wielingen Logo'
+                },
+                nav: {
+                    home: 'Startseite',
+                    hotel: 'Hotel',
+                    rooms: 'Zimmer',
+                    rates: 'Preisliste',
+                    practical: 'Praktische Infos',
+                    location: 'Lage',
+                    contact: 'Kontakt'
+                },
+                hero: {
+                    title: 'Ideale Lage',
+                    subtitle: 'Im Herzen von Ostende, in Gehweite zum Strand'
+                },
+                location: {
+                    title: 'Perfekt Gelegen',
+                    paragraph1: 'De Wielingen befindet sich an der Ecke von Irislaan und Henri Jasparlaan. Die Verbindungsstraße zu allen Küstenstädten. Gelegen im Zentrum von Westende-bad, 300 Meter von der Straßenbahnhaltestelle (Westende-bad) entfernt.',
+                    paragraph2: 'Diese Straßenbahnhaltestelle hat Verbindungen zu allen anderen Badeorten, Plopsaland usw. Von Westende aus starten wunderschöne Radtouren und Spaziergänge in der Polderlandschaft.',
+                    paragraph3: 'In Westende-bad gibt es zahlreiche Restaurants und Teestuben. Es gibt auch viele Sportmöglichkeiten, Wassersportzentrum, Golfplatz. Westende hat auch zahlreiche jährliche Veranstaltungen wie Champagner-Wochenende im November, Fisch-Wochenende und Bier-Wochenende im Juni und das Comic-Festival in den Sommerferien.',
+                    imageAlt: 'Ostende Strand'
+                },
+                address: {
+                    title: 'Unsere Adresse',
+                    full: 'Irislaan 1, 8400 Ostende, Belgien',
+                    corner: 'An der Ecke von Irislaan und Henri Jasparlaan'
+                },
+                nearby: {
+                    title: 'In der Nähe',
+                    subtitle: 'Entdecken Sie, was es in der Umgebung zu tun gibt',
+                    items: {
+                        beach: {
+                            imageAlt: 'Westende Strand',
+                            title: 'Westende Strand',
+                            body: 'In Gehweite des Hotels liegt der wunderschöne Strand von Westende-bad.',
+                            distance: 'In Gehweite'
+                        },
+                        tram: {
+                            imageAlt: 'Straßenbahnhaltestelle Westende-bad',
+                            title: 'Straßenbahnhaltestelle Westende-bad',
+                            body: '300m vom Hotel entfernt mit Verbindungen zu allen anderen Badeorten und Plopsaland.',
+                            distance: '300 Meter'
+                        },
+                        station: {
+                            imageAlt: 'Bahnhof Ostende',
+                            title: 'Bahnhof Ostende',
+                            body: 'Der Bahnhof für einfache Verbindungen zu anderen Städten.',
+                            distance: '15 Minuten zu Fuß'
+                        },
+                        casino: {
+                            imageAlt: 'Casino Ostende',
+                            title: 'Casino Kursaal',
+                            body: 'Das berühmte Casino Kursaal für Unterhaltung und Veranstaltungen.',
+                            distance: '8 Minuten zu Fuß'
+                        },
+                        fisherman: {
+                            imageAlt: 'Fischerkai',
+                            title: 'Fischerkai',
+                            body: 'Der traditionelle Fischerkai mit frischem Fisch und lokalen Spezialitäten.',
+                            distance: '12 Minuten zu Fuß'
+                        },
+                        park: {
+                            imageAlt: 'Leopoldpark',
+                            title: 'Leopoldpark',
+                            body: 'Eine grüne Oase im Zentrum für einen entspannenden Spaziergang.',
+                            distance: '7 Minuten zu Fuß'
+                        }
+                    }
+                },
+                transport: {
+                    title: 'Erreichbarkeit',
+                    subtitle: 'Wie Sie uns leicht erreichen können',
+                    items: {
+                        car: {
+                            title: 'Mit dem Auto',
+                            body: 'Einfach über die E40 erreichbar. Parkplatz gegen Aufpreis verfügbar.',
+                            price: '€10 pro Nacht'
+                        },
+                        train: {
+                            title: 'Mit der Bahn',
+                            body: 'Bahnhof Ostende in 15 Minuten zu Fuß. Direkte Verbindungen nach Brüssel und andere Städte.',
+                            distance: '15 Minuten zu Fuß'
+                        },
+                        bus: {
+                            title: 'Mit dem Bus',
+                            body: 'Mehrere Buslinien halten in der Nähe. Busbahnhof in 10 Minuten zu Fuß.',
+                            distance: '10 Minuten zu Fuß'
+                        }
+                    }
+                },
+                cta: {
+                    bookNow: 'Jetzt buchen',
+                    reserve: 'Reservieren Sie Ihren Aufenthalt am Meer',
+                    sectionTitle: 'Entdecken Sie unsere Lage',
+                    sectionBody: 'Buchen Sie jetzt und erleben Sie selbst, wie perfekt unsere Lage ist'
+                },
+                footer: {
+                    contact: {
+                        heading: 'Kontakt',
+                        addressLine1: 'Irislaan 1',
+                        addressLine2: '8400 Ostende',
+                        addressLine3: 'Belgien',
+                        phone: 'Tel.: +32 59 70 11 11',
+                        email: 'E-Mail: info@dewielingen.be'
+                    },
+                    quickLinks: {
+                        heading: 'Schnelle Links'
+                    },
+                    practical: {
+                        heading: 'Praktische Infos',
+                        checkin: 'Check-in/Check-out',
+                        amenities: 'Ausstattung'
+                    },
+                    booking: {
+                        heading: 'Buchen Sie Ihren Aufenthalt',
+                        body: 'Reservieren Sie jetzt und genießen Sie einen entspannten Aufenthalt am Meer.'
+                    },
+                    bottom: '© 2024 Aparthotel De Wielingen. Alle Rechte vorbehalten.'
+                }
+            }
+        };
+
+        const languageButtons = document.querySelectorAll('.language-switcher .lang-btn');
+        let storedLang = null;
+        try {
+            storedLang = localStorage.getItem('preferredLang');
+        } catch (error) {
+            storedLang = null;
+        }
+        const defaultLang = storedLang && translations[storedLang] ? storedLang : 'nl';
+
+        function getTranslation(lang, key) {
+            return key.split('.').reduce((result, part) => {
+                if (result && Object.prototype.hasOwnProperty.call(result, part)) {
+                    return result[part];
+                }
+                return undefined;
+            }, translations[lang]);
+        }
+
+        function applyTranslations(lang) {
+            if (!translations[lang]) {
+                lang = 'nl';
+            }
+
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const attr = element.getAttribute('data-i18n-attr');
+                const fallback = getTranslation('nl', key);
+                const translation = getTranslation(lang, key) ?? fallback;
+
+                if (translation === undefined) {
+                    return;
+                }
+
+                if (attr) {
+                    if (attr === 'html') {
+                        element.innerHTML = translation;
+                    } else {
+                        element.setAttribute(attr, translation);
+                    }
+                } else {
+                    element.textContent = translation;
+                }
+            });
+
+            document.documentElement.setAttribute('lang', lang);
+
+            if (translations[lang].meta && translations[lang].meta.title) {
+                document.title = translations[lang].meta.title;
+            }
+
+            const metaDescription = document.querySelector('meta[name="description"]');
+            if (metaDescription && translations[lang].meta && translations[lang].meta.description) {
+                metaDescription.setAttribute('content', translations[lang].meta.description);
+            }
+
+            languageButtons.forEach(button => {
+                if (button.getAttribute('data-lang') === lang) {
+                    button.classList.add('active');
+                } else {
+                    button.classList.remove('active');
+                }
+            });
+
+            try {
+                localStorage.setItem('preferredLang', lang);
+            } catch (error) {
+                // Ignore localStorage errors
+            }
+        }
+
+        languageButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const lang = button.getAttribute('data-lang');
+                applyTranslations(lang);
+            });
+        });
+
+        applyTranslations(defaultLang);
+
+        // Mobile menu toggle - Simple & Reliable
         function toggleMobileMenu() {
             const mobileMenu = document.querySelector('.mobile-menu');
             const mobileOverlay = document.querySelector('.mobile-overlay');
@@ -566,14 +1251,13 @@
                 mobileOverlay.classList.remove('active');
                 hamburger.classList.remove('active');
                 document.body.style.overflow = '';
-        }
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const mobileOverlay = document.querySelector('.mobile-overlay');
-            const hamburger = document.querySelector('.hamburger');
-            
-            mobileMenu.classList.toggle('open');
-            mobileOverlay.classList.toggle('active');
-            hamburger.classList.toggle('active');
+            } else {
+                // Open menu
+                mobileMenu.classList.add('open');
+                mobileOverlay.classList.add('active');
+                hamburger.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
         }
         
         // Scroll animations

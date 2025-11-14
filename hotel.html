@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hotel - Aparthotel De Wielingen</title>
-    <meta name="description" content="Ontdek Aparthotel De Wielingen: moderne accommodatie aan de Belgische kust met uitstekende service en ideale ligging.">
+    <title data-i18n="meta.title">Hotel - Aparthotel De Wielingen</title>
+    <meta name="description" content="Ontdek Aparthotel De Wielingen: moderne accommodatie aan de Belgische kust met uitstekende service en ideale ligging." data-i18n="meta.description" data-i18n-attr="content">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -169,6 +169,57 @@
             top: 8px;
             transform: rotate(-135deg);
         }
+        
+        .language-switcher {
+            position: fixed;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 9999px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            z-index: 1100;
+        }
+        
+        .language-switcher button {
+            width: 44px;
+            height: 44px;
+            border-radius: 9999px;
+            border: 1px solid #e5e7eb;
+            background: white;
+            color: #2d2d2d;
+            font-weight: 600;
+            transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border 0.2s ease;
+        }
+        
+        .language-switcher button:hover {
+            transform: translateY(-2px);
+            border-color: #a50030;
+        }
+        
+        .language-switcher button.active {
+            background: #a50030;
+            color: #ffffff;
+            border-color: #a50030;
+        }
+        
+        @media (max-width: 768px) {
+            .language-switcher {
+                top: auto;
+                bottom: 1.5rem;
+                right: 50%;
+                transform: translateX(50%);
+                flex-direction: row;
+            }
+            
+            .language-switcher button:hover {
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body class="bg-cream font-sans text-dark-gray">
@@ -179,22 +230,22 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="index.html" class="flex items-center space-x-2">
-                        <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto">
-                        <span class="text-2xl font-bold text-accent-red">De Wielingen</span>
+                        <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto" data-i18n="brand.logoAlt" data-i18n-attr="alt">
+                    <span class="text-xl font-bold text-accent-red" data-i18n="brand.name">De Wielingen</span>
                     </a>
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="index.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Home</a>
-                        <a href="hotel.html" class="text-accent-red font-medium">Hotel</a>
-                        <a href="kamers.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Kamers</a>
-                        <a href="prijslijst.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Prijslijst</a>
-                        <a href="praktisch.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Praktisch</a>
-                        <a href="ligging.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Ligging</a>
-                        <a href="contact.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Contact</a>
-                        <a href="#" class="bg-accent-red text-white px-6 py-2 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium">Boek nu</a>
+                        <a href="index.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.home">Home</a>
+                        <a href="hotel.html" class="text-accent-red font-medium" data-i18n="nav.hotel">Hotel</a>
+                        <a href="kamers.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rooms">Kamers</a>
+                        <a href="prijslijst.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rates">Prijslijst</a>
+                        <a href="praktisch.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.practical">Praktisch</a>
+                        <a href="ligging.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.location">Ligging</a>
+                        <a href="contact.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.contact">Contact</a>
+                        <a href="#" class="bg-accent-red text-white px-6 py-2 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium" data-i18n="cta.bookNow">Boek nu</a>
                     </div>
                 </div>
                 
@@ -217,8 +268,8 @@
             <!-- Header -->
             <div class="flex items-center justify-between p-6 border-b border-gray-200">
                 <a href="index.html" class="flex items-center space-x-2">
-                    <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto">
-                    <span class="text-xl font-bold text-accent-red">De Wielingen</span>
+                        <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto" data-i18n="brand.logoAlt" data-i18n-attr="alt">
+                    <span class="text-xl font-bold text-accent-red" data-i18n="brand.name">De Wielingen</span>
                 </a>
                 <button class="hamburger" onclick="toggleMobileMenu()">
                     <span></span>
@@ -230,30 +281,37 @@
             <!-- Navigation -->
             <div class="px-6 py-8">
                 <nav class="space-y-6">
-                    <a href="index.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Home</a>
-                    <a href="hotel.html" class="block text-2xl font-semibold text-accent-red">Hotel</a>
-                    <a href="kamers.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Kamers</a>
-                    <a href="prijslijst.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Prijslijst</a>
-                    <a href="praktisch.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Praktisch</a>
-                    <a href="ligging.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Ligging</a>
-                    <a href="contact.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Contact</a>
+                    <a href="index.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.home">Home</a>
+                    <a href="hotel.html" class="block text-2xl font-semibold text-accent-red" data-i18n="nav.hotel">Hotel</a>
+                    <a href="kamers.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rooms">Kamers</a>
+                    <a href="prijslijst.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rates">Prijslijst</a>
+                    <a href="praktisch.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.practical">Praktisch</a>
+                    <a href="ligging.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.location">Ligging</a>
+                    <a href="contact.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.contact">Contact</a>
                 </nav>
             </div>
             
             <!-- CTA Section -->
             <div class="px-6 pb-8">
-                <a href="#" class="block w-full bg-accent-red text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-red-700 transition-colors duration-200 text-center shadow-lg">Boek nu</a>
-                <p class="text-center text-light-gray mt-3 text-sm">Reserveer uw verblijf aan zee</p>
+                <a href="#" class="block w-full bg-accent-red text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-red-700 transition-colors duration-200 text-center shadow-lg" data-i18n="cta.bookNow">Boek nu</a>
+                <p class="text-center text-light-gray mt-3 text-sm" data-i18n="cta.reserve">Reserveer uw verblijf aan zee</p>
             </div>
         </div>
     </nav>
+    
+    <div class="language-switcher" role="group" data-i18n="languageSwitcher.aria" data-i18n-attr="aria-label" aria-label="Taalkeuze">
+        <button type="button" class="lang-btn active" data-lang="nl" title="Nederlands" data-i18n="languageSwitcher.labels.nl" data-i18n-attr="title">NL</button>
+        <button type="button" class="lang-btn" data-lang="en" title="English" data-i18n="languageSwitcher.labels.en" data-i18n-attr="title">EN</button>
+        <button type="button" class="lang-btn" data-lang="fr" title="Français" data-i18n="languageSwitcher.labels.fr" data-i18n-attr="title">FR</button>
+        <button type="button" class="lang-btn" data-lang="de" title="Deutsch" data-i18n="languageSwitcher.labels.de" data-i18n-attr="title">DE</button>
+    </div>
     
     <!-- Hero Section -->
     <section class="hero-bg pt-16 min-h-[60vh] flex items-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center text-white">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">Welkom bij De Wielingen</h1>
-                <p class="text-xl md:text-2xl opacity-90 fade-in">Ontdek onze moderne accommodatie aan de Belgische kust</p>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in" data-i18n="hero.title">Welkom bij De Wielingen</h1>
+                <p class="text-xl md:text-2xl opacity-90 fade-in" data-i18n="hero.subtitle">Ontdek onze moderne accommodatie aan de Belgische kust</p>
             </div>
         </div>
     </section>
@@ -263,16 +321,16 @@
         <div class="max-w-7xl mx-auto">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="fade-in">
-                    <h2 class="text-4xl font-bold mb-6 text-dark-gray">Over ons hotel</h2>
+                    <h2 class="text-4xl font-bold mb-6 text-dark-gray" data-i18n="overview.heading">Over ons hotel</h2>
                     <div class="space-y-4 text-lg text-light-gray">
-                        <p>Wij heten u van harte welkom bij Aparthotel De Wielingen. Wij bezorgen u een onvergetelijk verblijf aan de Belgische kust. Ons hotel is gelegen op wandelafstand van de zee en biedt hotelservice zonder maaltijden.</p>
-                        <p>De Wielingen heeft een unieke locatie, gelegen op een boog scheut van het strand en de uitgestrekte polders. Dit maakt onze ligging ideaal om er te wandelen, te fietsen en te relaxen.</p>
-                        <p>Wij beschikken over ruime studio's (met terras) en appartementen met (luxe) terras. Hiernaast bieden wij ook een eigen parking aan voor het hotel met 2 elektrische laadpalen voor uw wagen.</p>
+                        <p data-i18n="overview.paragraphs.intro">Wij heten u van harte welkom bij Aparthotel De Wielingen. Wij bezorgen u een onvergetelijk verblijf aan de Belgische kust. Ons hotel is gelegen op wandelafstand van de zee en biedt hotelservice zonder maaltijden.</p>
+                        <p data-i18n="overview.paragraphs.location">De Wielingen heeft een unieke locatie, gelegen op een boog scheut van het strand en de uitgestrekte polders. Dit maakt onze ligging ideaal om er te wandelen, te fietsen en te relaxen.</p>
+                        <p data-i18n="overview.paragraphs.rooms">Wij beschikken over ruime studio's (met terras) en appartementen met (luxe) terras. Hiernaast bieden wij ook een eigen parking aan voor het hotel met 2 elektrische laadpalen voor uw wagen.</p>
                     </div>
                 </div>
                 <div class="fade-in">
                     <div class="w-full h-96 bg-gray-200 rounded-lg overflow-hidden">
-                        <img src="assets/hotel_de_wielingen.png" alt="Hotel De Wielingen" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                        <img src="assets/hotel_de_wielingen.png" alt="Hotel De Wielingen" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-i18n="overview.imageAlt" data-i18n-attr="alt">
                     </div>
                 </div>
             </div>
@@ -283,8 +341,8 @@
     <section class="bg-white py-20 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6 text-dark-gray">Wat maakt ons bijzonder?</h2>
-                <p class="text-xl text-light-gray max-w-3xl mx-auto">Ontdek de voordelen van verblijven bij Aparthotel De Wielingen</p>
+                <h2 class="text-4xl font-bold mb-6 text-dark-gray" data-i18n="features.title">Wat maakt ons bijzonder?</h2>
+                <p class="text-xl text-light-gray max-w-3xl mx-auto" data-i18n="features.subtitle">Ontdek de voordelen van verblijven bij Aparthotel De Wielingen</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -296,8 +354,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Centrum van Westende-bad</h3>
-                    <p class="text-light-gray">Gelegen op de hoek van Irislaan en Henri Jasparlaan, op 300m van de tramhalte met verbinding naar alle kuststeden.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="features.items.center.title">Centrum van Westende-bad</h3>
+                    <p class="text-light-gray" data-i18n="features.items.center.body">Gelegen op de hoek van Irislaan en Henri Jasparlaan, op 300m van de tramhalte met verbinding naar alle kuststeden.</p>
                 </div>
                 
                 <!-- Feature 2 -->
@@ -308,8 +366,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5a2 2 0 012-2h4a2 2 0 012 2v2H8V5z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Ruime Studio's & Appartementen</h3>
-                    <p class="text-light-gray">Studio's met terras en appartementen met luxe terras, volledig ingericht met kingsize bed, eigen badkamer en kitchenette.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="features.items.spacious.title">Ruime Studio's & Appartementen</h3>
+                    <p class="text-light-gray" data-i18n="features.items.spacious.body">Studio's met terras en appartementen met luxe terras, volledig ingericht met kingsize bed, eigen badkamer en kitchenette.</p>
                 </div>
                 
                 <!-- Feature 3 -->
@@ -319,8 +377,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Hotelservice Zonder Maaltijden</h3>
-                    <p class="text-light-gray">Opgemaakte bedden, handdoeken en alle comfort van een hotel, maar met de vrijheid van een appartement.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="features.items.service.title">Hotelservice Zonder Maaltijden</h3>
+                    <p class="text-light-gray" data-i18n="features.items.service.body">Opgemaakte bedden, handdoeken en alle comfort van een hotel, maar met de vrijheid van een appartement.</p>
                 </div>
                 
                 <!-- Feature 4 -->
@@ -330,8 +388,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Gratis WiFi</h3>
-                    <p class="text-light-gray">Gratis WiFi in alle kamers en gemeenschappelijke ruimtes voor uw comfort en gemak.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="features.items.wifi.title">Gratis WiFi</h3>
+                    <p class="text-light-gray" data-i18n="features.items.wifi.body">Gratis WiFi in alle kamers en gemeenschappelijke ruimtes voor uw comfort en gemak.</p>
                 </div>
                 
                 <!-- Feature 5 -->
@@ -341,8 +399,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Flexibele Check-in</h3>
-                    <p class="text-light-gray">Flexibele incheck- en uitchecktijden om aan te sluiten bij uw reisplannen.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="features.items.flexible.title">Flexibele Check-in</h3>
+                    <p class="text-light-gray" data-i18n="features.items.flexible.body">Flexibele incheck- en uitchecktijden om aan te sluiten bij uw reisplannen.</p>
                 </div>
                 
                 <!-- Feature 6 -->
@@ -352,8 +410,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Kitchenette</h3>
-                    <p class="text-light-gray">Kitchenette met Senseo koffiezetapparaat en microgolf op aanvraag beschikbaar.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="features.items.kitchenette.title">Kitchenette</h3>
+                    <p class="text-light-gray" data-i18n="features.items.kitchenette.body">Kitchenette met Senseo koffiezetapparaat en microgolf op aanvraag beschikbaar.</p>
                 </div>
             </div>
         </div>
@@ -362,9 +420,9 @@
     <!-- CTA Section -->
     <section class="bg-dark-gray text-white py-20">
         <div class="max-w-4xl mx-auto text-center px-4">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">Ervaar onze gastvrijheid</h2>
-            <p class="text-xl mb-8 opacity-90">Boek nu uw verblijf en ontdek waarom gasten steeds terugkeren naar De Wielingen</p>
-            <a href="#" class="inline-block bg-accent-red text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-700 transition-all duration-300 transform hover:scale-105">Boek nu</a>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6" data-i18n="cta.sectionTitle">Ervaar onze gastvrijheid</h2>
+            <p class="text-xl mb-8 opacity-90" data-i18n="cta.sectionBody">Boek nu uw verblijf en ontdek waarom gasten steeds terugkeren naar De Wielingen</p>
+            <a href="#" class="inline-block bg-accent-red text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-700 transition-all duration-300 transform hover:scale-105" data-i18n="cta.bookNow">Boek nu</a>
         </div>
     </section>
     
@@ -374,53 +432,531 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <!-- Contact Info -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Contact</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="footer.contact.heading">Contact</h3>
                     <div class="space-y-2 text-light-gray">
-                        <p>Irislaan 1</p>
-                        <p>8400 Oostende</p>
-                        <p>België</p>
-                        <p class="mt-4">Tel: +32 59 70 11 11</p>
-                        <p>Email: info@dewielingen.be</p>
+                        <p data-i18n="footer.contact.addressLine1">Irislaan 1</p>
+                        <p data-i18n="footer.contact.addressLine2">8400 Oostende</p>
+                        <p data-i18n="footer.contact.addressLine3">België</p>
+                        <p class="mt-4" data-i18n="footer.contact.phone">Tel: +32 59 70 11 11</p>
+                        <p data-i18n="footer.contact.email">Email: info@dewielingen.be</p>
                     </div>
                 </div>
                 
                 <!-- Quick Links -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Snelle Links</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="footer.quickLinks.heading">Snelle Links</h3>
                     <div class="space-y-2">
-                        <a href="hotel.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Hotel</a>
-                        <a href="kamers.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Kamers</a>
-                        <a href="prijslijst.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Prijslijst</a>
-                        <a href="contact.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Contact</a>
+                        <a href="hotel.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.hotel">Hotel</a>
+                        <a href="kamers.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rooms">Kamers</a>
+                        <a href="prijslijst.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rates">Prijslijst</a>
+                        <a href="contact.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.contact">Contact</a>
                     </div>
                 </div>
                 
                 <!-- Practical Info -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Praktisch</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="footer.practical.heading">Praktisch</h3>
                     <div class="space-y-2">
-                        <a href="praktisch.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Check-in/out</a>
-                        <a href="ligging.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Ligging</a>
-                        <a href="#" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Voorzieningen</a>
+                        <a href="praktisch.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="footer.practical.checkin">Check-in/out</a>
+                        <a href="ligging.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.location">Ligging</a>
+                        <a href="#" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="footer.practical.amenities">Voorzieningen</a>
                     </div>
                 </div>
                 
                 <!-- Booking CTA -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Boek uw verblijf</h3>
-                    <p class="text-light-gray mb-4">Reserveer nu en geniet van een ontspannen verblijf aan zee.</p>
-                    <a href="#" class="inline-block bg-accent-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium">Boek nu</a>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="footer.booking.heading">Boek uw verblijf</h3>
+                    <p class="text-light-gray mb-4" data-i18n="footer.booking.body">Reserveer nu en geniet van een ontspannen verblijf aan zee.</p>
+                    <a href="#" class="inline-block bg-accent-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium" data-i18n="cta.bookNow">Boek nu</a>
                 </div>
             </div>
             
             <div class="border-t border-gray-200 mt-12 pt-8 text-center text-light-gray">
-                <p>&copy; 2024 Aparthotel De Wielingen. Alle rechten voorbehouden.</p>
+                <p data-i18n="footer.bottom">&copy; 2024 Aparthotel De Wielingen. Alle rechten voorbehouden.</p>
             </div>
         </div>
     </footer>
     
     <!-- JavaScript -->
     <script>
+        const translations = {
+            nl: {
+                meta: {
+                    title: 'Hotel - Aparthotel De Wielingen',
+                    description: 'Ontdek Aparthotel De Wielingen: moderne accommodatie aan de Belgische kust met uitstekende service en ideale ligging.'
+                },
+                languageSwitcher: {
+                    aria: 'Taalkeuze',
+                    labels: {
+                        nl: 'Nederlands',
+                        en: 'Engels',
+                        fr: 'Frans',
+                        de: 'Duits'
+                    }
+                },
+                brand: {
+                    name: 'De Wielingen',
+                    logoAlt: 'De Wielingen Logo'
+                },
+                nav: {
+                    home: 'Home',
+                    hotel: 'Hotel',
+                    rooms: 'Kamers',
+                    rates: 'Prijslijst',
+                    practical: 'Praktisch',
+                    location: 'Ligging',
+                    contact: 'Contact'
+                },
+                hero: {
+                    title: 'Welkom bij De Wielingen',
+                    subtitle: 'Ontdek onze moderne accommodatie aan de Belgische kust'
+                },
+                overview: {
+                    heading: 'Over ons hotel',
+                    paragraphs: {
+                        intro: 'Wij heten u van harte welkom bij Aparthotel De Wielingen. Wij bezorgen u een onvergetelijk verblijf aan de Belgische kust. Ons hotel is gelegen op wandelafstand van de zee en biedt hotelservice zonder maaltijden.',
+                        location: 'De Wielingen heeft een unieke locatie, gelegen op een boog scheut van het strand en de uitgestrekte polders. Dit maakt onze ligging ideaal om er te wandelen, te fietsen en te relaxen.',
+                        rooms: 'Wij beschikken over ruime studio\'s (met terras) en appartementen met (luxe) terras. Hiernaast bieden wij ook een eigen parking aan voor het hotel met 2 elektrische laadpalen voor uw wagen.'
+                    },
+                    imageAlt: 'Hotel De Wielingen'
+                },
+                features: {
+                    title: 'Wat maakt ons bijzonder?',
+                    subtitle: 'Ontdek de voordelen van verblijven bij Aparthotel De Wielingen',
+                    items: {
+                        center: {
+                            title: 'Centrum van Westende-bad',
+                            body: 'Gelegen op de hoek van Irislaan en Henri Jasparlaan, op 300m van de tramhalte met verbinding naar alle kuststeden.'
+                        },
+                        spacious: {
+                            title: 'Ruime Studio\'s & Appartementen',
+                            body: 'Studio\'s met terras en appartementen met luxe terras, volledig ingericht met kingsize bed, eigen badkamer en kitchenette.'
+                        },
+                        service: {
+                            title: 'Hotelservice Zonder Maaltijden',
+                            body: 'Opgemaakte bedden, handdoeken en alle comfort van een hotel, maar met de vrijheid van een appartement.'
+                        },
+                        wifi: {
+                            title: 'Gratis WiFi',
+                            body: 'Gratis WiFi in alle kamers en gemeenschappelijke ruimtes voor uw comfort en gemak.'
+                        },
+                        flexible: {
+                            title: 'Flexibele Check-in',
+                            body: 'Flexibele incheck- en uitchecktijden om aan te sluiten bij uw reisplannen.'
+                        },
+                        kitchenette: {
+                            title: 'Kitchenette',
+                            body: 'Kitchenette met Senseo koffiezetapparaat en microgolf op aanvraag beschikbaar.'
+                        }
+                    }
+                },
+                cta: {
+                    bookNow: 'Boek nu',
+                    sectionTitle: 'Ervaar onze gastvrijheid',
+                    sectionBody: 'Boek nu uw verblijf en ontdek waarom gasten steeds terugkeren naar De Wielingen',
+                    reserve: 'Reserveer uw verblijf aan zee'
+                },
+                footer: {
+                    contact: {
+                        heading: 'Contact',
+                        addressLine1: 'Irislaan 1',
+                        addressLine2: '8400 Oostende',
+                        addressLine3: 'België',
+                        phone: 'Tel: +32 59 70 11 11',
+                        email: 'Email: info@dewielingen.be'
+                    },
+                    quickLinks: {
+                        heading: 'Snelle Links'
+                    },
+                    practical: {
+                        heading: 'Praktisch',
+                        checkin: 'Check-in/out',
+                        amenities: 'Voorzieningen'
+                    },
+                    booking: {
+                        heading: 'Boek uw verblijf',
+                        body: 'Reserveer nu en geniet van een ontspannen verblijf aan zee.'
+                    },
+                    bottom: '\u00A9 2024 Aparthotel De Wielingen. Alle rechten voorbehouden.'
+                }
+            },
+            en: {
+                meta: {
+                    title: 'Hotel - Aparthotel De Wielingen',
+                    description: 'Discover Aparthotel De Wielingen: modern accommodation on the Belgian coast with excellent service and an ideal location.'
+                },
+                languageSwitcher: {
+                    aria: 'Language selection',
+                    labels: {
+                        nl: 'Dutch',
+                        en: 'English',
+                        fr: 'French',
+                        de: 'German'
+                    }
+                },
+                brand: {
+                    name: 'De Wielingen',
+                    logoAlt: 'De Wielingen logo'
+                },
+                nav: {
+                    home: 'Home',
+                    hotel: 'Hotel',
+                    rooms: 'Rooms',
+                    rates: 'Rates',
+                    practical: 'Practical info',
+                    location: 'Location',
+                    contact: 'Contact'
+                },
+                hero: {
+                    title: 'Welcome to De Wielingen',
+                    subtitle: 'Experience our modern accommodation on the Belgian coast'
+                },
+                overview: {
+                    heading: 'About our hotel',
+                    paragraphs: {
+                        intro: 'We warmly welcome you to Aparthotel De Wielingen. Enjoy an unforgettable stay on the Belgian coast with hotel service and apartment freedom.',
+                        location: 'De Wielingen offers a unique setting between the beach and the polders, perfect for walking, cycling, and relaxing.',
+                        rooms: 'Choose from spacious studios with terraces or apartments with premium balconies, plus on-site parking with two EV charging stations.'
+                    },
+                    imageAlt: 'Hotel De Wielingen exterior'
+                },
+                features: {
+                    title: 'What makes us special?',
+                    subtitle: 'Discover the advantages of staying at Aparthotel De Wielingen',
+                    items: {
+                        center: {
+                            title: 'Heart of Westende-bad',
+                            body: 'Located on the corner of Irislaan and Henri Jasparlaan, 300 m from the tram connecting all coastal towns.'
+                        },
+                        spacious: {
+                            title: 'Spacious Studios & Apartments',
+                            body: 'Studios with terraces and apartments with premium balconies, fully equipped with king-size beds, private bathrooms, and kitchenettes.'
+                        },
+                        service: {
+                            title: 'Hotel Service Without Meals',
+                            body: 'Beds made, towels provided, and all hotel comforts while keeping the independence of an apartment.'
+                        },
+                        wifi: {
+                            title: 'Free Wi-Fi',
+                            body: 'Complimentary Wi-Fi in every room and shared space for maximum convenience.'
+                        },
+                        flexible: {
+                            title: 'Flexible Check-in',
+                            body: 'Flexible arrival and departure times tailored to your travel schedule.'
+                        },
+                        kitchenette: {
+                            title: 'Kitchenette',
+                            body: 'Kitchenette with Senseo coffee maker and microwave available on request.'
+                        }
+                    }
+                },
+                cta: {
+                    bookNow: 'Book now',
+                    sectionTitle: 'Experience our hospitality',
+                    sectionBody: 'Reserve your stay today and discover why guests love returning to De Wielingen',
+                    reserve: 'Reserve your seaside stay'
+                },
+                footer: {
+                    contact: {
+                        heading: 'Contact',
+                        addressLine1: 'Irislaan 1',
+                        addressLine2: '8400 Ostend',
+                        addressLine3: 'Belgium',
+                        phone: 'Tel: +32 59 70 11 11',
+                        email: 'Email: info@dewielingen.be'
+                    },
+                    quickLinks: {
+                        heading: 'Quick links'
+                    },
+                    practical: {
+                        heading: 'Practical info',
+                        checkin: 'Check-in/out',
+                        amenities: 'Amenities'
+                    },
+                    booking: {
+                        heading: 'Book your stay',
+                        body: 'Reserve now and enjoy a relaxing break by the sea.'
+                    },
+                    bottom: '\u00A9 2024 Aparthotel De Wielingen. All rights reserved.'
+                }
+            },
+            fr: {
+                meta: {
+                    title: 'Hôtel - Aparthotel De Wielingen',
+                    description: 'Découvrez l\'Aparthotel De Wielingen : hébergement moderne sur la côte belge, service impeccable et emplacement idéal.'
+                },
+                languageSwitcher: {
+                    aria: 'Sélecteur de langue',
+                    labels: {
+                        nl: 'Néerlandais',
+                        en: 'Anglais',
+                        fr: 'Français',
+                        de: 'Allemand'
+                    }
+                },
+                brand: {
+                    name: 'De Wielingen',
+                    logoAlt: 'Logo De Wielingen'
+                },
+                nav: {
+                    home: 'Accueil',
+                    hotel: 'Hôtel',
+                    rooms: 'Chambres',
+                    rates: 'Tarifs',
+                    practical: 'Infos pratiques',
+                    location: 'Emplacement',
+                    contact: 'Contact'
+                },
+                hero: {
+                    title: 'Bienvenue à De Wielingen',
+                    subtitle: 'Découvrez notre hébergement moderne sur la côte belge'
+                },
+                overview: {
+                    heading: 'À propos de notre hôtel',
+                    paragraphs: {
+                        intro: 'Nous vous souhaitons la bienvenue à l\'Aparthotel De Wielingen. Profitez d\'un séjour inoubliable sur la côte belge avec la liberté d\'un appartement.',
+                        location: 'De Wielingen bénéficie d\'un emplacement unique entre la plage et les polders, idéal pour se promener, faire du vélo et se détendre.',
+                        rooms: 'Studios spacieux avec terrasse ou appartements avec terrasse de luxe, parking privé sur place avec deux bornes de recharge.'
+                    },
+                    imageAlt: 'Hôtel De Wielingen'
+                },
+                features: {
+                    title: 'Qu\'est-ce qui nous rend uniques ?',
+                    subtitle: 'Découvrez les avantages de séjourner à l\'Aparthotel De Wielingen',
+                    items: {
+                        center: {
+                            title: 'Au cœur de Westende-bad',
+                            body: 'Situé à l\'angle de l\'Irislaan et de la Henri Jasparlaan, à 300 m de l\'arrêt de tram desservant toutes les villes côtières.'
+                        },
+                        spacious: {
+                            title: 'Studios et appartements spacieux',
+                            body: 'Studios avec terrasse et appartements avec terrasse haut de gamme, entièrement équipés.'
+                        },
+                        service: {
+                            title: 'Service hôtelier sans repas',
+                            body: 'Lits faits, serviettes fournies et tout le confort d\'un hôtel, avec la liberté d\'un appartement.'
+                        },
+                        wifi: {
+                            title: 'Wi-Fi gratuit',
+                            body: 'Wi-Fi gratuit dans chaque chambre et espace commun pour votre confort.'
+                        },
+                        flexible: {
+                            title: 'Check-in flexible',
+                            body: 'Heures d\'arrivée et de départ flexibles selon votre programme.'
+                        },
+                        kitchenette: {
+                            title: 'Kitchenette',
+                            body: 'Kitchenette avec machine à café Senseo et micro-ondes disponible sur demande.'
+                        }
+                    }
+                },
+                cta: {
+                    bookNow: 'Réservez maintenant',
+                    sectionTitle: 'Découvrez notre hospitalité',
+                    sectionBody: 'Réservez votre séjour et découvrez pourquoi nos clients reviennent toujours à De Wielingen',
+                    reserve: 'Réservez votre séjour au bord de la mer'
+                },
+                footer: {
+                    contact: {
+                        heading: 'Contact',
+                        addressLine1: 'Irislaan 1',
+                        addressLine2: '8400 Ostende',
+                        addressLine3: 'Belgique',
+                        phone: 'Tél. : +32 59 70 11 11',
+                        email: 'E-mail : info@dewielingen.be'
+                    },
+                    quickLinks: {
+                        heading: 'Liens rapides'
+                    },
+                    practical: {
+                        heading: 'Infos pratiques',
+                        checkin: 'Arrivée/départ',
+                        amenities: 'Équipements'
+                    },
+                    booking: {
+                        heading: 'Réservez votre séjour',
+                        body: 'Réservez maintenant et profitez d\'un séjour détente au bord de la mer.'
+                    },
+                    bottom: '\u00A9 2024 Aparthotel De Wielingen. Tous droits réservés.'
+                }
+            },
+            de: {
+                meta: {
+                    title: 'Hotel - Aparthotel De Wielingen',
+                    description: 'Entdecken Sie das Aparthotel De Wielingen: moderne Unterkunft an der belgischen Küste mit hervorragendem Service und idealer Lage.'
+                },
+                languageSwitcher: {
+                    aria: 'Sprachauswahl',
+                    labels: {
+                        nl: 'Niederländisch',
+                        en: 'Englisch',
+                        fr: 'Französisch',
+                        de: 'Deutsch'
+                    }
+                },
+                brand: {
+                    name: 'De Wielingen',
+                    logoAlt: 'De Wielingen Logo'
+                },
+                nav: {
+                    home: 'Startseite',
+                    hotel: 'Hotel',
+                    rooms: 'Zimmer',
+                    rates: 'Preisliste',
+                    practical: 'Praktische Infos',
+                    location: 'Lage',
+                    contact: 'Kontakt'
+                },
+                hero: {
+                    title: 'Willkommen im De Wielingen',
+                    subtitle: 'Lernen Sie unsere moderne Unterkunft an der belgischen Küste kennen'
+                },
+                overview: {
+                    heading: 'Über unser Hotel',
+                    paragraphs: {
+                        intro: 'Wir heißen Sie im Aparthotel De Wielingen herzlich willkommen. Genießen Sie einen unvergesslichen Aufenthalt an der belgischen Küste.',
+                        location: 'De Wielingen liegt einzigartig zwischen Strand und Poldern – ideal zum Spazieren, Radfahren und Entspannen.',
+                        rooms: 'Geräumige Studios mit Terrasse oder Apartments mit luxuriöser Terrasse sowie hauseigene Parkplätze mit zwei Ladestationen.'
+                    },
+                    imageAlt: 'Hotel De Wielingen Außenansicht'
+                },
+                features: {
+                    title: 'Was macht uns besonders?',
+                    subtitle: 'Entdecken Sie die Vorteile eines Aufenthalts im Aparthotel De Wielingen',
+                    items: {
+                        center: {
+                            title: 'Im Zentrum von Westende-Bad',
+                            body: 'An der Ecke Irislaan und Henri Jasparlaan, 300 m von der Straßenbahnhaltestelle mit Verbindung zu allen Küstenstädten.'
+                        },
+                        spacious: {
+                            title: 'Geräumige Studios & Apartments',
+                            body: 'Studios mit Terrasse und Apartments mit luxuriöser Terrasse, komplett ausgestattet mit Kingsize-Bett, Bad und Kitchenette.'
+                        },
+                        service: {
+                            title: 'Hotelservice ohne Mahlzeiten',
+                            body: 'Bezogene Betten, frische Handtücher und der Komfort eines Hotels mit der Freiheit eines Apartments.'
+                        },
+                        wifi: {
+                            title: 'Kostenfreies WLAN',
+                            body: 'Kostenloses WLAN in allen Zimmern und Gemeinschaftsbereichen für Ihren Komfort.'
+                        },
+                        flexible: {
+                            title: 'Flexibler Check-in',
+                            body: 'Flexible An- und Abreisezeiten, abgestimmt auf Ihren Reiseplan.'
+                        },
+                        kitchenette: {
+                            title: 'Kitchenette',
+                            body: 'Kitchenette mit Senseo-Kaffeemaschine und Mikrowelle auf Anfrage verfügbar.'
+                        }
+                    }
+                },
+                cta: {
+                    bookNow: 'Jetzt buchen',
+                    sectionTitle: 'Erleben Sie unsere Gastfreundschaft',
+                    sectionBody: 'Buchen Sie jetzt und erfahren Sie, warum Gäste immer wieder nach De Wielingen zurückkehren',
+                    reserve: 'Reservieren Sie Ihren Aufenthalt am Meer'
+                },
+                footer: {
+                    contact: {
+                        heading: 'Kontakt',
+                        addressLine1: 'Irislaan 1',
+                        addressLine2: '8400 Ostende',
+                        addressLine3: 'Belgien',
+                        phone: 'Tel.: +32 59 70 11 11',
+                        email: 'E-Mail: info@dewielingen.be'
+                    },
+                    quickLinks: {
+                        heading: 'Schnelle Links'
+                    },
+                    practical: {
+                        heading: 'Praktische Infos',
+                        checkin: 'Check-in/Check-out',
+                        amenities: 'Ausstattung'
+                    },
+                    booking: {
+                        heading: 'Buchen Sie Ihren Aufenthalt',
+                        body: 'Reservieren Sie jetzt und genießen Sie einen entspannten Aufenthalt am Meer.'
+                    },
+                    bottom: '\u00A9 2024 Aparthotel De Wielingen. Alle Rechte vorbehalten.'
+                }
+            }
+        };
+
+        const languageButtons = document.querySelectorAll('.language-switcher .lang-btn');
+        let storedLang = null;
+        try {
+            storedLang = localStorage.getItem('preferredLang');
+        } catch (error) {
+            storedLang = null;
+        }
+        const defaultLang = storedLang && translations[storedLang] ? storedLang : 'nl';
+
+        function getTranslation(lang, key) {
+            return key.split('.').reduce((result, part) => {
+                if (result && Object.prototype.hasOwnProperty.call(result, part)) {
+                    return result[part];
+                }
+                return undefined;
+            }, translations[lang]);
+        }
+
+        function applyTranslations(lang) {
+            if (!translations[lang]) {
+                lang = 'nl';
+            }
+
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const attr = element.getAttribute('data-i18n-attr');
+                const fallback = getTranslation('nl', key);
+                const translation = getTranslation(lang, key) ?? fallback;
+
+                if (translation === undefined) {
+                    return;
+                }
+
+                if (attr) {
+                    if (attr === 'html') {
+                        element.innerHTML = translation;
+                    } else {
+                        element.setAttribute(attr, translation);
+                    }
+                } else {
+                    element.textContent = translation;
+                }
+            });
+
+            document.documentElement.setAttribute('lang', lang);
+
+            if (translations[lang].meta && translations[lang].meta.title) {
+                document.title = translations[lang].meta.title;
+            }
+
+            const metaDescription = document.querySelector('meta[name="description"]');
+            if (metaDescription && translations[lang].meta && translations[lang].meta.description) {
+                metaDescription.setAttribute('content', translations[lang].meta.description);
+            }
+
+            languageButtons.forEach(button => {
+                button.classList.toggle('active', button.dataset.lang === lang);
+            });
+
+            try {
+                localStorage.setItem('preferredLang', lang);
+            } catch (error) {
+                // Ignore storage errors
+            }
+        }
+
+        languageButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                applyTranslations(button.dataset.lang);
+            });
+        });
+
+        applyTranslations(defaultLang);
+
         // Mobile menu toggle
         function toggleMobileMenu() {
             const mobileMenu = document.querySelector('.mobile-menu');
@@ -454,7 +990,25 @@
             });
         }
         
-        // Initialize scroll animations
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (event) {
+                const targetSelector = this.getAttribute('href');
+                if (!targetSelector || targetSelector === '#') {
+                    return;
+                }
+
+                event.preventDefault();
+                const target = document.querySelector(targetSelector);
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
         window.addEventListener('scroll', handleScrollAnimations);
         window.addEventListener('load', handleScrollAnimations);
     </script>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Praktisch - Aparthotel De Wielingen</title>
-    <meta name="description" content="Praktische informatie over uw verblijf: check-in/out tijden, voorzieningen, kitchenette, Senseo, microgolf en gratis WiFi.">
+    <meta name="description" content="Praktische informatie over uw verblijf: check-in/out tijden, voorzieningen, kitchenette, Senseo, microgolf en gratis WiFi." data-i18n="meta.description" data-i18n-attr="content">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -211,7 +211,58 @@
         .mobile-menu.open .mobile-nav-item:nth-child(6) { transition-delay: 0.35s; }
         .mobile-menu.open .mobile-nav-item:nth-child(7) { transition-delay: 0.4s; }
         .mobile-menu.open .mobile-nav-item:nth-child(8) { transition-delay: 0.45s; }
-    
+        
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 9999px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            z-index: 1100;
+        }
+        
+        .language-switcher button {
+            width: 44px;
+            height: 44px;
+            border-radius: 9999px;
+            border: 1px solid #e5e7eb;
+            background: white;
+            color: #2d2d2d;
+            font-weight: 600;
+            transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border 0.2s ease;
+        }
+        
+        .language-switcher button:hover {
+            transform: translateY(-2px);
+            border-color: #a50030;
+        }
+        
+        .language-switcher button.active {
+            background: #a50030;
+            color: #ffffff;
+            border-color: #a50030;
+        }
+        
+        @media (max-width: 768px) {
+            .language-switcher {
+                top: auto;
+                bottom: 1.5rem;
+                right: 50%;
+                transform: translateX(50%);
+                flex-direction: row;
+            }
+            
+            .language-switcher button:hover {
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body class="bg-cream font-sans text-dark-gray">
@@ -222,22 +273,22 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="index.html" class="flex items-center space-x-2">
-                        <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto">
-                        <span class="text-2xl font-bold text-accent-red">De Wielingen</span>
+                        <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto" data-i18n="brand.logoAlt" data-i18n-attr="alt">
+                        <span class="text-2xl font-bold text-accent-red" data-i18n="brand.name">De Wielingen</span>
                     </a>
                 </div>
                 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="index.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Home</a>
-                        <a href="hotel.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Hotel</a>
-                        <a href="kamers.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Kamers</a>
-                        <a href="prijslijst.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Prijslijst</a>
-                        <a href="praktisch.html" class="text-accent-red font-medium">Praktisch</a>
-                        <a href="ligging.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Ligging</a>
-                        <a href="contact.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200">Contact</a>
-                        <a href="#" class="bg-accent-red text-white px-6 py-2 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium">Boek nu</a>
+                        <a href="index.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.home">Home</a>
+                        <a href="hotel.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.hotel">Hotel</a>
+                        <a href="kamers.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rooms">Kamers</a>
+                        <a href="prijslijst.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rates">Prijslijst</a>
+                        <a href="praktisch.html" class="text-accent-red font-medium" data-i18n="nav.practical">Praktisch</a>
+                        <a href="ligging.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.location">Ligging</a>
+                        <a href="contact.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.contact">Contact</a>
+                        <a href="#" class="bg-accent-red text-white px-6 py-2 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium" data-i18n="cta.bookNow">Boek nu</a>
                     </div>
                 </div>
                 
@@ -260,8 +311,8 @@
             <!-- Header -->
             <div class="flex items-center justify-between p-6 border-b border-gray-200">
                 <a href="index.html" class="flex items-center space-x-2">
-                    <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto">
-                    <span class="text-xl font-bold text-accent-red">De Wielingen</span>
+                    <img src="de-wielingen-logo.png" alt="De Wielingen Logo" class="h-8 w-auto" data-i18n="brand.logoAlt" data-i18n-attr="alt">
+                    <span class="text-xl font-bold text-accent-red" data-i18n="brand.name">De Wielingen</span>
                 </a>
                 <button class="hamburger" onclick="toggleMobileMenu()">
                     <span></span>
@@ -273,30 +324,37 @@
             <!-- Navigation -->
             <div class="px-6 py-8">
                 <nav class="space-y-6">
-                    <a href="index.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Home</a>
-                    <a href="hotel.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Hotel</a>
-                    <a href="kamers.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Kamers</a>
-                    <a href="prijslijst.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Prijslijst</a>
-                    <a href="praktisch.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Praktisch</a>
-                    <a href="ligging.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Ligging</a>
-                    <a href="contact.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200">Contact</a>
+                    <a href="index.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.home">Home</a>
+                    <a href="hotel.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.hotel">Hotel</a>
+                    <a href="kamers.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rooms">Kamers</a>
+                    <a href="prijslijst.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rates">Prijslijst</a>
+                    <a href="praktisch.html" class="block text-2xl font-semibold text-accent-red" data-i18n="nav.practical">Praktisch</a>
+                    <a href="ligging.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.location">Ligging</a>
+                    <a href="contact.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.contact">Contact</a>
                 </nav>
             </div>
             
             <!-- CTA Section -->
             <div class="px-6 pb-8">
-                <a href="#" class="block w-full bg-accent-red text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-red-700 transition-colors duration-200 text-center shadow-lg">Boek nu</a>
-                <p class="text-center text-light-gray mt-3 text-sm">Reserveer uw verblijf aan zee</p>
+                <a href="#" class="block w-full bg-accent-red text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-red-700 transition-colors duration-200 text-center shadow-lg" data-i18n="cta.bookNow">Boek nu</a>
+                <p class="text-center text-light-gray mt-3 text-sm" data-i18n="cta.reserve">Reserveer uw verblijf aan zee</p>
             </div>
         </div>
     </nav>
+    
+    <div class="language-switcher" role="group" data-i18n="languageSwitcher.aria" data-i18n-attr="aria-label" aria-label="Taalkeuze">
+        <button type="button" class="lang-btn active" data-lang="nl" title="Nederlands" data-i18n="languageSwitcher.labels.nl" data-i18n-attr="title">NL</button>
+        <button type="button" class="lang-btn" data-lang="en" title="English" data-i18n="languageSwitcher.labels.en" data-i18n-attr="title">EN</button>
+        <button type="button" class="lang-btn" data-lang="fr" title="Français" data-i18n="languageSwitcher.labels.fr" data-i18n-attr="title">FR</button>
+        <button type="button" class="lang-btn" data-lang="de" title="Deutsch" data-i18n="languageSwitcher.labels.de" data-i18n-attr="title">DE</button>
+    </div>
     
     <!-- Hero Section -->
     <section class="hero-bg pt-16 min-h-[60vh] flex items-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center text-white">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in">Praktische Informatie</h1>
-                <p class="text-xl md:text-2xl opacity-90 fade-in">Alles wat u moet weten voor een perfect verblijf</p>
+                <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in" data-i18n="hero.title">Praktische Informatie</h1>
+                <p class="text-xl md:text-2xl opacity-90 fade-in" data-i18n="hero.subtitle">Alles wat u moet weten voor een perfect verblijf</p>
             </div>
         </div>
     </section>
@@ -305,8 +363,8 @@
     <section class="py-20 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6 text-dark-gray">Check-in & Check-out</h2>
-                <p class="text-xl text-light-gray max-w-3xl mx-auto">Flexibele tijden die aansluiten bij uw reisplannen</p>
+                <h2 class="text-4xl font-bold mb-6 text-dark-gray" data-i18n="checkin.title">Check-in & Check-out</h2>
+                <p class="text-xl text-light-gray max-w-3xl mx-auto" data-i18n="checkin.subtitle">Flexibele tijden die aansluiten bij uw reisplannen</p>
             </div>
             
             <div class="grid md:grid-cols-2 gap-12">
@@ -318,9 +376,9 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-dark-gray mb-4">Check-in</h3>
+                        <h3 class="text-2xl font-bold text-dark-gray mb-4" data-i18n="checkin.checkin.title">Check-in</h3>
                         <div class="text-3xl font-bold text-accent-red mb-2">14:00 - 17:00</div>
-                        <p class="text-light-gray">Check-in: vanaf 14u00 tot 17u00</p>
+                        <p class="text-light-gray" data-i18n="checkin.checkin.time">Check-in: vanaf 14u00 tot 17u00</p>
                     </div>
                     
                     <div class="space-y-4">
@@ -328,19 +386,19 @@
                             <svg class="w-5 h-5 text-accent-red mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-dark-gray">Flexibele inchecktijden mogelijk</span>
+                            <span class="text-dark-gray" data-i18n="checkin.checkin.features.flexible">Flexibele inchecktijden mogelijk</span>
                         </div>
                         <div class="flex items-center">
                             <svg class="w-5 h-5 text-accent-red mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-dark-gray">Receptie beschikbaar tot 22:00</span>
+                            <span class="text-dark-gray" data-i18n="checkin.checkin.features.reception">Receptie beschikbaar tot 22:00</span>
                         </div>
                         <div class="flex items-center">
                             <svg class="w-5 h-5 text-accent-red mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-dark-gray">Late aankomst op afspraak</span>
+                            <span class="text-dark-gray" data-i18n="checkin.checkin.features.lateArrival">Late aankomst op afspraak</span>
                         </div>
                     </div>
                 </div>
@@ -353,9 +411,9 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-bold text-dark-gray mb-4">Check-out</h3>
+                        <h3 class="text-2xl font-bold text-dark-gray mb-4" data-i18n="checkin.checkout.title">Check-out</h3>
                         <div class="text-3xl font-bold text-accent-red mb-2">10:00 - 11:00</div>
-                        <p class="text-light-gray">Check-uit: tussen 10u00 en 11u00</p>
+                        <p class="text-light-gray" data-i18n="checkin.checkout.time">Check-uit: tussen 10u00 en 11u00</p>
                     </div>
                     
                     <div class="space-y-4">
@@ -363,19 +421,19 @@
                             <svg class="w-5 h-5 text-accent-red mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-dark-gray">Late check-out mogelijk tegen supplement</span>
+                            <span class="text-dark-gray" data-i18n="checkin.checkout.features.lateCheckout">Late check-out mogelijk tegen supplement</span>
                         </div>
                         <div class="flex items-center">
                             <svg class="w-5 h-5 text-accent-red mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-dark-gray">Bagage opslag beschikbaar</span>
+                            <span class="text-dark-gray" data-i18n="checkin.checkout.features.luggage">Bagage opslag beschikbaar</span>
                         </div>
                         <div class="flex items-center">
                             <svg class="w-5 h-5 text-accent-red mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
                             </svg>
-                            <span class="text-dark-gray">Snelle uitcheckprocedure</span>
+                            <span class="text-dark-gray" data-i18n="checkin.checkout.features.quick">Snelle uitcheckprocedure</span>
                         </div>
                     </div>
                 </div>
@@ -387,8 +445,8 @@
     <section class="bg-white py-20 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6 text-dark-gray">Voorzieningen</h2>
-                <p class="text-xl text-light-gray max-w-3xl mx-auto">Alle comfort en gemak voor uw verblijf</p>
+                <h2 class="text-4xl font-bold mb-6 text-dark-gray" data-i18n="amenities.title">Voorzieningen</h2>
+                <p class="text-xl text-light-gray max-w-3xl mx-auto" data-i18n="amenities.subtitle">Alle comfort en gemak voor uw verblijf</p>
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -399,8 +457,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Gratis WiFi</h3>
-                    <p class="text-light-gray">Snelle en betrouwbare internetverbinding in alle kamers en gemeenschappelijke ruimtes.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="amenities.items.wifi.title">Gratis WiFi</h3>
+                    <p class="text-light-gray" data-i18n="amenities.items.wifi.body">Snelle en betrouwbare internetverbinding in alle kamers en gemeenschappelijke ruimtes.</p>
                 </div>
                 
                 <!-- Kitchenette -->
@@ -410,8 +468,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Kitchenette</h3>
-                    <p class="text-light-gray">Kitchenette met twee kookplaten, frigo en keukenbenodigdheden zoals potten, pannen, bestek, glazen, borden.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="amenities.items.kitchenette.title">Kitchenette</h3>
+                    <p class="text-light-gray" data-i18n="amenities.items.kitchenette.body">Kitchenette met twee kookplaten, frigo en keukenbenodigdheden zoals potten, pannen, bestek, glazen, borden.</p>
                 </div>
                 
                 <!-- Senseo -->
@@ -421,8 +479,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">NIEUWE SENSEO Machines</h3>
-                    <p class="text-light-gray">NIEUWE SENSEO machines op elke kamer! Voor een perfecte kop koffie tijdens uw verblijf.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="amenities.items.senseo.title">NIEUWE SENSEO Machines</h3>
+                    <p class="text-light-gray" data-i18n="amenities.items.senseo.body">NIEUWE SENSEO machines op elke kamer! Voor een perfecte kop koffie tijdens uw verblijf.</p>
                 </div>
                 
                 <!-- Microgolf -->
@@ -432,8 +490,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Microgolfoven</h3>
-                    <p class="text-light-gray">Microgolfoven plaatsen is mogelijk op aanvraag (gratis service, beperkte voorraad).</p>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="amenities.items.microwave.title">Microgolfoven</h3>
+                    <p class="text-light-gray" data-i18n="amenities.items.microwave.body">Microgolfoven plaatsen is mogelijk op aanvraag (gratis service, beperkte voorraad).</p>
                 </div>
                 
                 <!-- Handdoeken -->
@@ -443,8 +501,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Handdoeken & Beddengoed</h3>
-                    <p class="text-light-gray">Handdoeken en beddengoed zijn inbegrepen in alle kamers voor uw comfort.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="amenities.items.towels.title">Handdoeken & Beddengoed</h3>
+                    <p class="text-light-gray" data-i18n="amenities.items.towels.body">Handdoeken en beddengoed zijn inbegrepen in alle kamers voor uw comfort.</p>
                 </div>
                 
                 <!-- TV -->
@@ -454,8 +512,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Flat-screen TV</h3>
-                    <p class="text-light-gray">Moderne flat-screen televisies voor entertainment tijdens uw verblijf.</p>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="amenities.items.tv.title">Flat-screen TV</h3>
+                    <p class="text-light-gray" data-i18n="amenities.items.tv.body">Moderne flat-screen televisies voor entertainment tijdens uw verblijf.</p>
                 </div>
             </div>
         </div>
@@ -465,8 +523,8 @@
     <section class="py-20 px-4">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-6 text-dark-gray">Extra Services</h2>
-                <p class="text-xl text-light-gray max-w-3xl mx-auto">Aanvullende services voor uw comfort</p>
+                <h2 class="text-4xl font-bold mb-6 text-dark-gray" data-i18n="services.title">Extra Services</h2>
+                <p class="text-xl text-light-gray max-w-3xl mx-auto" data-i18n="services.subtitle">Aanvullende services voor uw comfort</p>
             </div>
             
             <div class="grid md:grid-cols-2 gap-8">
@@ -479,11 +537,11 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold text-dark-gray">Eigen Parking</h3>
-                            <p class="text-light-gray">€10 per nacht</p>
+                            <h3 class="text-xl font-semibold text-dark-gray" data-i18n="services.items.parking.title">Eigen Parking</h3>
+                            <p class="text-light-gray" data-i18n="services.items.parking.price">€10 per nacht</p>
                         </div>
                     </div>
-                    <p class="text-light-gray">Het hotel beschikt over een eigen parking aan het hotel. Hier zijn ook 2 elektrische laadpalen beschikbaar voor uw wagen.</p>
+                    <p class="text-light-gray" data-i18n="services.items.parking.body">Het hotel beschikt over een eigen parking aan het hotel. Hier zijn ook 2 elektrische laadpalen beschikbaar voor uw wagen.</p>
                 </div>
                 
                 <!-- Cleaning -->
@@ -495,11 +553,11 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold text-dark-gray">Eindschoonmaak</h3>
-                            <p class="text-light-gray">€30 per verblijf</p>
+                            <h3 class="text-xl font-semibold text-dark-gray" data-i18n="services.items.cleaning.title">Eindschoonmaak</h3>
+                            <p class="text-light-gray" data-i18n="services.items.cleaning.price">€30 per verblijf</p>
                         </div>
                     </div>
-                    <p class="text-light-gray">Professionele eindschoonmaak service beschikbaar. U kunt ook zelf schoonmaken bij vertrek.</p>
+                    <p class="text-light-gray" data-i18n="services.items.cleaning.body">Professionele eindschoonmaak service beschikbaar. U kunt ook zelf schoonmaken bij vertrek.</p>
                 </div>
                 
                 <!-- Late Check-out -->
@@ -511,11 +569,11 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold text-dark-gray">Late Check-out</h3>
-                            <p class="text-light-gray">€20 per verblijf</p>
+                            <h3 class="text-xl font-semibold text-dark-gray" data-i18n="services.items.lateCheckout.title">Late Check-out</h3>
+                            <p class="text-light-gray" data-i18n="services.items.lateCheckout.price">€20 per verblijf</p>
                         </div>
                     </div>
-                    <p class="text-light-gray">Late check-out mogelijk tot 15:00 uur tegen supplement. Afhankelijk van beschikbaarheid.</p>
+                    <p class="text-light-gray" data-i18n="services.items.lateCheckout.body">Late check-out mogelijk tot 15:00 uur tegen supplement. Afhankelijk van beschikbaarheid.</p>
                 </div>
                 
                 <!-- Extra Bed -->
@@ -527,11 +585,11 @@
                             </svg>
                         </div>
                         <div>
-                            <h3 class="text-xl font-semibold text-dark-gray">Extra Bed</h3>
-                            <p class="text-light-gray">€25 per nacht</p>
+                            <h3 class="text-xl font-semibold text-dark-gray" data-i18n="services.items.extraBed.title">Extra Bed</h3>
+                            <p class="text-light-gray" data-i18n="services.items.extraBed.price">€25 per nacht</p>
                         </div>
                     </div>
-                    <p class="text-light-gray">Extra bed beschikbaar voor extra personen. Alleen beschikbaar in appartementen.</p>
+                    <p class="text-light-gray" data-i18n="services.items.extraBed.body">Extra bed beschikbaar voor extra personen. Alleen beschikbaar in appartementen.</p>
                 </div>
             </div>
         </div>
@@ -540,11 +598,11 @@
     <!-- CTA Section -->
     <section class="bg-dark-gray text-white py-20">
         <div class="max-w-4xl mx-auto text-center px-4">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6">Vragen over uw verblijf?</h2>
-            <p class="text-xl mb-8 opacity-90">Neem contact met ons op voor meer informatie of boek direct uw verblijf</p>
+            <h2 class="text-4xl md:text-5xl font-bold mb-6" data-i18n="cta.sectionTitle">Vragen over uw verblijf?</h2>
+            <p class="text-xl mb-8 opacity-90" data-i18n="cta.sectionBody">Neem contact met ons op voor meer informatie of boek direct uw verblijf</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="contact.html" class="inline-block bg-white text-dark-gray px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">Contact</a>
-                <a href="#" class="inline-block bg-accent-red text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-700 transition-all duration-300 transform hover:scale-105">Boek nu</a>
+                <a href="contact.html" class="inline-block bg-white text-dark-gray px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105" data-i18n="cta.contact">Contact</a>
+                <a href="#" class="inline-block bg-accent-red text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-red-700 transition-all duration-300 transform hover:scale-105" data-i18n="cta.bookNow">Boek nu</a>
             </div>
         </div>
     </section>
@@ -555,54 +613,692 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <!-- Contact Info -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Contact</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="footer.contact.heading">Contact</h3>
                     <div class="space-y-2 text-light-gray">
-                        <p>Irislaan 1</p>
-                        <p>8400 Oostende</p>
-                        <p>België</p>
-                        <p class="mt-4">Tel: +32 59 70 11 11</p>
-                        <p>Email: info@dewielingen.be</p>
+                        <p data-i18n="footer.contact.addressLine1">Irislaan 1</p>
+                        <p data-i18n="footer.contact.addressLine2">8400 Oostende</p>
+                        <p data-i18n="footer.contact.addressLine3">België</p>
+                        <p class="mt-4" data-i18n="footer.contact.phone">Tel: +32 59 70 11 11</p>
+                        <p data-i18n="footer.contact.email">Email: info@dewielingen.be</p>
                     </div>
                 </div>
                 
                 <!-- Quick Links -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Snelle Links</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="footer.quickLinks.heading">Snelle Links</h3>
                     <div class="space-y-2">
-                        <a href="hotel.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Hotel</a>
-                        <a href="kamers.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Kamers</a>
-                        <a href="prijslijst.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Prijslijst</a>
-                        <a href="contact.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Contact</a>
+                        <a href="hotel.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.hotel">Hotel</a>
+                        <a href="kamers.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rooms">Kamers</a>
+                        <a href="prijslijst.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rates">Prijslijst</a>
+                        <a href="contact.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.contact">Contact</a>
                     </div>
                 </div>
                 
                 <!-- Practical Info -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Praktisch</h3>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="footer.practical.heading">Praktisch</h3>
                     <div class="space-y-2">
-                        <a href="praktisch.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Check-in/out</a>
-                        <a href="ligging.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Ligging</a>
-                        <a href="#" class="block text-light-gray hover:text-accent-red transition-colors duration-200">Voorzieningen</a>
+                        <a href="praktisch.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="footer.practical.checkin">Check-in/out</a>
+                        <a href="ligging.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.location">Ligging</a>
+                        <a href="#" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="footer.practical.amenities">Voorzieningen</a>
                     </div>
                 </div>
                 
                 <!-- Booking CTA -->
                 <div>
-                    <h3 class="text-xl font-semibold mb-4 text-dark-gray">Boek uw verblijf</h3>
-                    <p class="text-light-gray mb-4">Reserveer nu en geniet van een ontspannen verblijf aan zee.</p>
-                    <a href="#" class="inline-block bg-accent-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium">Boek nu</a>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="footer.booking.heading">Boek uw verblijf</h3>
+                    <p class="text-light-gray mb-4" data-i18n="footer.booking.body">Reserveer nu en geniet van een ontspannen verblijf aan zee.</p>
+                    <a href="#" class="inline-block bg-accent-red text-white px-6 py-3 rounded-full hover:bg-red-700 transition-colors duration-200 font-medium" data-i18n="cta.bookNow">Boek nu</a>
                 </div>
             </div>
             
             <div class="border-t border-gray-200 mt-12 pt-8 text-center text-light-gray">
-                <p>&copy; 2024 Aparthotel De Wielingen. Alle rechten voorbehouden.</p>
+                <p data-i18n="footer.bottom">&copy; 2024 Aparthotel De Wielingen. Alle rechten voorbehouden.</p>
             </div>
         </div>
     </footer>
     
     <!-- JavaScript -->
     <script>
-        // Mobile menu toggle
+        const translations = {
+            nl: {
+                meta: {
+                    title: 'Praktisch - Aparthotel De Wielingen',
+                    description: 'Praktische informatie over uw verblijf: check-in/out tijden, voorzieningen, kitchenette, Senseo, microgolf en gratis WiFi.'
+                },
+                languageSwitcher: {
+                    aria: 'Taalkeuze',
+                    labels: {
+                        nl: 'Nederlands',
+                        en: 'Engels',
+                        fr: 'Frans',
+                        de: 'Duits'
+                    }
+                },
+                brand: {
+                    name: 'De Wielingen',
+                    logoAlt: 'De Wielingen Logo'
+                },
+                nav: {
+                    home: 'Home',
+                    hotel: 'Hotel',
+                    rooms: 'Kamers',
+                    rates: 'Prijslijst',
+                    practical: 'Praktisch',
+                    location: 'Ligging',
+                    contact: 'Contact'
+                },
+                hero: {
+                    title: 'Praktische Informatie',
+                    subtitle: 'Alles wat u moet weten voor een perfect verblijf'
+                },
+                checkin: {
+                    title: 'Check-in & Check-out',
+                    subtitle: 'Flexibele tijden die aansluiten bij uw reisplannen',
+                    checkin: {
+                        title: 'Check-in',
+                        time: 'Check-in: vanaf 14u00 tot 17u00',
+                        features: {
+                            flexible: 'Flexibele inchecktijden mogelijk',
+                            reception: 'Receptie beschikbaar tot 22:00',
+                            lateArrival: 'Late aankomst op afspraak'
+                        }
+                    },
+                    checkout: {
+                        title: 'Check-out',
+                        time: 'Check-uit: tussen 10u00 en 11u00',
+                        features: {
+                            lateCheckout: 'Late check-out mogelijk tegen supplement',
+                            luggage: 'Bagage opslag beschikbaar',
+                            quick: 'Snelle uitcheckprocedure'
+                        }
+                    }
+                },
+                amenities: {
+                    title: 'Voorzieningen',
+                    subtitle: 'Alle comfort en gemak voor uw verblijf',
+                    items: {
+                        wifi: {
+                            title: 'Gratis WiFi',
+                            body: 'Snelle en betrouwbare internetverbinding in alle kamers en gemeenschappelijke ruimtes.'
+                        },
+                        kitchenette: {
+                            title: 'Kitchenette',
+                            body: 'Kitchenette met twee kookplaten, frigo en keukenbenodigdheden zoals potten, pannen, bestek, glazen, borden.'
+                        },
+                        senseo: {
+                            title: 'NIEUWE SENSEO Machines',
+                            body: 'NIEUWE SENSEO machines op elke kamer! Voor een perfecte kop koffie tijdens uw verblijf.'
+                        },
+                        microwave: {
+                            title: 'Microgolfoven',
+                            body: 'Microgolfoven plaatsen is mogelijk op aanvraag (gratis service, beperkte voorraad).'
+                        },
+                        towels: {
+                            title: 'Handdoeken & Beddengoed',
+                            body: 'Handdoeken en beddengoed zijn inbegrepen in alle kamers voor uw comfort.'
+                        },
+                        tv: {
+                            title: 'Flat-screen TV',
+                            body: 'Moderne flat-screen televisies voor entertainment tijdens uw verblijf.'
+                        }
+                    }
+                },
+                services: {
+                    title: 'Extra Services',
+                    subtitle: 'Aanvullende services voor uw comfort',
+                    items: {
+                        parking: {
+                            title: 'Eigen Parking',
+                            price: '€10 per nacht',
+                            body: 'Het hotel beschikt over een eigen parking aan het hotel. Hier zijn ook 2 elektrische laadpalen beschikbaar voor uw wagen.'
+                        },
+                        cleaning: {
+                            title: 'Eindschoonmaak',
+                            price: '€30 per verblijf',
+                            body: 'Professionele eindschoonmaak service beschikbaar. U kunt ook zelf schoonmaken bij vertrek.'
+                        },
+                        lateCheckout: {
+                            title: 'Late Check-out',
+                            price: '€20 per verblijf',
+                            body: 'Late check-out mogelijk tot 15:00 uur tegen supplement. Afhankelijk van beschikbaarheid.'
+                        },
+                        extraBed: {
+                            title: 'Extra Bed',
+                            price: '€25 per nacht',
+                            body: 'Extra bed beschikbaar voor extra personen. Alleen beschikbaar in appartementen.'
+                        }
+                    }
+                },
+                cta: {
+                    bookNow: 'Boek nu',
+                    reserve: 'Reserveer uw verblijf aan zee',
+                    contact: 'Contact',
+                    sectionTitle: 'Vragen over uw verblijf?',
+                    sectionBody: 'Neem contact met ons op voor meer informatie of boek direct uw verblijf'
+                },
+                footer: {
+                    contact: {
+                        heading: 'Contact',
+                        addressLine1: 'Irislaan 1',
+                        addressLine2: '8400 Oostende',
+                        addressLine3: 'België',
+                        phone: 'Tel: +32 59 70 11 11',
+                        email: 'Email: info@dewielingen.be'
+                    },
+                    quickLinks: {
+                        heading: 'Snelle Links'
+                    },
+                    practical: {
+                        heading: 'Praktisch',
+                        checkin: 'Check-in/out',
+                        amenities: 'Voorzieningen'
+                    },
+                    booking: {
+                        heading: 'Boek uw verblijf',
+                        body: 'Reserveer nu en geniet van een ontspannen verblijf aan zee.'
+                    },
+                    bottom: '© 2024 Aparthotel De Wielingen. Alle rechten voorbehouden.'
+                }
+            },
+            en: {
+                meta: {
+                    title: 'Practical Info - Aparthotel De Wielingen',
+                    description: 'Practical information about your stay: check-in/out times, amenities, kitchenette, Senseo, microwave and free WiFi.'
+                },
+                languageSwitcher: {
+                    aria: 'Language selection',
+                    labels: {
+                        nl: 'Dutch',
+                        en: 'English',
+                        fr: 'French',
+                        de: 'German'
+                    }
+                },
+                brand: {
+                    name: 'De Wielingen',
+                    logoAlt: 'De Wielingen Logo'
+                },
+                nav: {
+                    home: 'Home',
+                    hotel: 'Hotel',
+                    rooms: 'Rooms',
+                    rates: 'Rates',
+                    practical: 'Practical info',
+                    location: 'Location',
+                    contact: 'Contact'
+                },
+                hero: {
+                    title: 'Practical Information',
+                    subtitle: 'Everything you need to know for a perfect stay'
+                },
+                checkin: {
+                    title: 'Check-in & Check-out',
+                    subtitle: 'Flexible times to suit your travel plans',
+                    checkin: {
+                        title: 'Check-in',
+                        time: 'Check-in: from 2:00 PM to 5:00 PM',
+                        features: {
+                            flexible: 'Flexible check-in times possible',
+                            reception: 'Reception available until 10:00 PM',
+                            lateArrival: 'Late arrival by appointment'
+                        }
+                    },
+                    checkout: {
+                        title: 'Check-out',
+                        time: 'Check-out: between 10:00 AM and 11:00 AM',
+                        features: {
+                            lateCheckout: 'Late check-out possible for a supplement',
+                            luggage: 'Luggage storage available',
+                            quick: 'Quick check-out procedure'
+                        }
+                    }
+                },
+                amenities: {
+                    title: 'Amenities',
+                    subtitle: 'All comfort and convenience for your stay',
+                    items: {
+                        wifi: {
+                            title: 'Free WiFi',
+                            body: 'Fast and reliable internet connection in all rooms and common areas.'
+                        },
+                        kitchenette: {
+                            title: 'Kitchenette',
+                            body: 'Kitchenette with two hotplates, fridge and kitchenware such as pots, pans, cutlery, glasses, plates.'
+                        },
+                        senseo: {
+                            title: 'NEW SENSEO Machines',
+                            body: 'NEW SENSEO machines in every room! For a perfect cup of coffee during your stay.'
+                        },
+                        microwave: {
+                            title: 'Microwave',
+                            body: 'Microwave placement is possible on request (free service, limited stock).'
+                        },
+                        towels: {
+                            title: 'Towels & Bed Linen',
+                            body: 'Towels and bed linen are included in all rooms for your comfort.'
+                        },
+                        tv: {
+                            title: 'Flat-screen TV',
+                            body: 'Modern flat-screen televisions for entertainment during your stay.'
+                        }
+                    }
+                },
+                services: {
+                    title: 'Extra Services',
+                    subtitle: 'Additional services for your comfort',
+                    items: {
+                        parking: {
+                            title: 'Private Parking',
+                            price: '€10 per night',
+                            body: 'The hotel has its own parking at the hotel. There are also 2 electric charging stations available for your car.'
+                        },
+                        cleaning: {
+                            title: 'Final Cleaning',
+                            price: '€30 per stay',
+                            body: 'Professional final cleaning service available. You can also clean yourself upon departure.'
+                        },
+                        lateCheckout: {
+                            title: 'Late Check-out',
+                            price: '€20 per stay',
+                            body: 'Late check-out possible until 3:00 PM for a supplement. Subject to availability.'
+                        },
+                        extraBed: {
+                            title: 'Extra Bed',
+                            price: '€25 per night',
+                            body: 'Extra bed available for additional persons. Only available in apartments.'
+                        }
+                    }
+                },
+                cta: {
+                    bookNow: 'Book now',
+                    reserve: 'Reserve your stay by the sea',
+                    contact: 'Contact',
+                    sectionTitle: 'Questions about your stay?',
+                    sectionBody: 'Contact us for more information or book your stay directly'
+                },
+                footer: {
+                    contact: {
+                        heading: 'Contact',
+                        addressLine1: 'Irislaan 1',
+                        addressLine2: '8400 Ostend',
+                        addressLine3: 'Belgium',
+                        phone: 'Tel: +32 59 70 11 11',
+                        email: 'Email: info@dewielingen.be'
+                    },
+                    quickLinks: {
+                        heading: 'Quick Links'
+                    },
+                    practical: {
+                        heading: 'Practical info',
+                        checkin: 'Check-in/out',
+                        amenities: 'Amenities'
+                    },
+                    booking: {
+                        heading: 'Book your stay',
+                        body: 'Reserve now and enjoy a relaxing stay by the sea.'
+                    },
+                    bottom: '© 2024 Aparthotel De Wielingen. All rights reserved.'
+                }
+            },
+            fr: {
+                meta: {
+                    title: 'Infos Pratiques - Aparthotel De Wielingen',
+                    description: 'Informations pratiques sur votre séjour: heures d\'arrivée/départ, équipements, kitchenette, Senseo, micro-ondes et WiFi gratuit.'
+                },
+                languageSwitcher: {
+                    aria: 'Sélection de langue',
+                    labels: {
+                        nl: 'Néerlandais',
+                        en: 'Anglais',
+                        fr: 'Français',
+                        de: 'Allemand'
+                    }
+                },
+                brand: {
+                    name: 'De Wielingen',
+                    logoAlt: 'Logo De Wielingen'
+                },
+                nav: {
+                    home: 'Accueil',
+                    hotel: 'Hôtel',
+                    rooms: 'Chambres',
+                    rates: 'Tarifs',
+                    practical: 'Infos pratiques',
+                    location: 'Emplacement',
+                    contact: 'Contact'
+                },
+                hero: {
+                    title: 'Informations Pratiques',
+                    subtitle: 'Tout ce que vous devez savoir pour un séjour parfait'
+                },
+                checkin: {
+                    title: 'Arrivée & Départ',
+                    subtitle: 'Heures flexibles selon votre programme de voyage',
+                    checkin: {
+                        title: 'Arrivée',
+                        time: 'Arrivée: à partir de 14h00 jusqu\'à 17h00',
+                        features: {
+                            flexible: 'Heures d\'arrivée flexibles possibles',
+                            reception: 'Réception disponible jusqu\'à 22h00',
+                            lateArrival: 'Arrivée tardive sur rendez-vous'
+                        }
+                    },
+                    checkout: {
+                        title: 'Départ',
+                        time: 'Départ: entre 10h00 et 11h00',
+                        features: {
+                            lateCheckout: 'Départ tardif possible moyennant un supplément',
+                            luggage: 'Consigne à bagages disponible',
+                            quick: 'Procédure de départ rapide'
+                        }
+                    }
+                },
+                amenities: {
+                    title: 'Équipements',
+                    subtitle: 'Tout le confort et la commodité pour votre séjour',
+                    items: {
+                        wifi: {
+                            title: 'WiFi gratuit',
+                            body: 'Connexion Internet rapide et fiable dans toutes les chambres et espaces communs.'
+                        },
+                        kitchenette: {
+                            title: 'Kitchenette',
+                            body: 'Kitchenette avec deux plaques de cuisson, frigo et ustensiles de cuisine tels que casseroles, poêles, couverts, verres, assiettes.'
+                        },
+                        senseo: {
+                            title: 'NOUVELLES Machines SENSEO',
+                            body: 'NOUVELLES machines SENSEO dans chaque chambre ! Pour une tasse de café parfaite pendant votre séjour.'
+                        },
+                        microwave: {
+                            title: 'Micro-ondes',
+                            body: 'Placement de micro-ondes possible sur demande (service gratuit, stock limité).'
+                        },
+                        towels: {
+                            title: 'Serviettes & Literie',
+                            body: 'Serviettes et literie incluses dans toutes les chambres pour votre confort.'
+                        },
+                        tv: {
+                            title: 'TV écran plat',
+                            body: 'Téléviseurs à écran plat modernes pour le divertissement pendant votre séjour.'
+                        }
+                    }
+                },
+                services: {
+                    title: 'Services Supplémentaires',
+                    subtitle: 'Services supplémentaires pour votre confort',
+                    items: {
+                        parking: {
+                            title: 'Parking Privé',
+                            price: '€10 par nuit',
+                            body: 'L\'hôtel dispose d\'un parking privé à l\'hôtel. Il y a également 2 bornes de recharge électriques disponibles pour votre voiture.'
+                        },
+                        cleaning: {
+                            title: 'Nettoyage Final',
+                            price: '€30 par séjour',
+                            body: 'Service de nettoyage final professionnel disponible. Vous pouvez également nettoyer vous-même au départ.'
+                        },
+                        lateCheckout: {
+                            title: 'Départ Tardif',
+                            price: '€20 par séjour',
+                            body: 'Départ tardif possible jusqu\'à 15h00 moyennant un supplément. Sous réserve de disponibilité.'
+                        },
+                        extraBed: {
+                            title: 'Lit Supplémentaire',
+                            price: '€25 par nuit',
+                            body: 'Lit supplémentaire disponible pour personnes supplémentaires. Disponible uniquement dans les appartements.'
+                        }
+                    }
+                },
+                cta: {
+                    bookNow: 'Réserver maintenant',
+                    reserve: 'Réservez votre séjour au bord de la mer',
+                    contact: 'Contact',
+                    sectionTitle: 'Des questions sur votre séjour ?',
+                    sectionBody: 'Contactez-nous pour plus d\'informations ou réservez directement votre séjour'
+                },
+                footer: {
+                    contact: {
+                        heading: 'Contact',
+                        addressLine1: 'Irislaan 1',
+                        addressLine2: '8400 Ostende',
+                        addressLine3: 'Belgique',
+                        phone: 'Tél. : +32 59 70 11 11',
+                        email: 'E-mail : info@dewielingen.be'
+                    },
+                    quickLinks: {
+                        heading: 'Liens rapides'
+                    },
+                    practical: {
+                        heading: 'Infos pratiques',
+                        checkin: 'Arrivée/départ',
+                        amenities: 'Équipements'
+                    },
+                    booking: {
+                        heading: 'Réservez votre séjour',
+                        body: 'Réservez maintenant et profitez d\'un séjour détente au bord de la mer.'
+                    },
+                    bottom: '© 2024 Aparthotel De Wielingen. Tous droits réservés.'
+                }
+            },
+            de: {
+                meta: {
+                    title: 'Praktische Infos - Aparthotel De Wielingen',
+                    description: 'Praktische Informationen zu Ihrem Aufenthalt: Check-in/out Zeiten, Ausstattung, Kitchenette, Senseo, Mikrowelle und kostenloses WiFi.'
+                },
+                languageSwitcher: {
+                    aria: 'Sprachauswahl',
+                    labels: {
+                        nl: 'Niederländisch',
+                        en: 'Englisch',
+                        fr: 'Französisch',
+                        de: 'Deutsch'
+                    }
+                },
+                brand: {
+                    name: 'De Wielingen',
+                    logoAlt: 'De Wielingen Logo'
+                },
+                nav: {
+                    home: 'Startseite',
+                    hotel: 'Hotel',
+                    rooms: 'Zimmer',
+                    rates: 'Preisliste',
+                    practical: 'Praktische Infos',
+                    location: 'Lage',
+                    contact: 'Kontakt'
+                },
+                hero: {
+                    title: 'Praktische Informationen',
+                    subtitle: 'Alles, was Sie für einen perfekten Aufenthalt wissen müssen'
+                },
+                checkin: {
+                    title: 'Check-in & Check-out',
+                    subtitle: 'Flexible Zeiten, abgestimmt auf Ihren Reiseplan',
+                    checkin: {
+                        title: 'Check-in',
+                        time: 'Check-in: ab 14:00 Uhr bis 17:00 Uhr',
+                        features: {
+                            flexible: 'Flexible Check-in-Zeiten möglich',
+                            reception: 'Rezeption bis 22:00 Uhr verfügbar',
+                            lateArrival: 'Späte Ankunft nach Vereinbarung'
+                        }
+                    },
+                    checkout: {
+                        title: 'Check-out',
+                        time: 'Check-out: zwischen 10:00 und 11:00 Uhr',
+                        features: {
+                            lateCheckout: 'Später Check-out gegen Aufpreis möglich',
+                            luggage: 'Gepäckaufbewahrung verfügbar',
+                            quick: 'Schnelle Check-out-Prozedur'
+                        }
+                    }
+                },
+                amenities: {
+                    title: 'Ausstattung',
+                    subtitle: 'Aller Komfort und Bequemlichkeit für Ihren Aufenthalt',
+                    items: {
+                        wifi: {
+                            title: 'Kostenloses WiFi',
+                            body: 'Schnelle und zuverlässige Internetverbindung in allen Zimmern und Gemeinschaftsbereichen.'
+                        },
+                        kitchenette: {
+                            title: 'Kitchenette',
+                            body: 'Kitchenette mit zwei Kochplatten, Kühlschrank und Küchenutensilien wie Töpfe, Pfannen, Besteck, Gläser, Teller.'
+                        },
+                        senseo: {
+                            title: 'NEUE SENSEO-Maschinen',
+                            body: 'NEUE SENSEO-Maschinen in jedem Zimmer! Für eine perfekte Tasse Kaffee während Ihres Aufenthalts.'
+                        },
+                        microwave: {
+                            title: 'Mikrowelle',
+                            body: 'Mikrowellenplatzierung auf Anfrage möglich (kostenloser Service, begrenzter Vorrat).'
+                        },
+                        towels: {
+                            title: 'Handtücher & Bettwäsche',
+                            body: 'Handtücher und Bettwäsche sind in allen Zimmern für Ihren Komfort enthalten.'
+                        },
+                        tv: {
+                            title: 'Flachbild-TV',
+                            body: 'Moderne Flachbildfernseher für Unterhaltung während Ihres Aufenthalts.'
+                        }
+                    }
+                },
+                services: {
+                    title: 'Zusätzliche Services',
+                    subtitle: 'Zusätzliche Services für Ihren Komfort',
+                    items: {
+                        parking: {
+                            title: 'Eigener Parkplatz',
+                            price: '€10 pro Nacht',
+                            body: 'Das Hotel verfügt über einen eigenen Parkplatz am Hotel. Es stehen auch 2 elektrische Ladestationen für Ihr Auto zur Verfügung.'
+                        },
+                        cleaning: {
+                            title: 'Endreinigung',
+                            price: '€30 pro Aufenthalt',
+                            body: 'Professioneller Endreinigungsservice verfügbar. Sie können auch selbst bei der Abreise reinigen.'
+                        },
+                        lateCheckout: {
+                            title: 'Später Check-out',
+                            price: '€20 pro Aufenthalt',
+                            body: 'Später Check-out bis 15:00 Uhr gegen Aufpreis möglich. Abhängig von der Verfügbarkeit.'
+                        },
+                        extraBed: {
+                            title: 'Zusatzbett',
+                            price: '€25 pro Nacht',
+                            body: 'Zusatzbett für zusätzliche Personen verfügbar. Nur in Apartments verfügbar.'
+                        }
+                    }
+                },
+                cta: {
+                    bookNow: 'Jetzt buchen',
+                    reserve: 'Reservieren Sie Ihren Aufenthalt am Meer',
+                    contact: 'Kontakt',
+                    sectionTitle: 'Fragen zu Ihrem Aufenthalt?',
+                    sectionBody: 'Kontaktieren Sie uns für weitere Informationen oder buchen Sie direkt Ihren Aufenthalt'
+                },
+                footer: {
+                    contact: {
+                        heading: 'Kontakt',
+                        addressLine1: 'Irislaan 1',
+                        addressLine2: '8400 Ostende',
+                        addressLine3: 'Belgien',
+                        phone: 'Tel.: +32 59 70 11 11',
+                        email: 'E-Mail: info@dewielingen.be'
+                    },
+                    quickLinks: {
+                        heading: 'Schnelle Links'
+                    },
+                    practical: {
+                        heading: 'Praktische Infos',
+                        checkin: 'Check-in/Check-out',
+                        amenities: 'Ausstattung'
+                    },
+                    booking: {
+                        heading: 'Buchen Sie Ihren Aufenthalt',
+                        body: 'Reservieren Sie jetzt und genießen Sie einen entspannten Aufenthalt am Meer.'
+                    },
+                    bottom: '© 2024 Aparthotel De Wielingen. Alle Rechte vorbehalten.'
+                }
+            }
+        };
+
+        const languageButtons = document.querySelectorAll('.language-switcher .lang-btn');
+        let storedLang = null;
+        try {
+            storedLang = localStorage.getItem('preferredLang');
+        } catch (error) {
+            storedLang = null;
+        }
+        const defaultLang = storedLang && translations[storedLang] ? storedLang : 'nl';
+
+        function getTranslation(lang, key) {
+            return key.split('.').reduce((result, part) => {
+                if (result && Object.prototype.hasOwnProperty.call(result, part)) {
+                    return result[part];
+                }
+                return undefined;
+            }, translations[lang]);
+        }
+
+        function applyTranslations(lang) {
+            if (!translations[lang]) {
+                lang = 'nl';
+            }
+
+            const elements = document.querySelectorAll('[data-i18n]');
+            elements.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                const attr = element.getAttribute('data-i18n-attr');
+                const fallback = getTranslation('nl', key);
+                const translation = getTranslation(lang, key) ?? fallback;
+
+                if (translation === undefined) {
+                    return;
+                }
+
+                if (attr) {
+                    if (attr === 'html') {
+                        element.innerHTML = translation;
+                    } else {
+                        element.setAttribute(attr, translation);
+                    }
+                } else {
+                    element.textContent = translation;
+                }
+            });
+
+            document.documentElement.setAttribute('lang', lang);
+
+            if (translations[lang].meta && translations[lang].meta.title) {
+                document.title = translations[lang].meta.title;
+            }
+
+            const metaDescription = document.querySelector('meta[name="description"]');
+            if (metaDescription && translations[lang].meta && translations[lang].meta.description) {
+                metaDescription.setAttribute('content', translations[lang].meta.description);
+            }
+
+            languageButtons.forEach(button => {
+                button.classList.toggle('active', button.dataset.lang === lang);
+            });
+
+            try {
+                localStorage.setItem('preferredLang', lang);
+            } catch (error) {
+                // Ignore storage errors
+            }
+        }
+
+        languageButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                applyTranslations(button.dataset.lang);
+            });
+        });
+
+        applyTranslations(defaultLang);
+
+        // Mobile menu toggle - Simple & Reliable
         function toggleMobileMenu() {
             const mobileMenu = document.querySelector('.mobile-menu');
             const mobileOverlay = document.querySelector('.mobile-overlay');
@@ -614,14 +1310,13 @@
                 mobileOverlay.classList.remove('active');
                 hamburger.classList.remove('active');
                 document.body.style.overflow = '';
-        }
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const mobileOverlay = document.querySelector('.mobile-overlay');
-            const hamburger = document.querySelector('.hamburger');
-            
-            mobileMenu.classList.toggle('open');
-            mobileOverlay.classList.toggle('active');
-            hamburger.classList.toggle('active');
+            } else {
+                // Open menu
+                mobileMenu.classList.add('open');
+                mobileOverlay.classList.add('active');
+                hamburger.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
         }
         
         // Scroll animations
