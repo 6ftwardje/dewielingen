@@ -263,6 +263,74 @@
                 transform: translateY(0);
             }
         }
+        
+        /* Carousel Styles */
+        [data-carousel] {
+            position: relative;
+            touch-action: pan-y pinch-zoom;
+            overflow: hidden;
+        }
+        
+        [data-carousel-track] {
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+        }
+        
+        [data-carousel-track].dragging {
+            transition: none !important;
+        }
+        
+        [data-carousel-prev],
+        [data-carousel-next] {
+            z-index: 10;
+            min-width: 44px;
+            min-height: 44px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            touch-action: manipulation;
+        }
+        
+        @media (max-width: 768px) {
+            [data-carousel-prev],
+            [data-carousel-next] {
+                opacity: 1 !important;
+                background: rgba(255, 255, 255, 0.95) !important;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            }
+            
+            [data-carousel-dot] {
+                width: 10px;
+                height: 10px;
+                min-width: 10px;
+                min-height: 10px;
+            }
+        }
+        
+        [data-carousel-dot] {
+            z-index: 10;
+            touch-action: manipulation;
+            min-width: 8px;
+            min-height: 8px;
+        }
+        
+        [data-carousel] button:focus-visible {
+            outline: 2px solid #a50030;
+            outline-offset: 2px;
+        }
+        
+        /* Prevent horizontal scrollbars */
+        [data-carousel] * {
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        /* Swipe feedback */
+        [data-carousel-track].swiping {
+            cursor: grabbing;
+        }
     </style>
 </head>
 <body class="bg-cream font-sans text-dark-gray">
@@ -370,8 +438,132 @@
             <!-- Studio -->
             <div class="grid lg:grid-cols-2 gap-12 items-center mb-20">
                 <div class="fade-in">
-                    <div class="w-full h-96 bg-gray-200 rounded-lg overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Studio kamer" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-i18n="rooms.studio.imageAlt" data-i18n-attr="alt">
+                    <div class="relative group" data-carousel="studio" role="region" aria-label="Studio foto carrousel">
+                        <div class="w-full h-80 md:h-96 bg-gray-200 rounded-lg overflow-hidden relative">
+                            <div id="studio-carousel-track" class="flex transition-transform duration-500 ease-out h-full" data-carousel-track role="group" aria-label="Studio foto's">
+                                <!-- Slide 1 -->
+                                <div class="min-w-full h-full flex-shrink-0" role="group" aria-roledescription="slide" aria-label="Studio foto 1 van 4">
+                                    <img 
+                                        src="assets/fotos/studio/foto1_large.webp" 
+                                        srcset="assets/fotos/studio/foto1_small.webp 640w, assets/fotos/studio/foto1_medium.webp 1024w, assets/fotos/studio/foto1_large.webp 1920w"
+                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                                        alt="Studio kamer" 
+                                        class="w-full h-full object-cover" 
+                                        width="1920" 
+                                        height="1280"
+                                        decoding="async"
+                                        onerror="this.style.display='none'; this.parentElement.style.backgroundColor='#e5e7eb';"
+                                        data-i18n="rooms.studio.imageAlt" 
+                                        data-i18n-attr="alt">
+                                </div>
+                                <!-- Slide 2 -->
+                                <div class="min-w-full h-full flex-shrink-0" role="group" aria-roledescription="slide" aria-label="Studio foto 2 van 4">
+                                    <img 
+                                        src="assets/fotos/studio/foto2_large.webp" 
+                                        srcset="assets/fotos/studio/foto2_small.webp 640w, assets/fotos/studio/foto2_medum.webp 1024w, assets/fotos/studio/foto2_large.webp 1920w"
+                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                                        alt="Studio kamer" 
+                                        class="w-full h-full object-cover" 
+                                        width="1920" 
+                                        height="1280"
+                                        loading="lazy"
+                                        decoding="async"
+                                        onerror="this.style.display='none'; this.parentElement.style.backgroundColor='#e5e7eb';"
+                                        data-i18n="rooms.studio.imageAlt" 
+                                        data-i18n-attr="alt">
+                                </div>
+                                <!-- Slide 3 -->
+                                <div class="min-w-full h-full flex-shrink-0" role="group" aria-roledescription="slide" aria-label="Studio foto 3 van 4">
+                                    <img 
+                                        src="assets/fotos/studio/foto3_large.webp" 
+                                        srcset="assets/fotos/studio/foto3_small.webp 640w, assets/fotos/studio/foto3_medium.webp 1024w, assets/fotos/studio/foto3_large.webp 1920w"
+                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                                        alt="Studio kamer" 
+                                        class="w-full h-full object-cover" 
+                                        width="1920" 
+                                        height="1280"
+                                        loading="lazy"
+                                        decoding="async"
+                                        onerror="this.style.display='none'; this.parentElement.style.backgroundColor='#e5e7eb';"
+                                        data-i18n="rooms.studio.imageAlt" 
+                                        data-i18n-attr="alt">
+                                </div>
+                                <!-- Slide 4 -->
+                                <div class="min-w-full h-full flex-shrink-0" role="group" aria-roledescription="slide" aria-label="Studio foto 4 van 4">
+                                    <img 
+                                        src="assets/fotos/studio/foto4_large.webp" 
+                                        srcset="assets/fotos/studio/foto4_small.webp 640w, assets/fotos/studio/foto4_medium.webp 1024w, assets/fotos/studio/foto4_large.webp 1920w"
+                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                                        alt="Studio kamer" 
+                                        class="w-full h-full object-cover" 
+                                        width="1920" 
+                                        height="1280"
+                                        loading="lazy"
+                                        decoding="async"
+                                        onerror="this.style.display='none'; this.parentElement.style.backgroundColor='#e5e7eb';"
+                                        data-i18n="rooms.studio.imageAlt" 
+                                        data-i18n-attr="alt">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Prev/Next Buttons -->
+                        <button 
+                            type="button" 
+                            class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-dark-gray rounded-full p-2 shadow-lg transition-all duration-200 opacity-0 group-hover:opacity-100 md:group-hover:opacity-100 focus:opacity-100 focus-visible:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-red focus-visible:ring-offset-2" 
+                            data-carousel-prev
+                            aria-label="Vorige foto"
+                            aria-controls="studio-carousel-track">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button 
+                            type="button" 
+                            class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-dark-gray rounded-full p-2 shadow-lg transition-all duration-200 opacity-0 group-hover:opacity-100 md:group-hover:opacity-100 focus:opacity-100 focus-visible:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-red focus-visible:ring-offset-2" 
+                            data-carousel-next
+                            aria-label="Volgende foto"
+                            aria-controls="studio-carousel-track">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                        
+                        <!-- Dots Indicators -->
+                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2" role="tablist" aria-label="Carrousel navigatie">
+                            <button 
+                                type="button" 
+                                class="w-2 h-2 md:w-2 md:h-2 rounded-full bg-white/80 hover:bg-white transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900" 
+                                data-carousel-dot
+                                role="tab"
+                                aria-label="Ga naar foto 1"
+                                aria-selected="true"
+                                aria-controls="studio-carousel-track"></button>
+                            <button 
+                                type="button" 
+                                class="w-2 h-2 md:w-2 md:h-2 rounded-full bg-white/50 hover:bg-white/80 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900" 
+                                data-carousel-dot
+                                role="tab"
+                                aria-label="Ga naar foto 2"
+                                aria-selected="false"
+                                aria-controls="studio-carousel-track"></button>
+                            <button 
+                                type="button" 
+                                class="w-2 h-2 md:w-2 md:h-2 rounded-full bg-white/50 hover:bg-white/80 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900" 
+                                data-carousel-dot
+                                role="tab"
+                                aria-label="Ga naar foto 3"
+                                aria-selected="false"
+                                aria-controls="studio-carousel-track"></button>
+                            <button 
+                                type="button" 
+                                class="w-2 h-2 md:w-2 md:h-2 rounded-full bg-white/50 hover:bg-white/80 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900" 
+                                data-carousel-dot
+                                role="tab"
+                                aria-label="Ga naar foto 4"
+                                aria-selected="false"
+                                aria-controls="studio-carousel-track"></button>
+                        </div>
                     </div>
                 </div>
                 <div class="fade-in">
@@ -424,8 +616,156 @@
             <!-- Appartement -->
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="fade-in lg:order-2">
-                    <div class="w-full h-96 bg-gray-200 rounded-lg overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Appartement" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-i18n="rooms.apartment.imageAlt" data-i18n-attr="alt">
+                    <div class="relative group" data-carousel="apartment" role="region" aria-label="Appartement foto carrousel">
+                        <div class="w-full h-80 md:h-96 bg-gray-200 rounded-lg overflow-hidden relative">
+                            <div id="apartment-carousel-track" class="flex transition-transform duration-500 ease-out h-full" data-carousel-track role="group" aria-label="Appartement foto's">
+                                <!-- Slide 1 -->
+                                <div class="min-w-full h-full flex-shrink-0" role="group" aria-roledescription="slide" aria-label="Appartement foto 1 van 5">
+                                    <img 
+                                        src="assets/fotos/appartement/foto1_large.webp" 
+                                        srcset="assets/fotos/appartement/foto1_small.webp 640w, assets/fotos/appartement/foto1_medium.webp 1024w, assets/fotos/appartement/foto1_large.webp 1920w"
+                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                                        alt="Appartement" 
+                                        class="w-full h-full object-cover" 
+                                        width="1920" 
+                                        height="1280"
+                                        decoding="async"
+                                        onerror="this.style.display='none'; this.parentElement.style.backgroundColor='#e5e7eb';"
+                                        data-i18n="rooms.apartment.imageAlt" 
+                                        data-i18n-attr="alt">
+                                </div>
+                                <!-- Slide 2 -->
+                                <div class="min-w-full h-full flex-shrink-0" role="group" aria-roledescription="slide" aria-label="Appartement foto 2 van 5">
+                                    <img 
+                                        src="assets/fotos/appartement/foto2_large.webp" 
+                                        srcset="assets/fotos/appartement/foto2_small.webp 640w, assets/fotos/appartement/foto2_medium.webp 1024w, assets/fotos/appartement/foto2_large.webp 1920w"
+                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                                        alt="Appartement" 
+                                        class="w-full h-full object-cover" 
+                                        width="1920" 
+                                        height="1280"
+                                        loading="lazy"
+                                        decoding="async"
+                                        onerror="this.style.display='none'; this.parentElement.style.backgroundColor='#e5e7eb';"
+                                        data-i18n="rooms.apartment.imageAlt" 
+                                        data-i18n-attr="alt">
+                                </div>
+                                <!-- Slide 3 -->
+                                <div class="min-w-full h-full flex-shrink-0" role="group" aria-roledescription="slide" aria-label="Appartement foto 3 van 5">
+                                    <img 
+                                        src="assets/fotos/appartement/foto3_large.webp" 
+                                        srcset="assets/fotos/appartement/foto3_small.webp 640w, assets/fotos/appartement/foto3_medium.webp 1024w, assets/fotos/appartement/foto3_large.webp 1920w"
+                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                                        alt="Appartement" 
+                                        class="w-full h-full object-cover" 
+                                        width="1920" 
+                                        height="1280"
+                                        loading="lazy"
+                                        decoding="async"
+                                        onerror="this.style.display='none'; this.parentElement.style.backgroundColor='#e5e7eb';"
+                                        data-i18n="rooms.apartment.imageAlt" 
+                                        data-i18n-attr="alt">
+                                </div>
+                                <!-- Slide 4 -->
+                                <div class="min-w-full h-full flex-shrink-0" role="group" aria-roledescription="slide" aria-label="Appartement foto 4 van 5">
+                                    <img 
+                                        src="assets/fotos/appartement/foto4_large.webp" 
+                                        srcset="assets/fotos/appartement/foto4_small.webp 640w, assets/fotos/appartement/foto4_medium.webp 1024w, assets/fotos/appartement/foto4_large.webp 1920w"
+                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                                        alt="Appartement" 
+                                        class="w-full h-full object-cover" 
+                                        width="1920" 
+                                        height="1280"
+                                        loading="lazy"
+                                        decoding="async"
+                                        onerror="this.style.display='none'; this.parentElement.style.backgroundColor='#e5e7eb';"
+                                        data-i18n="rooms.apartment.imageAlt" 
+                                        data-i18n-attr="alt">
+                                </div>
+                                <!-- Slide 5 -->
+                                <div class="min-w-full h-full flex-shrink-0" role="group" aria-roledescription="slide" aria-label="Appartement foto 5 van 5">
+                                    <img 
+                                        src="assets/fotos/appartement/foto5_large.webp" 
+                                        srcset="assets/fotos/appartement/foto5_small.webp 640w, assets/fotos/appartement/foto5_medium.webp 1024w, assets/fotos/appartement/foto5_large.webp 1920w"
+                                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, 100vw"
+                                        alt="Appartement" 
+                                        class="w-full h-full object-cover" 
+                                        width="1920" 
+                                        height="1280"
+                                        loading="lazy"
+                                        decoding="async"
+                                        onerror="this.style.display='none'; this.parentElement.style.backgroundColor='#e5e7eb';"
+                                        data-i18n="rooms.apartment.imageAlt" 
+                                        data-i18n-attr="alt">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Prev/Next Buttons -->
+                        <button 
+                            type="button" 
+                            class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-dark-gray rounded-full p-2 shadow-lg transition-all duration-200 opacity-0 group-hover:opacity-100 md:group-hover:opacity-100 focus:opacity-100 focus-visible:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-red focus-visible:ring-offset-2" 
+                            data-carousel-prev
+                            aria-label="Vorige foto"
+                            aria-controls="apartment-carousel-track">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                            </svg>
+                        </button>
+                        <button 
+                            type="button" 
+                            class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-dark-gray rounded-full p-2 shadow-lg transition-all duration-200 opacity-0 group-hover:opacity-100 md:group-hover:opacity-100 focus:opacity-100 focus-visible:opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-red focus-visible:ring-offset-2" 
+                            data-carousel-next
+                            aria-label="Volgende foto"
+                            aria-controls="apartment-carousel-track">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </button>
+                        
+                        <!-- Dots Indicators -->
+                        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2" role="tablist" aria-label="Carrousel navigatie">
+                            <button 
+                                type="button" 
+                                class="w-2 h-2 md:w-2 md:h-2 rounded-full bg-white/80 hover:bg-white transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900" 
+                                data-carousel-dot
+                                role="tab"
+                                aria-label="Ga naar foto 1"
+                                aria-selected="true"
+                                aria-controls="apartment-carousel-track"></button>
+                            <button 
+                                type="button" 
+                                class="w-2 h-2 md:w-2 md:h-2 rounded-full bg-white/50 hover:bg-white/80 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900" 
+                                data-carousel-dot
+                                role="tab"
+                                aria-label="Ga naar foto 2"
+                                aria-selected="false"
+                                aria-controls="apartment-carousel-track"></button>
+                            <button 
+                                type="button" 
+                                class="w-2 h-2 md:w-2 md:h-2 rounded-full bg-white/50 hover:bg-white/80 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900" 
+                                data-carousel-dot
+                                role="tab"
+                                aria-label="Ga naar foto 3"
+                                aria-selected="false"
+                                aria-controls="apartment-carousel-track"></button>
+                            <button 
+                                type="button" 
+                                class="w-2 h-2 md:w-2 md:h-2 rounded-full bg-white/50 hover:bg-white/80 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900" 
+                                data-carousel-dot
+                                role="tab"
+                                aria-label="Ga naar foto 4"
+                                aria-selected="false"
+                                aria-controls="apartment-carousel-track"></button>
+                            <button 
+                                type="button" 
+                                class="w-2 h-2 md:w-2 md:h-2 rounded-full bg-white/50 hover:bg-white/80 transition-colors duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-gray-900" 
+                                data-carousel-dot
+                                role="tab"
+                                aria-label="Ga naar foto 5"
+                                aria-selected="false"
+                                aria-controls="apartment-carousel-track"></button>
+                        </div>
                     </div>
                 </div>
                 <div class="fade-in lg:order-1">
@@ -1350,6 +1690,296 @@
         // Initialize scroll animations
         window.addEventListener('scroll', handleScrollAnimations);
         window.addEventListener('load', handleScrollAnimations);
+        
+        // Image Carousel Implementation - Mobile-First & Performance Optimized
+        (function initCarousels() {
+            const carousels = document.querySelectorAll('[data-carousel]');
+            let resizeTimeout;
+            
+            // Debounced resize handler
+            function debounceResize(callback, delay = 150) {
+                return function(...args) {
+                    clearTimeout(resizeTimeout);
+                    resizeTimeout = setTimeout(() => callback.apply(this, args), delay);
+                };
+            }
+            
+            carousels.forEach(carousel => {
+                const track = carousel.querySelector('[data-carousel-track]');
+                const prevButton = carousel.querySelector('[data-carousel-prev]');
+                const nextButton = carousel.querySelector('[data-carousel-next]');
+                const dots = carousel.querySelectorAll('[data-carousel-dot]');
+                const slides = track.querySelectorAll('[role="group"]');
+                
+                let currentIndex = 0;
+                const totalSlides = slides.length;
+                let touchStartX = 0;
+                let touchEndX = 0;
+                let touchCurrentX = 0;
+                let isTransitioning = false;
+                let isDragging = false;
+                let dragOffset = 0;
+                let lastUpdateTime = 0;
+                let rafId = null;
+                
+                // Update carousel position with requestAnimationFrame for smoothness
+                function updateCarouselPosition(immediate = false) {
+                    if (isTransitioning && !immediate) return;
+                    
+                    const baseTranslate = -currentIndex * 100;
+                    const translateX = baseTranslate + dragOffset;
+                    
+                    if (rafId) {
+                        cancelAnimationFrame(rafId);
+                    }
+                    
+                    rafId = requestAnimationFrame(() => {
+                        track.style.transform = `translateX(${translateX}%)`;
+                        rafId = null;
+                    });
+                    
+                    // Update dots and ARIA attributes
+                    updateDots();
+                }
+                
+                function updateDots() {
+                    dots.forEach((dot, index) => {
+                        const isActive = index === currentIndex;
+                        if (isActive) {
+                            dot.classList.remove('bg-white/50');
+                            dot.classList.add('bg-white/80');
+                            dot.setAttribute('aria-selected', 'true');
+                        } else {
+                            dot.classList.remove('bg-white/80');
+                            dot.classList.add('bg-white/50');
+                            dot.setAttribute('aria-selected', 'false');
+                        }
+                    });
+                    
+                    // Update slide ARIA labels
+                    slides.forEach((slide, index) => {
+                        const isActive = index === currentIndex;
+                        slide.setAttribute('aria-hidden', !isActive ? 'true' : 'false');
+                    });
+                }
+                
+                // Go to specific slide
+                function goToSlide(index, skipTransition = false) {
+                    if (index < 0 || index >= totalSlides) return;
+                    if (isTransitioning && !skipTransition) return;
+                    
+                    // Prevent rapid clicks/swipes
+                    const now = Date.now();
+                    if (now - lastUpdateTime < 300 && !skipTransition) return;
+                    lastUpdateTime = now;
+                    
+                    isTransitioning = true;
+                    currentIndex = index;
+                    dragOffset = 0;
+                    
+                    // Remove dragging class and restore transition
+                    track.classList.remove('dragging', 'swiping');
+                    track.style.transition = skipTransition ? 'none' : 'transform 0.5s ease-out';
+                    
+                    updateCarouselPosition(true);
+                    
+                    // Reset transition lock after animation
+                    setTimeout(() => {
+                        isTransitioning = false;
+                    }, skipTransition ? 0 : 500);
+                }
+                
+                // Next slide (with wrapping)
+                function nextSlide() {
+                    if (isTransitioning) return;
+                    const nextIndex = currentIndex < totalSlides - 1 ? currentIndex + 1 : 0;
+                    goToSlide(nextIndex);
+                }
+                
+                // Previous slide (with wrapping)
+                function prevSlide() {
+                    if (isTransitioning) return;
+                    const prevIndex = currentIndex > 0 ? currentIndex - 1 : totalSlides - 1;
+                    goToSlide(prevIndex);
+                }
+                
+                // Touch/swipe handlers with free-drag support
+                function handleTouchStart(e) {
+                    if (isTransitioning) return;
+                    
+                    touchStartX = e.touches[0].clientX;
+                    touchCurrentX = touchStartX;
+                    isDragging = true;
+                    
+                    // Disable transition during drag for free movement
+                    track.classList.add('dragging', 'swiping');
+                    track.style.transition = 'none';
+                    
+                    // Prevent default to avoid scrolling
+                    e.preventDefault();
+                }
+                
+                function handleTouchMove(e) {
+                    if (!isDragging) return;
+                    
+                    touchCurrentX = e.touches[0].clientX;
+                    const diff = touchStartX - touchCurrentX;
+                    const trackWidth = track.offsetWidth;
+                    dragOffset = (diff / trackWidth) * 100;
+                    
+                    // Constrain drag offset to prevent over-dragging
+                    const maxDrag = 30; // Max 30% drag
+                    dragOffset = Math.max(-maxDrag, Math.min(maxDrag, dragOffset));
+                    
+                    updateCarouselPosition(true);
+                    
+                    e.preventDefault();
+                }
+                
+                function handleTouchEnd(e) {
+                    if (!isDragging) return;
+                    
+                    isDragging = false;
+                    touchEndX = touchCurrentX;
+                    
+                    const diff = touchStartX - touchEndX;
+                    const minSwipeDistance = 50; // 50px threshold
+                    const trackWidth = track.offsetWidth;
+                    const swipePercentage = (Math.abs(diff) / trackWidth) * 100;
+                    
+                    // Remove dragging classes
+                    track.classList.remove('swiping');
+                    
+                    // Determine if we should change slides
+                    if (Math.abs(diff) > minSwipeDistance || swipePercentage > 10) {
+                        if (diff > 0) {
+                            // Swiped left - next slide
+                            nextSlide();
+                        } else {
+                            // Swiped right - previous slide
+                            prevSlide();
+                        }
+                    } else {
+                        // Snap back to current slide
+                        goToSlide(currentIndex, true);
+                    }
+                    
+                    // Reset
+                    touchStartX = 0;
+                    touchEndX = 0;
+                    touchCurrentX = 0;
+                    dragOffset = 0;
+                }
+                
+                // Button click handlers with debouncing
+                let buttonClickTimeout;
+                function handleButtonClick(direction) {
+                    if (buttonClickTimeout) return;
+                    
+                    if (direction === 'next') {
+                        nextSlide();
+                    } else {
+                        prevSlide();
+                    }
+                    
+                    buttonClickTimeout = setTimeout(() => {
+                        buttonClickTimeout = null;
+                    }, 300);
+                }
+                
+                // Event listeners
+                if (prevButton) {
+                    prevButton.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleButtonClick('prev');
+                    }, { passive: false });
+                }
+                
+                if (nextButton) {
+                    nextButton.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        handleButtonClick('next');
+                    }, { passive: false });
+                }
+                
+                // Dot navigation
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        goToSlide(index);
+                    }, { passive: false });
+                });
+                
+                // Touch/swipe support with passive listeners where possible
+                track.addEventListener('touchstart', handleTouchStart, { passive: false });
+                track.addEventListener('touchmove', handleTouchMove, { passive: false });
+                track.addEventListener('touchend', handleTouchEnd, { passive: true });
+                track.addEventListener('touchcancel', handleTouchEnd, { passive: true });
+                
+                // Keyboard navigation
+                carousel.addEventListener('keydown', (e) => {
+                    if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        prevSlide();
+                    } else if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        nextSlide();
+                    } else if (e.key === 'Home') {
+                        e.preventDefault();
+                        goToSlide(0);
+                    } else if (e.key === 'End') {
+                        e.preventDefault();
+                        goToSlide(totalSlides - 1);
+                    }
+                });
+                
+                // Make carousel focusable for keyboard navigation
+                carousel.setAttribute('tabindex', '0');
+                
+                // Intersection Observer for lazy loading optimization
+                if ('IntersectionObserver' in window) {
+                    const imageObserver = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                const img = entry.target;
+                                if (img.dataset.src) {
+                                    img.src = img.dataset.src;
+                                    img.removeAttribute('data-src');
+                                }
+                                imageObserver.unobserve(img);
+                            }
+                        });
+                    }, {
+                        rootMargin: '50px'
+                    });
+                    
+                    // Observe images that are not the first slide
+                    slides.forEach((slide, index) => {
+                        if (index > 0) {
+                            const img = slide.querySelector('img');
+                            if (img) {
+                                imageObserver.observe(img);
+                            }
+                        }
+                    });
+                }
+                
+                // Handle window resize
+                const handleResize = debounceResize(() => {
+                    // Recalculate position on resize
+                    updateCarouselPosition(true);
+                });
+                
+                window.addEventListener('resize', handleResize);
+                
+                // Initialize
+                updateCarouselPosition(true);
+                updateDots();
+            });
+        })();
     </script>
 
     </body>
