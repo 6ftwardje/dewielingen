@@ -4,14 +4,14 @@ Een moderne, minimalistische website voor Aparthotel De Wielingen gebouwd met Ta
 
 ## 🏨 Over het Project
 
-Deze website is ontworpen voor Aparthotel De Wielingen, gelegen op de hoek van Irislaan en Henri Jasparlaan in Oostende, België. De site biedt een professionele, gebruiksvriendelijke ervaring voor gasten die op zoek zijn naar accommodatie aan de Belgische kust.
+Deze website is ontworpen voor Aparthotel De Wielingen, gelegen op de hoek van Irislaan en Henri Jasparlaan in Westende, België. De site biedt een professionele, gebruiksvriendelijke ervaring voor gasten die op zoek zijn naar accommodatie aan de Belgische kust in Westende en Middelkerke.
 
 ## ✨ Features
 
 ### Design & UX
 - **Mobile-first design** - Optimized voor alle apparaten
 - **Minimalistisch design** - Clean en professioneel
-- **Kleurenschema**: Gebroken wit (#f9f9f7) achtergrond, zwart/donkere grijstinten voor tekst, accentkleur rood (#a50030)
+- **Kleurenschema**: Gebroken wit (#f9f9f7) achtergrond, zwart/donkere grijstinten voor tekst, accentkleur lichtblauw (#2a95ff)
 - **Lettertype**: Inter (Google Fonts) voor moderne uitstraling
 - **Subtiele animaties** - Scroll animaties en hover effecten
 
@@ -76,7 +76,7 @@ tailwind.config = {
         extend: {
             colors: {
                 'cream': '#f9f9f7',        // Achtergrond
-                'accent-red': '#a50030',   // Accent kleur
+                'accent-red': '#2a95ff',   // Accent kleur (lichtblauw)
                 'dark-gray': '#2d2d2d',    // Tekst
                 'light-gray': '#6b7280'    // Secundaire tekst
             }
@@ -113,7 +113,7 @@ De taalwisselaar is voorbereid voor uitbreiding:
 ## 📞 Contact Informatie
 
 **Aparthotel De Wielingen**
-- Adres: Irislaan 1, 8400 Oostende, België
+- Adres: Irislaan 8434, 8434 Westende, België
 - Telefoon: +32 59 70 11 11
 - Email: info@dewielingen.be
 
