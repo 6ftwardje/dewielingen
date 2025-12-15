@@ -337,6 +337,44 @@
         </div>
     </section>
     
+    <!-- Parking Section -->
+    <section class="bg-cream py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="fade-in order-2 lg:order-1">
+                    <div class="w-full h-80 bg-gray-200 rounded-lg overflow-hidden">
+                        <img src="assets/fotos/energiepalen.webp" alt="Parking met elektrische laadpalen" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" data-i18n="parking.imageAlt" data-i18n-attr="alt">
+                    </div>
+                </div>
+                <div class="fade-in order-1 lg:order-2">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-accent-red rounded-full flex items-center justify-center mr-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-4xl font-bold text-dark-gray" data-i18n="parking.heading">Eigen Parking</h2>
+                    </div>
+                    <div class="space-y-4 text-lg text-light-gray">
+                        <p class="font-semibold text-dark-gray" data-i18n="parking.highlight">Parkeer uw wagen veilig op onze eigen parking bij het hotel.</p>
+                        <p data-i18n="parking.description">Wij bieden een eigen parking aan voor al onze gasten. Geen zorgen over parkeerplaatsen vinden in het drukke centrum van Westende-bad.</p>
+                        <div class="bg-white rounded-lg p-6 shadow-sm border-l-4 border-accent-red">
+                            <div class="flex items-start">
+                                <svg class="w-6 h-6 text-accent-red mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2 text-dark-gray" data-i18n="parking.charging.title">2 Elektrische Laadpalen</h3>
+                                    <p class="text-light-gray" data-i18n="parking.charging.description">Laad uw elektrische wagen op tijdens uw verblijf. Onze moderne laadpalen zijn beschikbaar voor al onze gasten.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <!-- Features Section -->
     <section class="bg-white py-20 px-4">
         <div class="max-w-7xl mx-auto">
@@ -412,6 +450,18 @@
                     </div>
                     <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="features.items.kitchenette.title">Kitchenette</h3>
                     <p class="text-light-gray" data-i18n="features.items.kitchenette.body">Kitchenette met Senseo koffiezetapparaat en microgolf op aanvraag beschikbaar.</p>
+                </div>
+                
+                <!-- Feature 7 - Parking -->
+                <div class="text-center fade-in">
+                    <div class="w-16 h-16 bg-accent-red rounded-full flex items-center justify-center mx-auto mb-6">
+                        <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11v6m0 0l-3-3m3 3l3-3"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="features.items.parking.title">Eigen Parking</h3>
+                    <p class="text-light-gray" data-i18n="features.items.parking.body">Eigen parking bij het hotel met 2 elektrische laadpalen voor uw wagen.</p>
                 </div>
             </div>
         </div>
@@ -520,6 +570,16 @@
                     },
                     imageAlt: 'Hotel De Wielingen'
                 },
+                parking: {
+                    heading: 'Eigen Parking',
+                    highlight: 'Parkeer uw wagen veilig op onze eigen parking bij het hotel.',
+                    description: 'Wij bieden een eigen parking aan voor al onze gasten. Geen zorgen over parkeerplaatsen vinden in het drukke centrum van Westende-bad.',
+                    imageAlt: 'Parking met elektrische laadpalen',
+                    charging: {
+                        title: '2 Elektrische Laadpalen',
+                        description: 'Laad uw elektrische wagen op tijdens uw verblijf. Onze moderne laadpalen zijn beschikbaar voor al onze gasten.'
+                    }
+                },
                 features: {
                     title: 'Wat maakt ons bijzonder?',
                     subtitle: 'Ontdek de voordelen van verblijven bij Aparthotel De Wielingen',
@@ -547,6 +607,10 @@
                         kitchenette: {
                             title: 'Kitchenette',
                             body: 'Kitchenette met Senseo koffiezetapparaat en microgolf op aanvraag beschikbaar.'
+                        },
+                        parking: {
+                            title: 'Eigen Parking',
+                            body: 'Eigen parking bij het hotel met 2 elektrische laadpalen voor uw wagen.'
                         }
                     }
                 },
@@ -620,6 +684,16 @@
                     },
                     imageAlt: 'Hotel De Wielingen exterior'
                 },
+                parking: {
+                    heading: 'Private Parking',
+                    highlight: 'Park your car safely in our private hotel parking.',
+                    description: 'We offer private parking for all our guests. No worries about finding parking spaces in the busy center of Westende-bad.',
+                    imageAlt: 'Parking with electric charging stations',
+                    charging: {
+                        title: '2 Electric Charging Stations',
+                        description: 'Charge your electric vehicle during your stay. Our modern charging stations are available for all our guests.'
+                    }
+                },
                 features: {
                     title: 'What makes us special?',
                     subtitle: 'Discover the advantages of staying at Aparthotel De Wielingen',
@@ -647,6 +721,10 @@
                         kitchenette: {
                             title: 'Kitchenette',
                             body: 'Kitchenette with Senseo coffee maker and microwave available on request.'
+                        },
+                        parking: {
+                            title: 'Private Parking',
+                            body: 'Private hotel parking with two EV charging stations for your vehicle.'
                         }
                     }
                 },
@@ -720,6 +798,16 @@
                     },
                     imageAlt: 'Hôtel De Wielingen'
                 },
+                parking: {
+                    heading: 'Parking Privé',
+                    highlight: 'Garez votre voiture en toute sécurité sur notre parking privé de l\'hôtel.',
+                    description: 'Nous offrons un parking privé pour tous nos clients. Pas de souci à se faire pour trouver une place de parking dans le centre animé de Westende-bad.',
+                    imageAlt: 'Parking avec bornes de recharge électriques',
+                    charging: {
+                        title: '2 Bornes de Recharge Électriques',
+                        description: 'Rechargez votre véhicule électrique pendant votre séjour. Nos bornes de recharge modernes sont disponibles pour tous nos clients.'
+                    }
+                },
                 features: {
                     title: 'Qu\'est-ce qui nous rend uniques ?',
                     subtitle: 'Découvrez les avantages de séjourner à l\'Aparthotel De Wielingen',
@@ -747,6 +835,10 @@
                         kitchenette: {
                             title: 'Kitchenette',
                             body: 'Kitchenette avec machine à café Senseo et micro-ondes disponible sur demande.'
+                        },
+                        parking: {
+                            title: 'Parking Privé',
+                            body: 'Parking privé de l\'hôtel avec deux bornes de recharge électriques pour votre véhicule.'
                         }
                     }
                 },
@@ -820,6 +912,16 @@
                     },
                     imageAlt: 'Hotel De Wielingen Außenansicht'
                 },
+                parking: {
+                    heading: 'Eigener Parkplatz',
+                    highlight: 'Parken Sie Ihr Auto sicher auf unserem privaten Hotelparkplatz.',
+                    description: 'Wir bieten einen privaten Parkplatz für alle unsere Gäste. Keine Sorgen um Parkplätze im belebten Zentrum von Westende-Bad.',
+                    imageAlt: 'Parkplatz mit Elektroladestationen',
+                    charging: {
+                        title: '2 Elektroladestationen',
+                        description: 'Laden Sie Ihr Elektrofahrzeug während Ihres Aufenthalts auf. Unsere modernen Ladestationen stehen allen Gästen zur Verfügung.'
+                    }
+                },
                 features: {
                     title: 'Was macht uns besonders?',
                     subtitle: 'Entdecken Sie die Vorteile eines Aufenthalts im Aparthotel De Wielingen',
@@ -847,6 +949,10 @@
                         kitchenette: {
                             title: 'Kitchenette',
                             body: 'Kitchenette mit Senseo-Kaffeemaschine und Mikrowelle auf Anfrage verfügbar.'
+                        },
+                        parking: {
+                            title: 'Eigener Parkplatz',
+                            body: 'Eigener Hotelparkplatz mit zwei Elektroladestationen für Ihr Fahrzeug.'
                         }
                     }
                 },
