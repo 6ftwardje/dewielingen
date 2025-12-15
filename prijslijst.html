@@ -44,7 +44,12 @@
         .hero-bg[style*="background-image"] {
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+        }
+        
+        @media (min-width: 1024px) {
+            .hero-bg[style*="background-image"] {
+                background-attachment: fixed;
+            }
         }
         
         .hero-bg::before {
@@ -128,6 +133,7 @@
             width: 24px;
             height: 18px;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
         
         .hamburger span {
@@ -153,30 +159,6 @@
         
         .hamburger span:nth-child(3) {
             top: 16px;
-        }
-        
-        .hamburger.active span:nth-child(1) {
-            top: 8px;
-            transform: rotate(135deg);
-        }
-        
-        .hamburger.active span:nth-child(2) {
-            opacity: 0;
-            left: -60px;
-        }
-        
-        .hamburger.active span:nth-child(3) {
-            top: 8px;
-            transform: rotate(-135deg);
-        }
-        
-        .mobile-menu.open {
-            transform: translateX(0);
-        }
-        
-        .hamburger {
-            transition: all 0.3s ease;
-            position: relative;
         }
         
         .hamburger.active span:nth-child(1) {
@@ -277,7 +259,7 @@
 </head>
 <body class="bg-cream font-sans text-dark-gray">
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50">
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-50" aria-label="Hoofdnavigatie">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <!-- Logo -->
@@ -298,7 +280,7 @@
                         <a href="praktisch.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.practical">Praktisch</a>
                         <a href="ligging.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.location">Ligging</a>
                         <a href="contact.html" class="text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.contact">Contact</a>
-                        <a href="https://bookingengine.mylighthouse.com/de-wielingen-westende" class="bg-accent-red text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors duration-200 font-medium" data-i18n="cta.bookNow">Boek nu</a>
+                        <a href="https://bookingengine.mylighthouse.com/de-wielingen-westende" rel="noopener" target="_blank" class="bg-accent-red text-white px-6 py-2 rounded-full hover:bg-blue-600 transition-colors duration-200 font-medium" data-i18n="cta.bookNow">Boek nu</a>
                     </div>
                 </div>
                 
@@ -333,7 +315,7 @@
             
             <!-- Navigation -->
             <div class="px-6 py-8">
-                <nav class="space-y-6">
+                <nav class="space-y-6" aria-label="Hoofdnavigatie">
                     <a href="index.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.home">Home</a>
                     <a href="hotel.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.hotel">Hotel</a>
                     <a href="kamers.html" class="block text-2xl font-semibold text-dark-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.rooms">Kamers</a>
@@ -346,7 +328,7 @@
             
             <!-- CTA Section -->
             <div class="px-6 pb-8">
-                <a href="https://bookingengine.mylighthouse.com/de-wielingen-westende" class="block w-full bg-accent-red text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-blue-600 transition-colors duration-200 text-center shadow-lg" data-i18n="cta.bookNow">Boek nu</a>
+                <a href="https://bookingengine.mylighthouse.com/de-wielingen-westende" rel="noopener" target="_blank" class="block w-full bg-accent-red text-white px-8 py-4 rounded-full text-xl font-bold hover:bg-blue-600 transition-colors duration-200 text-center shadow-lg" data-i18n="cta.bookNow">Boek nu</a>
                 <p class="text-center text-light-gray mt-3 text-sm" data-i18n="cta.reserve">Reserveer uw verblijf aan zee</p>
             </div>
         </div>
@@ -424,7 +406,7 @@
                         </div>
                     </div>
                     
-                    <a href="https://bookingengine.mylighthouse.com/de-wielingen-westende" class="w-full bg-accent-red text-white py-3 rounded-full hover:bg-blue-600 transition-colors duration-200 font-medium text-center block" data-i18n="pricing.studio.bookButton">Boek Studio</a>
+                    <a href="https://bookingengine.mylighthouse.com/de-wielingen-westende" rel="noopener" target="_blank" class="w-full bg-accent-red text-white py-3 rounded-full hover:bg-blue-600 transition-colors duration-200 font-medium text-center block" data-i18n="pricing.studio.bookButton">Boek Studio</a>
                 </div>
                 
                 <!-- Appartement Pricing -->
@@ -480,7 +462,7 @@
                         </div>
                     </div>
                     
-                    <a href="https://bookingengine.mylighthouse.com/de-wielingen-westende" class="w-full bg-accent-red text-white py-3 rounded-full hover:bg-blue-600 transition-colors duration-200 font-medium text-center block" data-i18n="pricing.apartment.bookButton">Boek Appartement</a>
+                    <a href="https://bookingengine.mylighthouse.com/de-wielingen-westende" rel="noopener" target="_blank" class="w-full bg-accent-red text-white py-3 rounded-full hover:bg-blue-600 transition-colors duration-200 font-medium text-center block" data-i18n="pricing.apartment.bookButton">Boek Appartement</a>
                 </div>
             </div>
         </div>
@@ -601,7 +583,7 @@
         <div class="max-w-4xl mx-auto text-center px-4">
             <h2 class="text-4xl md:text-5xl font-bold mb-6" data-i18n="cta.sectionTitle">Klaar om te boeken?</h2>
             <p class="text-xl mb-8 opacity-90" data-i18n="cta.sectionBody">Kies uw accommodatie en geniet van een ontspannen verblijf aan zee</p>
-            <a href="https://bookingengine.mylighthouse.com/de-wielingen-westende" class="inline-block bg-accent-red text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-600 transition-all duration-300 transform hover:scale-105" data-i18n="cta.bookNow">Boek nu</a>
+            <a href="https://bookingengine.mylighthouse.com/de-wielingen-westende" rel="noopener" target="_blank" class="inline-block bg-accent-red text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-blue-600 transition-all duration-300 transform hover:scale-105" data-i18n="cta.bookNow">Boek nu</a>
         </div>
     </section>
     
@@ -638,7 +620,7 @@
                     <div class="space-y-2">
                         <a href="praktisch.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="footer.practical.checkin">Check-in/out</a>
                         <a href="ligging.html" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="nav.location">Ligging</a>
-                        <a href="https://bookingengine.mylighthouse.com/de-wielingen-westende" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="footer.practical.amenities">Voorzieningen</a>
+                        <a href="https://bookingengine.mylighthouse.com/de-wielingen-westende" rel="noopener" target="_blank" class="block text-light-gray hover:text-accent-red transition-colors duration-200" data-i18n="footer.practical.amenities">Voorzieningen</a>
                     </div>
                 </div>
                 
@@ -646,7 +628,7 @@
                 <div>
                     <h3 class="text-xl font-semibold mb-4 text-dark-gray" data-i18n="footer.booking.heading">Boek uw verblijf</h3>
                     <p class="text-light-gray mb-4" data-i18n="footer.booking.body">Reserveer nu en geniet van een ontspannen verblijf aan zee.</p>
-                    <a href="https://bookingengine.mylighthouse.com/de-wielingen-westende" class="inline-block bg-accent-red text-white px-6 py-3 rounded-full hover:bg-blue-600 transition-colors duration-200 font-medium" data-i18n="cta.bookNow">Boek nu</a>
+                    <a href="https://bookingengine.mylighthouse.com/de-wielingen-westende" rel="noopener" target="_blank" class="inline-block bg-accent-red text-white px-6 py-3 rounded-full hover:bg-blue-600 transition-colors duration-200 font-medium" data-i18n="cta.bookNow">Boek nu</a>
                 </div>
             </div>
             
@@ -1008,7 +990,7 @@
                         parking: 'Place de parking (par nuit)',
                         microwave: 'Micro-ondes sur demande',
                         senseo: 'Machine à café Senseo',
-                        pets: 'Animaux de compagnie'
+                        pets: 'Animaux de compagnie',
                         towels: 'Serviettes et literie',
                         cleaning: 'Nettoyage final'
                     }
@@ -1143,7 +1125,7 @@
                         babyBed: 'Babybett',
                         lateCheckout: 'Später Check-out bis 12:00',
                         parking: 'Parkplatz (pro Nacht)',
-                        pets: 'Haustiere'
+                        pets: 'Haustiere',
                         microwave: 'Mikrowelle auf Anfrage',
                         senseo: 'Senseo-Kaffeemaschine',
                         towels: 'Handtücher und Bettwäsche',
@@ -1290,17 +1272,31 @@
             const mobileOverlay = document.querySelector('.mobile-overlay');
             const hamburger = document.querySelector('.hamburger');
             
+            if (!mobileMenu) return;
+            
             if (mobileMenu.classList.contains('open')) {
                 // Close menu
                 mobileMenu.classList.remove('open');
-                mobileOverlay.classList.remove('active');
-                hamburger.classList.remove('active');
+                if (mobileOverlay) {
+                    mobileOverlay.classList.remove('active');
+                }
+                if (hamburger) {
+                    hamburger.classList.remove('active');
+                }
+                // Update all hamburgers
+                document.querySelectorAll('.hamburger').forEach(h => h.classList.remove('active'));
                 document.body.style.overflow = '';
             } else {
                 // Open menu
                 mobileMenu.classList.add('open');
-                mobileOverlay.classList.add('active');
-                hamburger.classList.add('active');
+                if (mobileOverlay) {
+                    mobileOverlay.classList.add('active');
+                }
+                if (hamburger) {
+                    hamburger.classList.add('active');
+                }
+                // Update all hamburgers
+                document.querySelectorAll('.hamburger').forEach(h => h.classList.add('active'));
                 document.body.style.overflow = 'hidden';
             }
         }
