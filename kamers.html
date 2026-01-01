@@ -270,12 +270,37 @@
             position: relative;
             touch-action: pan-y pinch-zoom;
             overflow: hidden;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        /* Ensure carousel container has explicit width */
+        [data-carousel] > div {
+            width: 100%;
+            box-sizing: border-box;
         }
         
         [data-carousel-track] {
             will-change: transform;
             transform: translateZ(0);
             backface-visibility: hidden;
+            display: flex;
+            width: 100%;
+            box-sizing: border-box;
+            /* Remove any potential gaps */
+            gap: 0;
+        }
+        
+        /* Force slides to be exactly 100% width - structural fix for mobile */
+        [data-carousel-track] > [role="group"] {
+            flex: 0 0 100% !important;
+            width: 100% !important;
+            min-width: 0 !important;
+            max-width: 100% !important;
+            box-sizing: border-box;
+            /* Prevent any shrinking or growing */
+            flex-shrink: 0;
+            flex-grow: 0;
         }
         
         [data-carousel-track].dragging {
@@ -309,6 +334,19 @@
                 min-width: 10px;
                 min-height: 10px;
             }
+            
+            /* Extra precision for mobile - ensure no subpixel issues */
+            [data-carousel-track] > [role="group"] {
+                /* Force exact pixel alignment on mobile */
+                transform: translateZ(0);
+                -webkit-transform: translateZ(0);
+            }
+            
+            [data-carousel-track] {
+                /* Prevent any rounding issues */
+                -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+            }
         }
         
         [data-carousel-dot] {
@@ -316,6 +354,21 @@
             touch-action: manipulation;
             min-width: 8px;
             min-height: 8px;
+        }
+        
+        /* Uniform dot container centering - structural fix for all carousels */
+        [data-carousel] [role="tablist"] {
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            /* Ensure container is centered horizontally */
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            /* Prevent overflow issues */
+            max-width: 100% !important;
+            width: auto !important;
+            /* Ensure proper wrapping on small screens */
+            flex-wrap: wrap !important;
         }
         
         [data-carousel] button:focus-visible {
@@ -2647,6 +2700,9 @@
                 const dots = carousel.querySelectorAll('[data-carousel-dot]');
                 const slides = track.querySelectorAll('[role="group"]');
                 
+                // Get the carousel container (the direct child div that contains the track)
+                const carouselContainer = carousel.querySelector('[data-carousel-track]').parentElement;
+                
                 let currentIndex = 0;
                 const totalSlides = slides.length;
                 let touchStartX = 0;
@@ -2658,10 +2714,19 @@
                 let lastUpdateTime = 0;
                 let rafId = null;
                 
+                // Get the actual visible width of the carousel container (not the track)
+                function getCarouselWidth() {
+                    // Use the container width, not track width, to avoid rounding issues
+                    const containerWidth = carouselContainer.getBoundingClientRect().width;
+                    // Round to avoid subpixel issues on mobile
+                    return Math.round(containerWidth);
+                }
+                
                 // Update carousel position with requestAnimationFrame for smoothness
                 function updateCarouselPosition(immediate = false) {
                     if (isTransitioning && !immediate) return;
                     
+                    // Use percentage-based transform but ensure slides are exactly 100% width
                     const baseTranslate = -currentIndex * 100;
                     const translateX = baseTranslate + dragOffset;
                     
@@ -2670,7 +2735,9 @@
                     }
                     
                     rafId = requestAnimationFrame(() => {
-                        track.style.transform = `translateX(${translateX}%)`;
+                        // Round translateX to avoid subpixel rendering issues on mobile
+                        const roundedTranslate = Math.round(translateX * 100) / 100;
+                        track.style.transform = `translateX(${roundedTranslate}%)`;
                         rafId = null;
                     });
                     
@@ -2760,8 +2827,9 @@
                     
                     touchCurrentX = e.touches[0].clientX;
                     const diff = touchStartX - touchCurrentX;
-                    const trackWidth = track.offsetWidth;
-                    dragOffset = (diff / trackWidth) * 100;
+                    // Use carousel container width, not track width, for accurate calculations
+                    const carouselWidth = getCarouselWidth();
+                    dragOffset = (diff / carouselWidth) * 100;
                     
                     // Constrain drag offset to prevent over-dragging
                     const maxDrag = 30; // Max 30% drag
@@ -2780,15 +2848,17 @@
                     
                     const diff = touchStartX - touchEndX;
                     const minSwipeDistance = 50; // 50px threshold
-                    const trackWidth = track.offsetWidth;
-                    const swipePercentage = (Math.abs(diff) / trackWidth) * 100;
+                    // Use carousel container width for consistent calculations
+                    const carouselWidth = getCarouselWidth();
+                    const swipePercentage = (Math.abs(diff) / carouselWidth) * 100;
                     
                     // Remove dragging classes
                     track.classList.remove('swiping');
                     
                     // Determine if we should change slides
-                    if (Math.abs(diff) > minSwipeDistance || swipePercentage > 10) {
-                        if (diff > 0) {
+                    // Also check if drag offset exceeds threshold (more reliable on mobile)
+                    if (Math.abs(diff) > minSwipeDistance || swipePercentage > 10 || Math.abs(dragOffset) > 15) {
+                        if (diff > 0 || dragOffset > 0) {
                             // Swiped left - next slide
                             nextSlide();
                         } else {
@@ -2796,7 +2866,7 @@
                             prevSlide();
                         }
                     } else {
-                        // Snap back to current slide
+                        // Snap back to current slide - ensure it lands exactly on the slide
                         goToSlide(currentIndex, true);
                     }
                     
@@ -2905,13 +2975,28 @@
                 
                 // Handle window resize
                 const handleResize = debounceResize(() => {
-                    // Recalculate position on resize
+                    // Recalculate position on resize - ensure slides are still exactly 100%
+                    // Force recalculation of slide widths
+                    slides.forEach(slide => {
+                        // Ensure flex properties are maintained
+                        slide.style.flex = '0 0 100%';
+                        slide.style.width = '100%';
+                    });
                     updateCarouselPosition(true);
                 });
                 
                 window.addEventListener('resize', handleResize);
                 
-                // Initialize
+                // Initialize - ensure slides are exactly 100% width
+                slides.forEach(slide => {
+                    slide.style.flex = '0 0 100%';
+                    slide.style.width = '100%';
+                    slide.style.boxSizing = 'border-box';
+                });
+                
+                // Ensure track has no gap
+                track.style.gap = '0';
+                
                 updateCarouselPosition(true);
                 updateDots();
             });
