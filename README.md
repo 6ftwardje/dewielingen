@@ -113,7 +113,7 @@ De taalwisselaar is voorbereid voor uitbreiding:
 ## 📞 Contact Informatie
 
 **Aparthotel De Wielingen**
-- Adres: Irislaan 8434, 8434 Westende, België
+- Adres: Irislaan 38, 8434 Westende, België
 - Telefoon: 059 30 33 64
 - Email: info@dewielingen.be
 
