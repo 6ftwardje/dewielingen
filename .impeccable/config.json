@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "hotel.html"
+        ],
+        "createdAt": "2026-11-21T18:13:55.479Z",
+        "reason": "Codex: browser measurements at 390px and 1440px show 36px section headings over 18px body text (2:1); the static detector reads the Tailwind classes as 16px."
+      }
+    ]
+  }
+}
